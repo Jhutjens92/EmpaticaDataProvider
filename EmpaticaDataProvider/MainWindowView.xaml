@@ -1,10 +1,10 @@
 ﻿<Window
-    x:Class="MQTTDataProvider.MainWindowView"
+    x:Class="EmpaticaDataProvider.MainWindowView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="MQTTDataProvider"
+    Title="EmpaticaDataProvider"
     Width="450"
     Height="420"
     DataContext="{StaticResource MainWindowViewModel}"
@@ -28,7 +28,7 @@
             Margin="154,42,154,0"
             VerticalAlignment="Top"
             Content="MQTT Message Received"
-            RenderTransformOrigin="2.77,-3.548"/>
+            RenderTransformOrigin="2.77,-3.548" />
         <Button
             x:Name="BtnRecord"
             Width="142"

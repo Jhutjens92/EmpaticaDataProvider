@@ -1,14 +1,15 @@
 ﻿using EmpaticaDataProvider.ViewModel;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 
 namespace EmpaticaDataProvider.EmpaticaManager
 {
     class EmpaticaDataManager
     {
-
-
-        public event EventHandler<TextReceivedEventArgs> NewDataReceived;
+        public event EventHandler<TextReceivedEventArgs> NewEmpaticaDataReceived;
 
         private string _txtReceived = " ";
         public string TxtReceived
@@ -21,9 +22,10 @@ namespace EmpaticaDataProvider.EmpaticaManager
             }
         }
 
-        protected virtual void OnNewDataReceived(TextReceivedEventArgs e)
+
+        protected virtual void OnNewTextReceived(TextReceivedEventArgs e)
         {
-            EventHandler<TextReceivedEventArgs> handler = NewDataReceived;
+            EventHandler<TextReceivedEventArgs> handler = NewEmpaticaDataReceived;
             if(handler != null)
             {
                 handler(this, e);
@@ -34,14 +36,5 @@ namespace EmpaticaDataProvider.EmpaticaManager
         {
             public string TextReceived { get; set; }
         }
-        #region Methods
-       
-
-        public String UpdateText()
-        {
-            return TxtReceived;
-        }
-
-        #endregion
     }
 }

@@ -8,13 +8,13 @@ namespace EmpaticaDataProvider.ViewModel
 {
     public static class Globals
     {
-        private static bool _isRecordingMqtt = false;
-        public static bool IsRecordingMqtt
+        private static bool _isRecordingData = false;
+        public static bool IsRecordingData
         {
-            get { return _isRecordingMqtt; }
+            get { return _isRecordingData; }
             set
             {
-                _isRecordingMqtt = value;
+                _isRecordingData = value;
             }
         }
     }

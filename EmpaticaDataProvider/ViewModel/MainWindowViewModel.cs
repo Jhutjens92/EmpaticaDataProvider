@@ -1,84 +1,96 @@
 ﻿using System;
-﻿using EmpaticaDataProvider.Model;
-using EmpaticaDataProvider.EmpaticaManager;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using EmpaticaDataProvider.Model;
+using EmpaticaDataProvider.EmpaticaManager;
 using static EmpaticaDataProvider.EmpaticaManager.EmpaticaDataManager;
 
 namespace EmpaticaDataProvider.ViewModel
 {
-    class MainWindowViewModel: BindableBase
+    class MainWindowViewModel : BindableBase
     {
         EmpaticaDataManager empmanager = new EmpaticaDataManager();
 
         #region Vars & Properties
-        private string _PPG_Sensor= "";
-        public String PPG_Sensor
+        private string _empatica_AccX = "";
+        public String empatica_AccX
         {
-            get { return _PPG_Sensor; }
+            get { return _empatica_AccX; }
             set
             {
-                _PPG_Sensor = value;
-                OnPropertyChanged("PPG_Sensor");
+                _empatica_AccX = value;
+                OnPropertyChanged("empatica_AccX");
             }
         }
 
-        private string _Accelerometer_X= "";
-        public String Accelerometer_X
+        private string _empatica_AccY = "";
+        public String empatica_AccY
         {
-            get { return _Accelerometer_X; }
+            get { return _empatica_AccY; }
             set
             {
-                _Accelerometer_X = value;
-                OnPropertyChanged("Accelerometer_X");
+                _empatica_AccY = value;
+                OnPropertyChanged("empatica_AccY");
             }
         }
 
-        private string _Accelerometer_Y = "";
-        public String Accelerometer_Y
+        private string _empatica_AccZ = "";
+        public String empatica_AccZ
         {
-            get { return _Accelerometer_Y; }
+            get { return _empatica_AccZ; }
             set
             {
-                _Accelerometer_Y = value;
-                OnPropertyChanged("Accelerometer_Y");
+                _empatica_AccZ = value;
+                OnPropertyChanged("empatica_AccZ");
             }
         }
 
-        private string _Accelerometer_Z = "";
-        public String Accelerometer_Z
+        private string _empatica_Skin_Temp = "";
+        public String empatica_Skin_Temp
         {
-            get { return _Accelerometer_Z; }
+            get { return _empatica_Skin_Temp; }
             set
             {
-                _Accelerometer_X = value;
-                OnPropertyChanged("Accelerometer_Z");
+                _empatica_Skin_Temp = value;
+                OnPropertyChanged("empatica_Skin_Temp");
             }
         }
 
-        private string _GSR_Sensor= "";
-        public String GSR_Sensor
+        private string _empatica_BVP = "";
+        public String empatica_BVP
         {
-            get { return _GSR_Sensor; }
+            get { return _empatica_BVP; }
             set
             {
-                _GSR_Sensor = value;
-                OnPropertyChanged("GSR_Sensor");
+                _empatica_BVP = value;
+                OnPropertyChanged("empatica_BVP");
             }
         }
 
-        private string _Temp_Wrist = ""; 
-        public String Temp_Wrist
-        {
-            get { return _Temp_Wrist; }
+        private string _empatica_HRV = "";
+        public String empatica_HRV
+        { 
+        
+            get { return _empatica_HRV; }
             set
             {
-                _Temp_Wrist = value;
-                OnPropertyChanged("Temp_Wrist");
+                _empatica_HRV = value;
+                OnPropertyChanged("empatica_HRV");
+            }
+        }
+
+        private string _empatica_GSR = ""; 
+        public String empatica_GSR
+        {
+            get { return _empatica_GSR; }
+            set
+            {
+                _empatica_GSR = value;
+                OnPropertyChanged("empatica_GSR");
             }
         }
 
@@ -122,7 +134,7 @@ namespace EmpaticaDataProvider.ViewModel
 
         public MainWindowViewModel()
         {
-            empmanager.NewDataReceived += OnNewDataReceived;
+            empmanager.NewEmpaticaDataReceived += OnNewDataReceived;
             HubConnector.StartConnection();
             HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
@@ -168,16 +180,16 @@ namespace EmpaticaDataProvider.ViewModel
 
         public void StartRecordingData()
         {
-            if (Globals.IsRecordingMqtt == false)
+            if (Globals.IsRecordingData == false)
             {
-                Globals.IsRecordingMqtt = true;
+                Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
 
             }
-            else if (Globals.IsRecordingMqtt == true)
+            else if (Globals.IsRecordingData == true)
             {
-                Globals.IsRecordingMqtt = false;
+                Globals.IsRecordingData = false;
                 ButtonText = "Start Recording";
                 ButtonColor = new SolidColorBrush(Colors.White);
             }
@@ -188,12 +200,13 @@ namespace EmpaticaDataProvider.ViewModel
         public void SetValueNames()
         {
             var names = new List<string>();
-            names.Add("PPG_Sensor");
-            names.Add("Accelerometer_X");
-            names.Add("Accelerometer_Y");
-            names.Add("Accelerometer_Z");
-            names.Add("GSR_Sensor");
-            names.Add("Temp_Wrist");
+            names.Add("empatica_AccX");
+            names.Add("empatica_AccY");
+            names.Add("empatica_AccZ");
+            names.Add("empatica_Skin_Temp");
+            names.Add("empatica_BVP");
+            names.Add("empatica_HRV");
+            names.Add("empatica_GSR");
             HubConnector.SetValuesName(names);
 
         }
@@ -203,12 +216,13 @@ namespace EmpaticaDataProvider.ViewModel
             try
             {
                 var values = new List<string>();
-                values.Add(PPG_Sensor);
-                values.Add(Accelerometer_X);
-                values.Add(Accelerometer_Y);
-                values.Add(Accelerometer_Z);
-                values.Add(GSR_Sensor);
-                values.Add(Temp_Wrist);
+                values.Add(empatica_AccX);
+                values.Add(empatica_AccY);
+                values.Add(empatica_AccZ);
+                values.Add(empatica_Skin_Temp);
+                values.Add(empatica_BVP);
+                values.Add(empatica_HRV);
+                values.Add(empatica_GSR);
                 HubConnector.SendData(values);
             }
             catch (Exception ex)
