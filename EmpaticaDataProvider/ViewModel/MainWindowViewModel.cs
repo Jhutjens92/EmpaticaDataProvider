@@ -16,8 +16,8 @@ namespace EmpaticaDataProvider.ViewModel
         EmpaticaDataManager empmanager = new EmpaticaDataManager();
 
         #region Vars & Properties
-        private string _empatica_AccX = "";
-        public String empatica_AccX
+        private float _empatica_AccX = 0;
+        public float Empatica_AccX
         {
             get { return _empatica_AccX; }
             set
@@ -27,8 +27,8 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _empatica_AccY = "";
-        public String empatica_AccY
+        private float _empatica_AccY = 0;
+        public float Empatica_AccY
         {
             get { return _empatica_AccY; }
             set
@@ -38,8 +38,8 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _empatica_AccZ = "";
-        public String empatica_AccZ
+        private float _empatica_AccZ = 0;
+        public float Empatica_AccZ
         {
             get { return _empatica_AccZ; }
             set
@@ -49,8 +49,8 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _empatica_Skin_Temp = "";
-        public String empatica_Skin_Temp
+        private float _empatica_Skin_Temp = 0;
+        public float Empatica_Skin_Temp
         {
             get { return _empatica_Skin_Temp; }
             set
@@ -60,8 +60,8 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _empatica_BVP = "";
-        public String empatica_BVP
+        private float _empatica_BVP = 0;
+        public float Empatica_BVP
         {
             get { return _empatica_BVP; }
             set
@@ -71,10 +71,10 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _empatica_HRV = "";
-        public String empatica_HRV
-        { 
-        
+        private float _empatica_HRV = 0;
+        public float Empatica_HRV
+        {
+
             get { return _empatica_HRV; }
             set
             {
@@ -83,8 +83,20 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _empatica_GSR = ""; 
-        public String empatica_GSR
+        private float _empatica_IBI = 0;
+        public float Empatica_IBI
+        {
+
+            get { return _empatica_IBI; }
+            set
+            {
+                _empatica_IBI = value;
+                OnPropertyChanged("empatica_IBI");
+            }
+        }
+
+        private float _empatica_GSR = 0;
+        public float Empatica_GSR
         {
             get { return _empatica_GSR; }
             set
@@ -94,15 +106,14 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private string _textReceived = "";
-        public String TextReceived
+        private int _empatica_Tag = 0;
+        public int Empatica_Tag
         {
-            get { return _textReceived; }
+            get { return _empatica_Tag; }
             set
             {
-                _textReceived = value;
-                OnPropertyChanged("TextReceived");
-
+                _empatica_Tag = value;
+                OnPropertyChanged("empatica_Tag");
             }
         }
 
@@ -134,20 +145,26 @@ namespace EmpaticaDataProvider.ViewModel
 
         public MainWindowViewModel()
         {
-            empmanager.NewEmpaticaDataReceived += OnNewDataReceived;
+            empmanager.GSRSensorChanged += UpdateGSRSensor;
+            empmanager.AccelerometerChanged += UpdateAccelerometer;
+            empmanager.PPGSensorChanged += UpdatePPGSensor;
+            empmanager.IBISensorChanged += UpdateIBISensor;
+            empmanager.TemperatureSensorChanged += UpdateTemperatureSenser;
+            empmanager.TagCreated += UpdateTagCreated;
             HubConnector.StartConnection();
             HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
             SetValueNames();
         }
 
+        #region Learning Hub Event Handlers
         private void MyConnector_stopRecordingEvent(object sender)
         {
             Application.Current.Dispatcher.BeginInvoke(
                 DispatcherPriority.Background,
                 new Action(() => {
-                this.StartRecordingData();
-            }));
+                    this.StartRecordingData();
+                }));
         }
 
         private void MyConnector_startRecordingEvent(object sender)
@@ -155,28 +172,12 @@ namespace EmpaticaDataProvider.ViewModel
             Application.Current.Dispatcher.BeginInvoke(
                  DispatcherPriority.Background,
                  new Action(() => {
-                 this.StartRecordingData();
-            }));
+                     this.StartRecordingData();
+                 }));
         }
+        #endregion
 
-        private void OnNewDataReceived(object sender, TextReceivedEventArgs e)
-        {
-            TextReceived = e.TextReceived;
-        }
-
-        #region events
-        private ICommand _buttonClicked;
-
-        public ICommand OnButtonClicked
-        {
-            get 
-                {
-                _buttonClicked = new RelayCommand(
-                    param => this.StartRecordingData(), null
-                    );
-                return _buttonClicked;
-            }
-        }
+        #region UI Handlers
 
         public void StartRecordingData()
         {
@@ -194,19 +195,97 @@ namespace EmpaticaDataProvider.ViewModel
                 ButtonColor = new SolidColorBrush(Colors.White);
             }
         }
+
         #endregion
 
-        #region LearningHubMethods
+        #region Event Handlers
+        private ICommand _buttonClicked;
+
+        public ICommand OnButtonClicked
+        {
+            get
+            {
+                _buttonClicked = new RelayCommand(
+                    param => this.StartRecordingData(), null
+                    );
+                return _buttonClicked;
+            }
+        }
+
+        private void UpdateAccelerometer(object sender, AccelerometerChangedEventArgs a)
+        {
+            Empatica_AccX = a.AccelerometerX;
+            Empatica_AccY = a.AccelerometerY;
+            Empatica_AccZ = a.AccelerometerZ;
+            if (Globals.IsRecordingData == true)
+            {
+                SendData();
+            }
+        }
+
+        private void UpdateGSRSensor(object sender, GSRSensorChangedEventArgs e)
+        {
+            Empatica_GSR = e.GalvanicSkinResponse;
+            if (Globals.IsRecordingData == true)
+            {
+                SendData();
+            }
+        }
+
+        private void UpdateIBISensor(object sender, IBISensorChangedEventArgs e)
+        {
+            Empatica_IBI = e.InterBeatInterval;
+            Empatica_HRV = e.HearthRateVariability;
+            if (Globals.IsRecordingData == true)
+            {
+                SendData();
+            }
+        }
+
+        private void UpdatePPGSensor(object sender, PPGSensorChangedEventArgs e)
+        {
+            Empatica_BVP = e.BloodVolumePulse;
+            if (Globals.IsRecordingData == true)
+            {
+                SendData();
+            }
+        }
+
+        private void UpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs e)
+        {
+            Empatica_Skin_Temp = e.SkinTemperature;
+            if (Globals.IsRecordingData == true)
+            {
+                SendData();
+            }
+        }
+
+        private void UpdateTagCreated(object sender, TagCreatedEventArgs e)
+        {
+            Empatica_Tag = e.Tag;
+            if (Globals.IsRecordingData == true)
+            {
+                SendData();
+            }
+        }
+
+        #endregion
+
+        #region Learning Hub Send Data
         public void SetValueNames()
         {
-            var names = new List<string>();
-            names.Add("empatica_AccX");
-            names.Add("empatica_AccY");
-            names.Add("empatica_AccZ");
-            names.Add("empatica_Skin_Temp");
-            names.Add("empatica_BVP");
-            names.Add("empatica_HRV");
-            names.Add("empatica_GSR");
+            var names = new List<string>
+            {
+                "empatica_AccX",
+                "empatica_AccY",
+                "empatica_AccZ",
+                "empatica_Skin_Temp",
+                "empatica_IBI",
+                "empatica_BVP",
+                "empatica_HRV",
+                "empatica_GSR",
+                "empatica_Tag"
+            };
             HubConnector.SetValuesName(names);
 
         }
@@ -215,14 +294,18 @@ namespace EmpaticaDataProvider.ViewModel
         {
             try
             {
-                var values = new List<string>();
-                values.Add(empatica_AccX);
-                values.Add(empatica_AccY);
-                values.Add(empatica_AccZ);
-                values.Add(empatica_Skin_Temp);
-                values.Add(empatica_BVP);
-                values.Add(empatica_HRV);
-                values.Add(empatica_GSR);
+                var values = new List<string>
+                {
+                    Empatica_AccX.ToString(),
+                    Empatica_AccY.ToString(),
+                    Empatica_AccZ.ToString(),
+                    Empatica_Skin_Temp.ToString(),
+                    Empatica_IBI.ToString(),
+                    Empatica_BVP.ToString(),
+                    Empatica_HRV.ToString(),
+                    Empatica_GSR.ToString(),
+                    Empatica_Tag.ToString()
+                };
                 HubConnector.SendData(values);
             }
             catch (Exception ex)

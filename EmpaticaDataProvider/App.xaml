@@ -2,7 +2,7 @@
     x:Class="EmpaticaDataProvider.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:EmpaticaDataProvider"
+    xmlns:Local="clr-namespace:EmpaticaDataProvider"
     xmlns:localViewModel="clr-namespace:EmpaticaDataProvider.ViewModel"
     StartupUri="MainWindowView.xaml">
     <Application.Resources>

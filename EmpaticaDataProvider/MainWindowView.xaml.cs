@@ -5,6 +5,6 @@ namespace EmpaticaDataProvider
 {
     public partial class MainWindowView : Window
     {
-              
+
     }
 }

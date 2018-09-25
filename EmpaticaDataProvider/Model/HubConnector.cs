@@ -10,14 +10,17 @@ namespace EmpaticaDataProvider.Model
     {
         private static ConnectorHub.ConnectorHub _myConnector;
 
-        public static ConnectorHub.ConnectorHub MyConnector {
-            get {
+        public static ConnectorHub.ConnectorHub MyConnector
+        {
+            get
+            {
                 if (_myConnector == null)
                 {
                     StartConnection();
                 }
                 return _myConnector;
-            } }
+            }
+        }
 
         public static void StartConnection()
         {
