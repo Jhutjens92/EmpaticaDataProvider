@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>EmpaticaDataProvider.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ConnectorHub">
       <HintPath>References\ConnectorHub.dll</HintPath>
@@ -58,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EmpaticaManager\ASyncTCPClient.cs" />
+    <Compile Include="EmpaticaManager\StateObject.cs" />
     <Compile Include="ViewModel\Globals.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="MainWindowView.xaml">

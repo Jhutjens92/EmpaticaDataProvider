@@ -142,7 +142,8 @@ namespace EmpaticaDataProvider.ViewModel
         }
 
         #endregion
-
+        
+        #region Methods
         public MainWindowViewModel()
         {
             empmanager.GSRSensorChanged += UpdateGSRSensor;
@@ -156,25 +157,6 @@ namespace EmpaticaDataProvider.ViewModel
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
             SetValueNames();
         }
-
-        #region Learning Hub Event Handlers
-        private void MyConnector_stopRecordingEvent(object sender)
-        {
-            Application.Current.Dispatcher.BeginInvoke(
-                DispatcherPriority.Background,
-                new Action(() => {
-                    this.StartRecordingData();
-                }));
-        }
-
-        private void MyConnector_startRecordingEvent(object sender)
-        {
-            Application.Current.Dispatcher.BeginInvoke(
-                 DispatcherPriority.Background,
-                 new Action(() => {
-                     this.StartRecordingData();
-                 }));
-        }
         #endregion
 
         #region UI Handlers
@@ -186,6 +168,7 @@ namespace EmpaticaDataProvider.ViewModel
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
+                empmanager.StartTCPClients();
 
             }
             else if (Globals.IsRecordingData == true)
@@ -198,9 +181,8 @@ namespace EmpaticaDataProvider.ViewModel
 
         #endregion
 
-        #region Event Handlers
+        #region UI Event Handlers
         private ICommand _buttonClicked;
-
         public ICommand OnButtonClicked
         {
             get
@@ -269,6 +251,26 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
+        #endregion
+
+        #region Learning Hub Event Handlers
+        private void MyConnector_stopRecordingEvent(object sender)
+        {
+            Application.Current.Dispatcher.BeginInvoke(
+                DispatcherPriority.Background,
+                new Action(() => {
+                    this.StartRecordingData();
+                }));
+        }
+
+        private void MyConnector_startRecordingEvent(object sender)
+        {
+            Application.Current.Dispatcher.BeginInvoke(
+                 DispatcherPriority.Background,
+                 new Action(() => {
+                     this.StartRecordingData();
+                 }));
+        }
         #endregion
 
         #region Learning Hub Send Data
