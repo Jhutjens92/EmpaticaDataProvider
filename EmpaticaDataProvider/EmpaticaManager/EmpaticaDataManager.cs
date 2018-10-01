@@ -95,7 +95,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
         {
             GSRSensorChangedEventArgs args = new GSRSensorChangedEventArgs();
             {
-                GalvanicSkinResponse = 23;
+                args.GalvanicSkinResponse = 23;
             }
             OnGSRSensorChanged(args);
         }

@@ -20,9 +20,13 @@ namespace EmpaticaDataProvider.EmpaticaManager
 
         // The response from the remote device.
         private String _response = String.Empty;
+        EmpaticaDataManager EDM = new EmpaticaDataManager();
+        // string containing the parameter Datastream
+        string DataStreamCheck;
 
         public void StartClient(string DataStream)
         {
+            DataStreamCheck = DataStream; 
             // Connect to a remote device.
             try
             {
@@ -46,6 +50,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
                     {
                         TCPCommand = "device_subscribe  " + DataStream;
                         TCPStep++;
+                        EDM.GSRSensorChanged += EDM_GSRSensorChanged;
                     }
 
                     else if (TCPStep == 2)
@@ -76,6 +81,15 @@ namespace EmpaticaDataProvider.EmpaticaManager
             {
                 Console.WriteLine(e.ToString());
             }
+        }
+
+        private void EDM_GSRSensorChanged(object sender, EmpaticaDataManager.GSRSensorChangedEventArgs e)
+        {
+            if(TCPStep == 4 && DataStreamCheck == "gsr")
+            {
+                FilteredResponse[2] = e.GalvanicSkinResponse.ToString();
+            }
+           
         }
 
         private void ConnectCallback(IAsyncResult ar)
@@ -149,11 +163,6 @@ namespace EmpaticaDataProvider.EmpaticaManager
                     {
                         _response = state.Sb.ToString();
                          FilteredResponse = _response.Split(null);
-                        if (TCPStep == 4)
-                        {
-                            FilteredResponse[2];
-                        }
-
                     }
                     // Signal that all bytes have been received.
                     ReceiveDone.Set();
