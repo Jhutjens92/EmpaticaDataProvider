@@ -50,7 +50,30 @@ namespace EmpaticaDataProvider.EmpaticaManager
                     {
                         TCPCommand = "device_subscribe  " + DataStream;
                         TCPStep++;
-                        EDM.GSRSensorChanged += EDM_GSRSensorChanged;
+                        if (DataStream == "acc")
+                        {
+                            EDM.AccelerometerChanged += EDM_AccelerometerChanged;
+                        }
+                        else if (DataStream == "bvp")
+                        {
+                            EDM.PPGSensorChanged += EDM_PPGChanged;
+                        }
+                        else if (DataStream == "gsr")
+                        {
+                            EDM.GSRSensorChanged += EDM_GSRSensorChanged;
+                        }
+                        else if (DataStream == "ibi")
+                        {
+                            EDM.IBISensorChanged += EDM_IBISensorChanged;
+                        }
+                        else if (DataStream == "tmp")
+                        {
+                            EDM.TemperatureSensorChanged += EDM_TemperatureSensorChanged;
+                        }
+                        else if (DataStream == "tag")
+                        {
+                            EDM.TagCreatedEvent += EDM_TagCreatedEvent;
+                        }
                     }
 
                     else if (TCPStep == 2)
@@ -83,14 +106,40 @@ namespace EmpaticaDataProvider.EmpaticaManager
             }
         }
 
+        private void EDM_TagCreatedEvent(object sender, EmpaticaDataManager.TagCreatedEventArgs e)
+        {
+            int i = 1;
+            i = e.Tag;
+        }
+
+        private void EDM_TemperatureSensorChanged(object sender, EmpaticaDataManager.TemperatureSensorChangedEventArgs e)
+        {
+            FilteredResponse[2] = e.SkinTemperature.ToString();
+        }
+
+        private void EDM_IBISensorChanged(object sender, EmpaticaDataManager.IBISensorChangedEventArgs e)
+        {
+            FilteredResponse[2] = e.InterBeatInterval.ToString();
+            FilteredResponse[3] = e.HearthRateVariability.ToString();
+        }
+
+        private void EDM_PPGChanged(object sender, EmpaticaDataManager.PPGSensorChangedEventArgs e)
+        {
+            FilteredResponse[2] = e.BloodVolumePulse.ToString();
+        }
+
+        private void EDM_AccelerometerChanged (object sender, EmpaticaDataManager.AccelerometerChangedEventArgs e)
+        {
+            FilteredResponse[2] = e.AccelerometerX.ToString();
+            FilteredResponse[3] = e.AccelerometerY.ToString();
+            FilteredResponse[4] = e.AccelerometerZ.ToString();
+        }
+
         private void EDM_GSRSensorChanged(object sender, EmpaticaDataManager.GSRSensorChangedEventArgs e)
         {
-            if(TCPStep == 4 && DataStreamCheck == "gsr")
-            {
-                FilteredResponse[2] = e.GalvanicSkinResponse.ToString();
-            }
-           
+            FilteredResponse[2] = e.GalvanicSkinResponse.ToString();
         }
+
 
         private void ConnectCallback(IAsyncResult ar)
         {
