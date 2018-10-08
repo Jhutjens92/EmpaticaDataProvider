@@ -14,7 +14,9 @@ namespace EmpaticaDataProvider.EmpaticaManager
         static readonly string cPath = "C:/Program Files (x86)/Empatica/EmpaticaBLEServer";
         static readonly string filename = Path.Combine(cPath, "EmpaticaBLEServer.exe");
         static readonly string cParams = "a389709ed28b4138985821a5ac90c893 127.0.0.1 5555";
+        #endregion
 
+        #region Events
         public class TagCreatedEventArgs : EventArgs
         {
             public int Tag { get; set; }
@@ -47,19 +49,14 @@ namespace EmpaticaDataProvider.EmpaticaManager
         {
             public float SkinTemperature { get; set; }
         }
-
-        #endregion
-
-        #region Event Handlers
+                       
         public event EventHandler<AccelerometerChangedEventArgs> AccelerometerChanged;
         public event EventHandler<IBISensorChangedEventArgs> IBISensorChanged;
         public event EventHandler<PPGSensorChangedEventArgs> PPGSensorChanged;
         public event EventHandler<GSRSensorChangedEventArgs> GSRSensorChanged;
         public event EventHandler<TemperatureSensorChangedEventArgs> TemperatureSensorChanged;
         public event EventHandler<TagCreatedEventArgs> TagCreatedEvent;
-        #endregion
-
-        #region Event Handler Methods
+   
         protected virtual void OnAccelerometerChanged(AccelerometerChangedEventArgs e)
         {
             AccelerometerChanged?.Invoke(this, e);
