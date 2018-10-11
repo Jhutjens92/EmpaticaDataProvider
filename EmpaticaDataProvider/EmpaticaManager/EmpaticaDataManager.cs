@@ -19,35 +19,82 @@ namespace EmpaticaDataProvider.EmpaticaManager
         #region Events
         public class TagCreatedEventArgs : EventArgs
         {
-            public int Tag { get; set; }
+            
+            private int _Tag;
+            public int Tag
+            {
+                get { return _Tag; }
+                set { _Tag = value;}
+            }
         }
 
         public class PPGSensorChangedEventArgs : EventArgs
         {
-            public float BloodVolumePulse { get; set; }
+            private float _BloodVolumePulse;
+            public float BloodVolumePulse
+            {
+                get { return _BloodVolumePulse; }
+                set { _BloodVolumePulse = value; }
+            }
         }
 
         public class IBISensorChangedEventArgs : EventArgs
         {
-            public float InterBeatInterval { get; set; }
-            public float HearthRateVariability { get; set; }
+            private float _InterBeatInterval;
+            public float InterBeatInterval
+            {
+                get { return _InterBeatInterval; }
+                set { _InterBeatInterval = value;}
+            }
+            private float _HearthRateVariability;
+            public float HearthRateVariability
+            {
+                get { return _HearthRateVariability; }
+                set { _HearthRateVariability = value; }
+            }
         }
 
         public class AccelerometerChangedEventArgs : EventArgs
         {
-            public float AccelerometerX { get; set; }
-            public float AccelerometerY { get; set; }
-            public float AccelerometerZ { get; set; }
+            private float _AccelerometerX;
+            public float AccelerometerX
+            {
+                get { return _AccelerometerX; }
+                set { _AccelerometerX = value; }
+            }
+            private float _AccelerometerY;
+            public float AccelerometerY
+            {
+                get { return _AccelerometerY; }
+                set { _AccelerometerY = value; }
+            }
+
+            private float _AccelerometerZ;
+            public float AccelerometerZ
+            {
+                get { return _AccelerometerZ; }
+                set { _AccelerometerZ = value;}
+            }
         }
 
         public class GSRSensorChangedEventArgs : EventArgs
         {
-            public float GalvanicSkinResponse { get; set; }
+            private float _GalvanicSkinResponse;
+            public float GalvanicSkinResponse
+            {
+                get { return _GalvanicSkinResponse; }
+                set { _GalvanicSkinResponse = value; }
+            }
         }
 
         public class TemperatureSensorChangedEventArgs : EventArgs
         {
-            public float SkinTemperature { get; set; }
+            private float _SkinTemperature;
+            public float SkinTemperature
+            {
+                get { return _SkinTemperature; }
+                set { _SkinTemperature = value; }
+            }
         }
                        
         public event EventHandler<AccelerometerChangedEventArgs> AccelerometerChanged;
@@ -86,18 +133,6 @@ namespace EmpaticaDataProvider.EmpaticaManager
         {
             TagCreatedEvent?.Invoke(this, e);
         }
-        #endregion
-
-        #region EmpaticaEvents
-        void EmpaticaGSRDataAcquired()
-        {
-            GSRSensorChangedEventArgs args = new GSRSensorChangedEventArgs();
-            {
-                args.GalvanicSkinResponse = 23;
-            }
-            OnGSRSensorChanged(args);
-        }
-
         #endregion
 
         #region Methods

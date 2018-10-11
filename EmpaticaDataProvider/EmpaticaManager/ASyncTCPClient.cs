@@ -11,7 +11,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
         // The port number for the remote device.
         private const string ServerAddress = "127.0.0.1";
         private const int ServerPort = 5555;
-        private string[] FilteredResponse = { };
+        public string[] FilteredResponse = { };
         public int TCPStep = 0;
         // ManualResetEvent instances signal completion.
         private readonly ManualResetEvent ConnectDone = new ManualResetEvent(false);
