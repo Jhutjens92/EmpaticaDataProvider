@@ -3,6 +3,8 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.Linq;
+using EmpaticaDataProvider.ViewModel;
 
 namespace EmpaticaDataProvider.EmpaticaManager
 {
@@ -12,6 +14,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
         private const string ServerAddress = "127.0.0.1";
         private const int ServerPort = 5555;
         public string[] FilteredResponse = { };
+        private string EmpaticaID;
         public int TCPStep = 0;
         // ManualResetEvent instances signal completion.
         private readonly ManualResetEvent ConnectDone = new ManualResetEvent(false);
@@ -43,63 +46,60 @@ namespace EmpaticaDataProvider.EmpaticaManager
                 client.BeginConnect(remoteEp, (ConnectCallback), client);
                 ConnectDone.WaitOne();
 
-                while (true)
+                while (Globals.IsRecordingData == true)
                 {
                     var TCPCommand = "";
-                    if (TCPStep == 3)
+                    switch (TCPStep)
                     {
-                        TCPCommand = "device_subscribe  " + DataStream;
-                        TCPStep++;
-                        if (DataStream == "acc")
-                        {
-                            EDM.AccelerometerChanged += EDM_AccelerometerChanged;
-                        }
-                        else if (DataStream == "bvp")
-                        {
-                            EDM.PPGSensorChanged += EDM_PPGChanged;
-                        }
-                        else if (DataStream == "gsr")
-                        {
-                            EDM.GSRSensorChanged += EDM_GSRSensorChanged;
-                        }
-                        else if (DataStream == "ibi")
-                        {
-                            EDM.IBISensorChanged += EDM_IBISensorChanged;
-                        }
-                        else if (DataStream == "tmp")
-                        {
-                            EDM.TemperatureSensorChanged += EDM_TemperatureSensorChanged;
-                        }
-                        else if (DataStream == "tag")
-                        {
-                            EDM.TagCreatedEvent += EDM_TagCreatedEvent;
-                        }
+                        case 0:
+                            TCPCommand = "device_discover_list";
+                            break;
+                        case 1:
+                            TCPCommand = "device_connect_btle " + FilteredResponse[4];
+                            EmpaticaID = FilteredResponse[4];
+                            break;
+                        case 2:
+                            TCPCommand = "device_list";
+                            break;
+                        
+                        case 3:
+                            TCPCommand = "device_connect " + FilteredResponse[4];
+                            break;
+                        case 4:
+                            TCPCommand = "device_subscribe " + DataStream + " ON";
+                            if (DataStream == "acc")
+                            {
+                                EDM.AccelerometerChanged += EDM_AccelerometerChanged;
+                            }
+                            else if (DataStream == "bvp")
+                            {
+                                EDM.PPGSensorChanged += EDM_PPGChanged;
+                            }
+                            else if (DataStream == "gsr")
+                            {
+                                EDM.GSRSensorChanged += EDM_GSRSensorChanged;
+                            }
+                            else if (DataStream == "ibi")
+                            {
+                                EDM.IBISensorChanged += EDM_IBISensorChanged;
+                            }
+                            else if (DataStream == "tmp")
+                            {
+                                EDM.TemperatureSensorChanged += EDM_TemperatureSensorChanged;
+                            }
+                            else if (DataStream == "tag")
+                            {
+                                EDM.TagCreatedEvent += EDM_TagCreatedEvent;
+                            }
+                            break;
                     }
-
-                    else if (TCPStep == 2)
-                    {
-                        TCPCommand = "device_connect  " + FilteredResponse[4];
-                        TCPStep++;
-                    }
-
-                    else if (TCPStep == 1)
-                    {
-                        TCPCommand = "device_connect_btle " + FilteredResponse[4];
-                        TCPStep++;
-                    }
-
-                    else if (TCPStep == 0)
-                    {
-                        TCPCommand = "device_discover_list";
-                        TCPStep++;
-                    }
-
                     Send(client, TCPCommand + Environment.NewLine);
                     SendDone.WaitOne();
                     Receive(client);
                     ReceiveDone.WaitOne();
                 }
             }
+
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
@@ -197,9 +197,9 @@ namespace EmpaticaDataProvider.EmpaticaManager
                     _response = state.Sb.ToString();
 
                     HandleResponseFromEmpaticaBLEServer(_response);
-
+                    FilteredResponse = _response.Split(null);
+                    CheckSendStep();
                     state.Sb.Clear();
-
                     ReceiveDone.Set();
 
                     // Get the rest of the data.
@@ -212,6 +212,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
                     {
                         _response = state.Sb.ToString();
                          FilteredResponse = _response.Split(null);
+                        CheckSendStep();
                     }
                     // Signal that all bytes have been received.
                     ReceiveDone.Set();
@@ -221,6 +222,28 @@ namespace EmpaticaDataProvider.EmpaticaManager
             {
                 Console.WriteLine(e.ToString());
             }
+        }
+
+
+        private void CheckSendStep()
+        {
+            if (FilteredResponse[4] != "")
+            {
+                TCPStep = 1;
+            }
+            else if (FilteredResponse[2] == "OK")
+            {
+                TCPStep = 2;
+            }
+            else if (FilteredResponse[4] != "")
+            {
+                TCPStep = 3;
+            }
+            else if (FilteredResponse[2] == "OK")
+            {
+                TCPStep = 4;
+            }
+
         }
 
         private void Send(Socket client, String data)

@@ -63,6 +63,7 @@
     </ApplicationDefinition>
     <Compile Include="EmpaticaManager\ASyncTCPClient.cs" />
     <Compile Include="EmpaticaManager\StateObject.cs" />
+    <Compile Include="EmpaticaManager\SyncTCPClient.cs" />
     <Compile Include="ViewModel\Globals.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="MainWindowView.xaml">

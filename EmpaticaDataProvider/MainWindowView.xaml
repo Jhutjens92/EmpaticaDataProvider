@@ -32,21 +32,21 @@
             Margin="144,75,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_AccX}"
+            Text="{Binding AccelerometerX}"
             TextWrapping="Wrap" />
         <TextBox
             Height="23"
             Margin="229,75,145,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_AccY}"
+            Text="{Binding AccelerometerY}"
             TextWrapping="Wrap" />
         <TextBox
             Height="23"
             Margin="314,75,60,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_AccZ}"
+            Text="{Binding AccelerometerZ}"
             TextWrapping="Wrap" />
         <Label
             Margin="10,103,298,0"
@@ -58,7 +58,7 @@
             Margin="144,105,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_BVP}"
+            Text="{Binding BloodVolumePulse}"
             TextWrapping="Wrap" />
         <Label
             Margin="10,133,298,0"
@@ -70,7 +70,7 @@
             Margin="144,135,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_HRV}"
+            Text="{Binding HearthRateVariability}"
             TextWrapping="Wrap" />
         <Label
             Margin="10,163,298,0"
@@ -82,7 +82,7 @@
             Margin="144,165,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_IBI}"
+            Text="{Binding InterBeatInterval}"
             TextWrapping="Wrap" />
         <Label
             Margin="10,193,298,0"
@@ -94,7 +94,7 @@
             Margin="144,195,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_Skin_Temp}"
+            Text="{Binding SkinTemperature}"
             TextWrapping="Wrap" />
         <Label
             Margin="10,223,298,0"
@@ -106,7 +106,7 @@
             Margin="144,225,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
-            Text="{Binding Empatica_GSR}"
+            Text="{Binding GalvanicSkinResponse}"
             TextWrapping="Wrap" />
         <Button
             x:Name="BtnRecord"

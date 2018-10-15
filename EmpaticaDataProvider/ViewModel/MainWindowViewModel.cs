@@ -54,7 +54,7 @@ namespace EmpaticaDataProvider.ViewModel
         {
             get { return _AccelerometerX; }
             set { _AccelerometerX = value;
-                OnPropertyChanged("Empatica_AccZ");
+                OnPropertyChanged("Empatica_AccX");
             }
         }
         private float _AccelerometerY;
@@ -173,9 +173,9 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void UpdateAccelerometer(object sender, AccelerometerChangedEventArgs a)
         {
-            Empatica_AccX = a.AccelerometerX;
-            Empatica_AccY = a.AccelerometerY;
-            Empatica_AccZ = a.AccelerometerZ;
+            AccelerometerX = a.AccelerometerX;
+            AccelerometerY = a.AccelerometerY;
+            AccelerometerZ = a.AccelerometerZ;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
@@ -184,7 +184,7 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void UpdateGSRSensor(object sender, GSRSensorChangedEventArgs e)
         {
-            Empatica_GSR = e.GalvanicSkinResponse;
+            GalvanicSkinResponse = e.GalvanicSkinResponse;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
@@ -193,8 +193,8 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void UpdateIBISensor(object sender, IBISensorChangedEventArgs e)
         {
-            Empatica_IBI = e.InterBeatInterval;
-            Empatica_HRV = e.HearthRateVariability;
+            InterBeatInterval = e.InterBeatInterval;
+            HearthRateVariability = e.HearthRateVariability;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
@@ -203,7 +203,7 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void UpdatePPGSensor(object sender, PPGSensorChangedEventArgs e)
         {
-            Empatica_BVP = e.BloodVolumePulse;
+            BloodVolumePulse = e.BloodVolumePulse;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
@@ -212,7 +212,7 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void UpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs e)
         {
-            Empatica_Skin_Temp = e.SkinTemperature;
+            SkinTemperature = e.SkinTemperature;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
@@ -221,7 +221,7 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void UpdateTagCreated(object sender, TagCreatedEventArgs e)
         {
-            Empatica_Tag = e.Tag;
+            Tag = e.Tag;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
@@ -275,15 +275,15 @@ namespace EmpaticaDataProvider.ViewModel
             {
                 var values = new List<string>
                 {
-                    Empatica_AccX.ToString(),
-                    Empatica_AccY.ToString(),
-                    Empatica_AccZ.ToString(),
-                    Empatica_Skin_Temp.ToString(),
-                    Empatica_IBI.ToString(),
-                    Empatica_BVP.ToString(),
-                    Empatica_HRV.ToString(),
-                    Empatica_GSR.ToString(),
-                    Empatica_Tag.ToString()
+                    AccelerometerX.ToString(),
+                    AccelerometerY.ToString(),
+                    AccelerometerZ.ToString(),
+                    SkinTemperature.ToString(),
+                    InterBeatInterval.ToString(),
+                    BloodVolumePulse.ToString(),
+                    HearthRateVariability.ToString(),
+                    GalvanicSkinResponse.ToString(),
+                    Tag.ToString()
                 };
                 HubConnector.SendData(values);
             }
