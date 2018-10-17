@@ -6,14 +6,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 using EmpaticaDataProvider.Model;
-using EmpaticaDataProvider.EmpaticaManager;
-using static EmpaticaDataProvider.EmpaticaManager.EmpaticaDataManager;
+using EmpaticaDataProvider.Classes;
+using static EmpaticaDataProvider.Classes.EmpaticaManager;
 
 namespace EmpaticaDataProvider.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
-        EmpaticaDataManager empmanager = new EmpaticaDataManager();
+        EmpaticaManager empmanager = new EmpaticaManager();
 
         #region Vars & Properties
         private int _Tag;
@@ -133,6 +133,8 @@ namespace EmpaticaDataProvider.ViewModel
             HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
             SetValueNames();
+            Application.Current.MainWindow.Closing += MainWindow_Closing;
+
         }
         #endregion
 
@@ -227,6 +229,14 @@ namespace EmpaticaDataProvider.ViewModel
                 SendData();
             }
         }
+
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            CloseConnection();
+            CloseApp();
+            Environment.Exit(Environment.ExitCode);
+        }
+
 
         #endregion
 

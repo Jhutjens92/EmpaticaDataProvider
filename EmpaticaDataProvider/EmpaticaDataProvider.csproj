@@ -61,9 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="EmpaticaManager\ASyncTCPClient.cs" />
-    <Compile Include="EmpaticaManager\StateObject.cs" />
-    <Compile Include="EmpaticaManager\SyncTCPClient.cs" />
+    <Compile Include="Classes\ASyncTCPClient.cs" />
+    <Compile Include="Classes\StateObject.cs" />
     <Compile Include="ViewModel\Globals.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="MainWindowView.xaml">
@@ -74,7 +73,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EmpaticaManager\EmpaticaDataManager.cs" />
+    <Compile Include="Classes\EmpaticaManager.cs" />
     <Compile Include="MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>

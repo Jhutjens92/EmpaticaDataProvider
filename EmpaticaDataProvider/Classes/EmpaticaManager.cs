@@ -6,9 +6,9 @@ using System.Diagnostics;
 using EmpaticaDataProvider.ViewModel;
 
 
-namespace EmpaticaDataProvider.EmpaticaManager
+namespace EmpaticaDataProvider.Classes
 {
-    class EmpaticaDataManager
+    class EmpaticaManager
     {
         #region Variables
         static readonly string cPath = "C:/Program Files (x86)/Empatica/EmpaticaBLEServer";
@@ -151,7 +151,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
             Thread.Sleep(2000);
         }
 
-        public EmpaticaDataManager()
+        public EmpaticaManager()
         {
             CheckBLEServer();
         }
@@ -176,7 +176,7 @@ namespace EmpaticaDataProvider.EmpaticaManager
         static void DataStreamAcc()
         {
             string DataStream = "acc";
-            SyncTCPClient instance = new SyncTCPClient();
+            ASyncTCPClient instance = new ASyncTCPClient();
             instance.StartClient(DataStream);
             Console.WriteLine("ACC Datastream started");
 

@@ -1,7 +1,7 @@
 ﻿using System.Net.Sockets;
 using System.Text;
 
-namespace EmpaticaDataProvider.EmpaticaManager
+namespace EmpaticaDataProvider.Classes
 {
     public class StateObject
     {
