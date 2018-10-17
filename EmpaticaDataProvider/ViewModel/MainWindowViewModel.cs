@@ -147,7 +147,6 @@ namespace EmpaticaDataProvider.ViewModel
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
-                empmanager.StartTCPClients();
 
             }
             else if (Globals.IsRecordingData == true)
@@ -232,9 +231,22 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            CloseConnection();
+            SynchronousTCPClient.CloseTCPConnection();
             CloseApp();
             Environment.Exit(Environment.ExitCode);
+        }
+
+        public void CloseApp()
+        {
+            try
+            {
+                Process[] empaticaDataProviderProcess = Process.GetProcessesByName("EmpaticaDataProvider");
+                empaticaDataProviderProcess[0].CloseMainWindow();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("I got an exception after closing App" + e);
+            }
         }
 
 

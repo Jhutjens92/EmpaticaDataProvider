@@ -61,8 +61,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\ASyncTCPClient.cs" />
+    <Compile Include="Classes\BLEServer.cs" />
+    <Compile Include="Classes\CreateTCPCommand.cs" />
+    <Compile Include="Classes\Datastreams.cs" />
     <Compile Include="Classes\StateObject.cs" />
+    <Compile Include="Classes\SynchronousTCPClient.cs" />
     <Compile Include="ViewModel\Globals.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="MainWindowView.xaml">
