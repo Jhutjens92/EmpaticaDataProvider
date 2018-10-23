@@ -7,13 +7,15 @@ using System.Windows.Media;
 using System.Windows.Threading;
 using EmpaticaDataProvider.Model;
 using EmpaticaDataProvider.Classes;
-using static EmpaticaDataProvider.Classes.EmpaticaManager;
+using static EmpaticaDataProvider.Classes.TCPThreads;
+using static SynchronousTCPClient;
 
 namespace EmpaticaDataProvider.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
-        EmpaticaManager empmanager = new EmpaticaManager();
+        SynchronousTCPClient tcpclient = new SynchronousTCPClient();
+        TCPThreads tcpthreads = new TCPThreads();
 
         #region Vars & Properties
         private int _Tag;
@@ -95,7 +97,7 @@ namespace EmpaticaDataProvider.ViewModel
         }
  
         private string _buttonText = "Start Recording";
-        public String ButtonText
+        public string ButtonText
         {
             get { return _buttonText; }
             set
@@ -123,15 +125,19 @@ namespace EmpaticaDataProvider.ViewModel
         #region Methods
         public MainWindowViewModel()
         {
-            empmanager.GSRSensorChanged += UpdateGSRSensor;
-            empmanager.AccelerometerChanged += UpdateAccelerometer;
-            empmanager.PPGSensorChanged += UpdatePPGSensor;
-            empmanager.IBISensorChanged += UpdateIBISensor;
-            empmanager.TemperatureSensorChanged += UpdateTemperatureSenser;
-            empmanager.TagCreatedEvent += UpdateTagCreated;
+            tcpclient.GSRSensorChanged += UpdateGSRSensor;
+            tcpclient.AccelerometerChanged += UpdateAccelerometer;
+            tcpclient.PPGSensorChanged += UpdatePPGSensor;
+            tcpclient.IBISensorChanged += UpdateIBISensor;
+            tcpclient.TemperatureSensorChanged += UpdateTemperatureSenser;
+            tcpclient.TagCreatedEvent += UpdateTagCreated;
+            BLEServer.CheckBLEServer();
+            tcpthreads.CreateTCPThreads();
+            tcpthreads.StartTcpThreads();
             HubConnector.StartConnection();
             HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
+  
             SetValueNames();
             Application.Current.MainWindow.Closing += MainWindow_Closing;
 

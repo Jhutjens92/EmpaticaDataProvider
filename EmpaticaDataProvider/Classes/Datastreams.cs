@@ -12,7 +12,7 @@ namespace EmpaticaDataProvider.Classes
         {
             string DataStream = "acc";
             SynchronousTCPClient instance = new SynchronousTCPClient();
-            instance.TCPRoutine(DataStream);
+            instance.TCPMain(DataStream);
         }
 
         //static void DataStreamBVP()

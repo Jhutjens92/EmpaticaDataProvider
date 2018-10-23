@@ -62,9 +62,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\BLEServer.cs" />
-    <Compile Include="Classes\CreateTCPCommand.cs" />
     <Compile Include="Classes\Datastreams.cs" />
-    <Compile Include="Classes\StateObject.cs" />
     <Compile Include="Classes\SynchronousTCPClient.cs" />
     <Compile Include="ViewModel\Globals.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -76,7 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\EmpaticaManager.cs" />
+    <Compile Include="Classes\TCPThreads.cs" />
     <Compile Include="MainWindowView.xaml.cs">
       <DependentUpon>MainWindowView.xaml</DependentUpon>
       <SubType>Code</SubType>
