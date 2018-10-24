@@ -127,7 +127,7 @@ namespace EmpaticaDataProvider.ViewModel
         {
             tcpclient.GSRSensorChanged += IUpdateGSRSensor;
             tcpclient.AccelerometerChanged += IUpdateAccelerometer;
-            tcpclient.PPGSensorChanged += IUpdatePPGSensor;
+            tcpclient.BVPSensorChanged += IUpdatePPGSensor;
             tcpclient.IBISensorChanged += IUpdateIBISensor;
             tcpclient.TemperatureSensorChanged += IUpdateTemperatureSenser;
             tcpclient.TagCreatedEvent += IUpdateTagCreated;
@@ -176,57 +176,57 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void IUpdateAccelerometer(object sender, AccelerometerChangedEventArgs a)
+        private void IUpdateAccelerometer(object sender, AccelerometerChangedEventArgs acc)
         {
-            AccelerometerX = a.AccelerometerX;
-            AccelerometerY = a.AccelerometerY;
-            AccelerometerZ = a.AccelerometerZ;
+            AccelerometerX = acc.AccelerometerX;
+            AccelerometerY = acc.AccelerometerY;
+            AccelerometerZ = acc.AccelerometerZ;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
             }
         }
 
-        private void IUpdateGSRSensor(object sender, GSRSensorChangedEventArgs e)
+        private void IUpdateGSRSensor(object sender, GSRSensorChangedEventArgs gsr)
         {
-            GalvanicSkinResponse = e.GalvanicSkinResponse;
+            GalvanicSkinResponse = gsr.GSR;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
             }
         }
 
-        private void IUpdateIBISensor(object sender, IBISensorChangedEventArgs e)
+        private void IUpdateIBISensor(object sender, IBISensorChangedEventArgs ibi)
         {
-            InterBeatInterval = e.InterBeatInterval;
-            HearthRateVariability = e.HearthRateVariability;
+            InterBeatInterval = ibi.InterBeatInterval;
+            HearthRateVariability = ibi.HearthRateVariability;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
             }
         }
 
-        private void IUpdatePPGSensor(object sender, PPGSensorChangedEventArgs e)
+        private void IUpdatePPGSensor(object sender, BVPSensorChangedEventArgs bvp)
         {
-            BloodVolumePulse = e.BloodVolumePulse;
+            BloodVolumePulse = bvp.BloodVolumePulse;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
             }
         }
 
-        private void IUpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs e)
+        private void IUpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs tmp)
         {
-            SkinTemperature = e.SkinTemperature;
+            SkinTemperature = tmp.SkinTemperature;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
             }
         }
 
-        private void IUpdateTagCreated(object sender, TagCreatedEventArgs e)
+        private void IUpdateTagCreated(object sender, TagCreatedEventArgs tag)
         {
-            Tag = e.Tag;
+            Tag = tag.Tag;
             if (Globals.IsRecordingData == true)
             {
                 SendData();
