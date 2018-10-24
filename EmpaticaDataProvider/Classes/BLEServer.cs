@@ -20,8 +20,8 @@ namespace EmpaticaDataProvider.Classes
 
         public static void CheckBLEServer()
         {
-            Process[] pname = Process.GetProcessesByName("EmpaticaBLEServer");
-            if (pname.Length == 0)
+            Process[] empaticaBLEServer = Process.GetProcessesByName("EmpaticaBLEServer");
+            if (empaticaBLEServer.Length == 0)
             {
                 StartBLEServer();
             }

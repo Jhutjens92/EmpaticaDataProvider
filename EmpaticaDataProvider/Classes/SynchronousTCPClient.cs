@@ -4,6 +4,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using EmpaticaDataProvider.Classes;
+using EmpaticaDataProvider.ViewModel;
 
 public class SynchronousTCPClient
 {
@@ -15,9 +16,11 @@ public class SynchronousTCPClient
     bool TCPClientConnected = false;
 
     // String containing the filtered message split on null. 
-    private static string[] ReceivedStrFiltered = { };
+    private string[] ReceivedStrFiltered = { };
     // Int step counter to verify what to send next.
-    private static int tcpStep = 0;
+    private int tcpStep = 0;
+
+    string DataStreamStored;
 
     #endregion
 
@@ -144,7 +147,7 @@ public class SynchronousTCPClient
     // Create a TCP/IP  socket.  
     static Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-    private static void StartSyncTCPClient()
+    private void StartSyncTCPClient(string DataStream)
     {
         // Connect to a remote device.  
         try
@@ -153,6 +156,7 @@ public class SynchronousTCPClient
             var ipHostInfo = new IPHostEntry { AddressList = new[] { IPAddress.Parse(ServerAddress) } };
             var ipAddress = ipHostInfo.AddressList[0];
             var remoteEP = new IPEndPoint(ipAddress, ServerPort);
+            DataStreamStored = DataStream;
 
             // Connect the socket to the remote endpoint. Catch any errors.  
             try
@@ -194,7 +198,7 @@ public class SynchronousTCPClient
         }
     }
 
-    private static void SendTCPMessage(string TCPCommandStr)
+    private void SendTCPMessage(string TCPCommandStr)
     {
         try
         {
@@ -210,7 +214,7 @@ public class SynchronousTCPClient
         }
     }
 
-    private static string ReceiveTCPMessage()
+    private string ReceiveTCPMessage()
     {
         // Data buffer converted to string.
         string receivedStr = string.Empty;
@@ -223,47 +227,70 @@ public class SynchronousTCPClient
             int bytesSend = client.Receive(receivedBytes);
             receivedStr = Encoding.UTF8.GetString(receivedBytes, 0, bytesSend);
             Console.WriteLine("Received the following message: {0}", receivedStr);
+            ReceivedStrFiltered = receivedStr.Split(null);
         }
         catch (Exception e)
         {
             Console.WriteLine(e.ToString());
         }
+
         return receivedStr;
     }
 
-    public void TCPMain(string DataStream)
+    public void ConnectEmpatica(string DataStream)
     {
-        if (TCPClientConnected == false)
+        try
         {
-            StartSyncTCPClient();
-            TCPClientConnected = true;
+            if (TCPClientConnected == false)
+            {
+                StartSyncTCPClient(DataStream);
+                TCPClientConnected = true;
+            }
+            while (tcpStep < 5)
+            {
+                SendTCPMessage(CreateTcpCmd());
+                ChkReceivedMsg();
+            }
+            SubscribeToDataEvent();
         }
-        SendTCPMessage(CreateTcpCmd(DataStream));
-        CheckReceivedMessage(ReceiveTCPMessage());
-    }
-
-    public static void CheckReceivedMessage(string ReceivedStr)
-    {
-        ReceivedStrFiltered = ReceivedStr.Split(null);
-        if (ReceivedStrFiltered[4] != "")
+        catch (Exception e)
         {
-            tcpStep = 1;
-        }
-        else if (ReceivedStrFiltered[2] == "OK")
-        {
-            tcpStep = 2;
-        }
-        else if (ReceivedStrFiltered[4] != "")
-        {
-            tcpStep = 3;
-        }
-        else if (ReceivedStrFiltered[2] == "OK")
-        {
-            tcpStep = 4;
+            Console.WriteLine(e.ToString());
         }
     }
 
-    public string CreateTcpCmd(string DataStream)
+    public void GetEmpaticaData()
+    {
+        while (Globals.IsRecordingData == true)
+        {
+            ChkReceivedMsg();
+            // go to event here
+        }
+    }
+
+    private void ChkReceivedMsg()
+    {
+        switch (tcpStep)
+        {
+            case 0:
+                if (int.Parse(ReceivedStrFiltered[2]) > 0) tcpStep = 1;
+                break;
+            case 1:
+                if (ReceivedStrFiltered[2] == "OK") tcpStep = 2;
+                break;
+            case 2:
+                if (Int32.Parse(ReceivedStrFiltered[2]) > 0) tcpStep = 3;
+                break;
+            case 3:
+                if (ReceivedStrFiltered[2] == "OK") tcpStep = 4;
+                break;
+            case 4:
+                if (ReceivedStrFiltered[3] == "OK") tcpStep = 5;
+                break;
+        }
+    }
+
+    private string CreateTcpCmd()
     {
         var TCPCommandStr = "";
         switch (tcpStep)
@@ -281,37 +308,39 @@ public class SynchronousTCPClient
                 TCPCommandStr = "device_connect " + ReceivedStrFiltered[4];
                 break;
             case 4:
-                TCPCommandStr = "device_subscribe " + DataStream + " ON";
-                if (DataStream == "acc")
-                {
-                    AccelerometerChanged += EDM_AccelerometerChanged;
-                }
-                else if (DataStream == "bvp")
-                {
-                    PPGSensorChanged += EDM_PPGChanged;
-                }
-                else if (DataStream == "gsr")
-                {
-                    GSRSensorChanged += EDM_GSRSensorChanged;
-                }
-                else if (DataStream == "ibi")
-                {
-                    IBISensorChanged += EDM_IBISensorChanged;
-                }
-                else if (DataStream == "tmp")
-                {
-                    TemperatureSensorChanged += EDM_TemperatureSensorChanged;
-                }
-                else if (DataStream == "tag")
-                {
-                    TagCreatedEvent += EDM_TagCreatedEvent;
-                }
+                TCPCommandStr = "device_subscribe " + DataStreamStored + " ON";
                 break;
         }
         return TCPCommandStr;
     }
-    #endregion  
 
+    private void SubscribeToDataEvent()
+    {
+        switch (DataStreamStored)
+        {
+            case "acc":
+                AccelerometerChanged += EDM_AccelerometerChanged;
+                break;
+            case "bvp":
+                PPGSensorChanged += EDM_PPGChanged;
+                break;
+            case "gsr":
+                GSRSensorChanged += EDM_GSRSensorChanged;
+                break;
+            case "ibi":
+                IBISensorChanged += EDM_IBISensorChanged;
+                break;
+            case "tmp":
+                TemperatureSensorChanged += EDM_TemperatureSensorChanged;
+                break;
+            case "tag":
+                TagCreatedEvent += EDM_TagCreatedEvent;
+                break;
+        }
+    }
+    #endregion
+
+    // call these events after everything has been connected
     #region Event methods
     private void EDM_TagCreatedEvent(object sender, TagCreatedEventArgs e)
     {

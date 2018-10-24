@@ -122,25 +122,23 @@ namespace EmpaticaDataProvider.ViewModel
 
         #endregion
         
-        #region Methods
+        #region Constructor
         public MainWindowViewModel()
         {
-            tcpclient.GSRSensorChanged += UpdateGSRSensor;
-            tcpclient.AccelerometerChanged += UpdateAccelerometer;
-            tcpclient.PPGSensorChanged += UpdatePPGSensor;
-            tcpclient.IBISensorChanged += UpdateIBISensor;
-            tcpclient.TemperatureSensorChanged += UpdateTemperatureSenser;
-            tcpclient.TagCreatedEvent += UpdateTagCreated;
-            BLEServer.CheckBLEServer();
-            tcpthreads.CreateTCPThreads();
-            tcpthreads.StartTcpThreads();
+            tcpclient.GSRSensorChanged += IUpdateGSRSensor;
+            tcpclient.AccelerometerChanged += IUpdateAccelerometer;
+            tcpclient.PPGSensorChanged += IUpdatePPGSensor;
+            tcpclient.IBISensorChanged += IUpdateIBISensor;
+            tcpclient.TemperatureSensorChanged += IUpdateTemperatureSenser;
+            tcpclient.TagCreatedEvent += IUpdateTagCreated;
             HubConnector.StartConnection();
             HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
-  
-            SetValueNames();
             Application.Current.MainWindow.Closing += MainWindow_Closing;
-
+            SetValueNames();
+            BLEServer.CheckBLEServer();
+            tcpthreads.CreateTCPThreads();
+            tcpthreads.StartTcpThreads();
         }
         #endregion
 
@@ -153,7 +151,7 @@ namespace EmpaticaDataProvider.ViewModel
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
-
+                tcpclient.GetEmpaticaData();
             }
             else if (Globals.IsRecordingData == true)
             {
@@ -178,7 +176,7 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void UpdateAccelerometer(object sender, AccelerometerChangedEventArgs a)
+        private void IUpdateAccelerometer(object sender, AccelerometerChangedEventArgs a)
         {
             AccelerometerX = a.AccelerometerX;
             AccelerometerY = a.AccelerometerY;
@@ -189,7 +187,7 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void UpdateGSRSensor(object sender, GSRSensorChangedEventArgs e)
+        private void IUpdateGSRSensor(object sender, GSRSensorChangedEventArgs e)
         {
             GalvanicSkinResponse = e.GalvanicSkinResponse;
             if (Globals.IsRecordingData == true)
@@ -198,7 +196,7 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void UpdateIBISensor(object sender, IBISensorChangedEventArgs e)
+        private void IUpdateIBISensor(object sender, IBISensorChangedEventArgs e)
         {
             InterBeatInterval = e.InterBeatInterval;
             HearthRateVariability = e.HearthRateVariability;
@@ -208,7 +206,7 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void UpdatePPGSensor(object sender, PPGSensorChangedEventArgs e)
+        private void IUpdatePPGSensor(object sender, PPGSensorChangedEventArgs e)
         {
             BloodVolumePulse = e.BloodVolumePulse;
             if (Globals.IsRecordingData == true)
@@ -217,7 +215,7 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void UpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs e)
+        private void IUpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs e)
         {
             SkinTemperature = e.SkinTemperature;
             if (Globals.IsRecordingData == true)
@@ -226,7 +224,7 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
-        private void UpdateTagCreated(object sender, TagCreatedEventArgs e)
+        private void IUpdateTagCreated(object sender, TagCreatedEventArgs e)
         {
             Tag = e.Tag;
             if (Globals.IsRecordingData == true)
@@ -248,6 +246,10 @@ namespace EmpaticaDataProvider.ViewModel
             {
                 Process[] empaticaDataProviderProcess = Process.GetProcessesByName("EmpaticaDataProvider");
                 empaticaDataProviderProcess[0].CloseMainWindow();
+
+                Process[] empaticaBLEProcess = Process.GetProcessesByName("EmpaticaBLEServer");
+                empaticaBLEProcess[0].Kill();
+
             }
             catch (Exception e)
             {
