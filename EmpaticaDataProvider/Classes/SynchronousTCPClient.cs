@@ -28,86 +28,86 @@ public class SynchronousTCPClient
     public class TagCreatedEventArgs : EventArgs
     {
 
-        private int tag;
+        private int _Tag;
         public int Tag
         {
-            get { return tag; }
-            set { tag = value; }
+            get { return _Tag; }
+            set { _Tag = value; }
         }
     }
 
-    public class BVPSensorChangedEventArgs : EventArgs
+    public class PPGSensorChangedEventArgs : EventArgs
     {
-        private float bloodVolumePulse;
+        private float _BloodVolumePulse;
         public float BloodVolumePulse
         {
-            get { return bloodVolumePulse; }
-            set { bloodVolumePulse = value; }
+            get { return _BloodVolumePulse; }
+            set { _BloodVolumePulse = value; }
         }
     }
 
     public class IBISensorChangedEventArgs : EventArgs
     {
-        private float interBeatInterval;
+        private float _InterBeatInterval;
         public float InterBeatInterval
         {
-            get { return interBeatInterval; }
-            set { interBeatInterval = value; }
+            get { return _InterBeatInterval; }
+            set { _InterBeatInterval = value; }
         }
-        private float hearthRateVariability;
+        private float _HearthRateVariability;
         public float HearthRateVariability
         {
-            get { return hearthRateVariability; }
-            set { hearthRateVariability = value; }
+            get { return _HearthRateVariability; }
+            set { _HearthRateVariability = value; }
         }
     }
 
     public class AccelerometerChangedEventArgs : EventArgs
     {
-        private float accelerometerX;
+        private float _AccelerometerX;
         public float AccelerometerX
         {
-            get { return accelerometerX; }
-            set { accelerometerX = value; }
+            get { return _AccelerometerX; }
+            set { _AccelerometerX = value; }
         }
-        private float accelerometerY;
+        private float _AccelerometerY;
         public float AccelerometerY
         {
-            get { return accelerometerY; }
-            set { accelerometerY = value; }
+            get { return _AccelerometerY; }
+            set { _AccelerometerY = value; }
         }
 
-        private float accelerometerZ;
+        private float _AccelerometerZ;
         public float AccelerometerZ
         {
-            get { return accelerometerZ; }
-            set { accelerometerZ = value; }
+            get { return _AccelerometerZ; }
+            set { _AccelerometerZ = value; }
         }
     }
 
     public class GSRSensorChangedEventArgs : EventArgs
     {
-        private float gsr;
-        public float GSR
+        private float _GalvanicSkinResponse;
+        public float GalvanicSkinResponse
         {
-            get { return gsr; }
-            set { gsr = value; }
+            get { return _GalvanicSkinResponse; }
+            set { _GalvanicSkinResponse = value; }
         }
     }
 
     public class TemperatureSensorChangedEventArgs : EventArgs
     {
-        private float skinTemperature;
+        private float _SkinTemperature;
         public float SkinTemperature
         {
-            get { return skinTemperature; }
-            set { skinTemperature = value; }
+            get { return _SkinTemperature; }
+            set { _SkinTemperature = value; }
         }
     }
 
     public event EventHandler<AccelerometerChangedEventArgs> AccelerometerChanged;
     public event EventHandler<IBISensorChangedEventArgs> IBISensorChanged;
-    public event EventHandler<BVPSensorChangedEventArgs> BVPSensorChanged;
+    public event EventHandler<PPGSensorChangedEventArgs> PPGSensorChanged;
     public event EventHandler<GSRSensorChangedEventArgs> GSRSensorChanged;
     public event EventHandler<TemperatureSensorChangedEventArgs> TemperatureSensorChanged;
     public event EventHandler<TagCreatedEventArgs> TagCreatedEvent;
@@ -117,9 +117,9 @@ public class SynchronousTCPClient
         AccelerometerChanged?.Invoke(this, e);
     }
 
-    protected virtual void OnBVPSensorChanged(BVPSensorChangedEventArgs e)
+    protected virtual void OnPPGSensorChanged(PPGSensorChangedEventArgs e)
     {
-        BVPSensorChanged?.Invoke(this, e);
+        PPGSensorChanged?.Invoke(this, e);
     }
 
     protected virtual void OnIBISensorChanged(IBISensorChangedEventArgs e)
@@ -251,6 +251,7 @@ public class SynchronousTCPClient
                 SendTCPMessage(CreateTcpCmd());
                 ChkReceivedMsg();
             }
+            SubscribeToDataEvent();
         }
         catch (Exception e)
         {
@@ -263,29 +264,7 @@ public class SynchronousTCPClient
         while (Globals.IsRecordingData == true)
         {
             ChkReceivedMsg();
-            switch (DataStreamStored)
-            {
-                case "acc":
-                    UpdateAccValues();
-                    break;
-                case "bvp":
-                    UpdateBvpValues();
-                    break;
-                case "ibi":
-                    UpdateIbiValues();
-                    break;
-                case "gsr":
-                    UpdateGsrValues();
-                    break;
-                case "tag":
-                    UpdateTagValues();
-                    break;
-                case "tmp":
-                    UpdateTempValues();
-                    break;
-            }
-
-
+            // go to event here
         }
     }
 
@@ -335,141 +314,65 @@ public class SynchronousTCPClient
         return TCPCommandStr;
     }
 
-    private void UpdateAccValues()
+    private void SubscribeToDataEvent()
     {
-        try
+        switch (DataStreamStored)
         {
-
-            AccelerometerChangedEventArgs args = new AccelerometerChangedEventArgs
-            {
-                AccelerometerX = float.Parse(ReceivedStrFiltered[2]),
-                AccelerometerY = float.Parse(ReceivedStrFiltered[3]),
-                AccelerometerZ = float.Parse(ReceivedStrFiltered[4])
-
-            };
-            OnAccelerometerChanged(args);
-        }
-        catch (Exception)
-        {
-            AccelerometerChangedEventArgs args = new AccelerometerChangedEventArgs
-            {
-                AccelerometerX = 0.0F,
-                AccelerometerY = 0.0F,
-                AccelerometerZ = 0.0F
-            };
-            OnAccelerometerChanged(args);
+            case "acc":
+                AccelerometerChanged += EDM_AccelerometerChanged;
+                break;
+            case "bvp":
+                PPGSensorChanged += EDM_PPGChanged;
+                break;
+            case "gsr":
+                GSRSensorChanged += EDM_GSRSensorChanged;
+                break;
+            case "ibi":
+                IBISensorChanged += EDM_IBISensorChanged;
+                break;
+            case "tmp":
+                TemperatureSensorChanged += EDM_TemperatureSensorChanged;
+                break;
+            case "tag":
+                TagCreatedEvent += EDM_TagCreatedEvent;
+                break;
         }
     }
+    #endregion
 
-    private void UpdateBvpValues()
+    // call these events after everything has been connected
+    #region Event methods
+    private void EDM_TagCreatedEvent(object sender, TagCreatedEventArgs e)
     {
-        try
-        {
-
-            BVPSensorChangedEventArgs args = new BVPSensorChangedEventArgs
-            {
-                BloodVolumePulse = float.Parse(ReceivedStrFiltered[2]),
-
-            };
-            OnBVPSensorChanged(args);
-        }
-        catch (Exception)
-        {
-            BVPSensorChangedEventArgs args = new BVPSensorChangedEventArgs
-            {
-                BloodVolumePulse = 0.0F,
-            };
-            OnBVPSensorChanged(args);
-        }
+        ReceivedStrFiltered[2] = e.Tag.ToString();
     }
 
-    private void UpdateIbiValues()
+    private void EDM_TemperatureSensorChanged(object sender, TemperatureSensorChangedEventArgs e)
     {
-        try
-        {
-
-            IBISensorChangedEventArgs args = new IBISensorChangedEventArgs
-            {
-                InterBeatInterval = float.Parse(ReceivedStrFiltered[2]),
-                HearthRateVariability = float.Parse(ReceivedStrFiltered[3]),
-            };
-            OnIBISensorChanged(args);
-        }
-        catch (Exception)
-        {
-            IBISensorChangedEventArgs args = new IBISensorChangedEventArgs
-            {
-                InterBeatInterval = 0.0F,
-                HearthRateVariability = 0.0F,
-            };
-            OnIBISensorChanged(args);
-        }
+        ReceivedStrFiltered[2] = e.SkinTemperature.ToString();
     }
 
-    private void UpdateGsrValues()
+    private void EDM_IBISensorChanged(object sender, IBISensorChangedEventArgs e)
     {
-        try
-        {
-
-            GSRSensorChangedEventArgs args = new GSRSensorChangedEventArgs
-            {
-                GSR = float.Parse(ReceivedStrFiltered[2]),
-            };
-            OnGSRSensorChanged(args);
-        }
-        catch (Exception)
-        {
-            GSRSensorChangedEventArgs args = new GSRSensorChangedEventArgs
-            {
-                GSR = 0.0F,
-            };
-            OnGSRSensorChanged(args);
-        }
+        ReceivedStrFiltered[2] = e.InterBeatInterval.ToString();
+        ReceivedStrFiltered[3] = e.HearthRateVariability.ToString();
     }
 
-    private void UpdateTagValues()
+    private void EDM_PPGChanged(object sender, PPGSensorChangedEventArgs e)
     {
-        try
-        {
-
-            TagCreatedEventArgs args = new TagCreatedEventArgs
-            {
-                Tag = int.Parse(ReceivedStrFiltered[2]),
-
-
-            };
-            OnTagCreated(args);
-        }
-        catch (Exception)
-        {
-            TagCreatedEventArgs args = new TagCreatedEventArgs
-            {
-                Tag = 0,
-
-            };
-            OnTagCreated(args);
-        }
+        ReceivedStrFiltered[2] = e.BloodVolumePulse.ToString();
     }
 
-    private void UpdateTempValues()
+    private void EDM_AccelerometerChanged(object sender, AccelerometerChangedEventArgs e)
     {
-        try
-        {
+        ReceivedStrFiltered[2] = e.AccelerometerX.ToString();
+        ReceivedStrFiltered[3] = e.AccelerometerY.ToString();
+        ReceivedStrFiltered[4] = e.AccelerometerZ.ToString();
+    }
 
-            TemperatureSensorChangedEventArgs args = new TemperatureSensorChangedEventArgs
-            {
-                SkinTemperature = float.Parse(ReceivedStrFiltered[2]),
-            };
-            OnTemperatureSensorChanged(args);
-        }
-        catch (Exception)
-        {
-            TemperatureSensorChangedEventArgs args = new TemperatureSensorChangedEventArgs
-            {
-                SkinTemperature = 0.0F,
-            };
-            OnTemperatureSensorChanged(args);
-        }
+    private void EDM_GSRSensorChanged(object sender, GSRSensorChangedEventArgs e)
+    {
+        ReceivedStrFiltered[2] = e.GalvanicSkinResponse.ToString();
     }
     #endregion
 }
