@@ -14,7 +14,7 @@ namespace EmpaticaDataProvider.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
-        SynchronousTCPClient tcpclient = new SynchronousTCPClient();
+        Datastreams datastream;
         TCPThreads tcpthreads = new TCPThreads();
 
         #region Vars & Properties
@@ -56,7 +56,7 @@ namespace EmpaticaDataProvider.ViewModel
         {
             get { return _AccelerometerX; }
             set { _AccelerometerX = value;
-                OnPropertyChanged("Empatica_AccX");
+                OnPropertyChanged("AccelerometerX");
             }
         }
         private float _AccelerometerY;
@@ -64,7 +64,7 @@ namespace EmpaticaDataProvider.ViewModel
         {
             get { return _AccelerometerY; }
             set { _AccelerometerY = value;
-                OnPropertyChanged("Empatica_AccY");
+                OnPropertyChanged("AccelerometerY");
             }
         }
 
@@ -73,7 +73,7 @@ namespace EmpaticaDataProvider.ViewModel
         {
             get { return _AccelerometerZ; }
             set { _AccelerometerZ = value;
-                OnPropertyChanged("Empatica_AccY");
+                OnPropertyChanged("AccelerometerZ");
             }
         }
 
@@ -125,12 +125,13 @@ namespace EmpaticaDataProvider.ViewModel
         #region Constructor
         public MainWindowViewModel()
         {
-            tcpclient.GSRSensorChanged += IUpdateGSRSensor;
-            tcpclient.AccelerometerChanged += IUpdateAccelerometer;
-            tcpclient.BVPSensorChanged += IUpdatePPGSensor;
-            tcpclient.IBISensorChanged += IUpdateIBISensor;
-            tcpclient.TemperatureSensorChanged += IUpdateTemperatureSenser;
-            tcpclient.TagCreatedEvent += IUpdateTagCreated;
+            datastream = new Datastreams();
+            datastream.instance.AccelerometerChanged += IUpdateAccelerometer;
+            datastream.instance2.GSRSensorChanged += IUpdateGSRSensor;
+            //tcpclient.BVPSensorChanged += IUpdatePPGSensor;
+            //tcpclient.IBISensorChanged += IUpdateIBISensor;
+            //tcpclient.TemperatureSensorChanged += IUpdateTemperatureSenser;
+            //tcpclient.TagCreatedEvent += IUpdateTagCreated;
             HubConnector.StartConnection();
             HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
@@ -151,7 +152,9 @@ namespace EmpaticaDataProvider.ViewModel
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
-                tcpclient.GetEmpaticaData();
+                datastream.instance.GetEmpaticaData("acc");
+                Console.WriteLine("test");
+                //datastream.instance2.GetEmpaticaData();
             }
             else if (Globals.IsRecordingData == true)
             {

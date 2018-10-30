@@ -20,6 +20,8 @@ public class SynchronousTCPClient
     // Int step counter to verify what to send next.
     private int tcpStep = 0;
 
+    int tcpStepCount = 0;
+
     string DataStreamStored;
 
     #endregion
@@ -249,6 +251,7 @@ public class SynchronousTCPClient
             while (tcpStep < 5)
             {
                 SendTCPMessage(CreateTcpCmd());
+                ReceiveTCPMessage();
                 ChkReceivedMsg();
             }
         }
@@ -258,12 +261,14 @@ public class SynchronousTCPClient
         }
     }
 
-    public void GetEmpaticaData()
+    public void GetEmpaticaData(string Datastream)
     {
         while (Globals.IsRecordingData == true)
         {
-            ChkReceivedMsg();
-            switch (DataStreamStored)
+            //DataStreamStored = Datastream;
+            //SendTCPMessage(CreateTcpCmd());
+            ReceiveTCPMessage();
+            switch (Datastream)
             {
                 case "acc":
                     UpdateAccValues();
@@ -284,8 +289,6 @@ public class SynchronousTCPClient
                     UpdateTempValues();
                     break;
             }
-
-
         }
     }
 
@@ -294,7 +297,18 @@ public class SynchronousTCPClient
         switch (tcpStep)
         {
             case 0:
-                if (int.Parse(ReceivedStrFiltered[2]) > 0) tcpStep = 1;
+                tcpStepCount++;
+                if (int.Parse(ReceivedStrFiltered[2]) > 0)
+                {
+                    tcpStep = 1;
+                }
+                if (int.Parse(ReceivedStrFiltered[2]) == 0)
+                {
+                    if (tcpStepCount == 5)
+                    {
+                        tcpStep = 2;
+                    }
+                }
                 break;
             case 1:
                 if (ReceivedStrFiltered[2] == "OK") tcpStep = 2;

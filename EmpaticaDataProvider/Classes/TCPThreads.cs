@@ -13,9 +13,10 @@ namespace EmpaticaDataProvider.Classes
     /// </summary>
     class TCPThreads
     {
+        Datastreams datastrm = new Datastreams(); 
         public void CreateTCPThreads()
         {
-            Datastreams.DataStreamAcc();
+            datastrm.DataStreamAcc();
             //Thread EDPThread1 = new Thread(new ThreadStart(Datastreams.DataStreamAcc));
             //Thread EDPThread2 = new Thread(new ThreadStart(Datastreams.DataStreamBVP));
             //Thread EDPThread3 = new Thread(new ThreadStart(Datastreams.DataStreamGSR));
