@@ -15,39 +15,47 @@ namespace EmpaticaDataProvider.Classes
             instance.ConnectEmpatica(DataStream);
         }
 
-        public static void DataStreamBVP()
-        {
-            string DataStream = "bvp";
-            SynchronousTCPClient instance = new SynchronousTCPClient();
-            instance.ConnectEmpatica(DataStream);
-        }
+        //static void DataStreamBVP()
+        //{
+        //    string DataStream = "bvp";
+        //    ASyncTCPClient instance = new ASyncTCPClient();
+        //    instance.StartClient(DataStream);
+        //    Console.WriteLine("BVP Datastream started");
 
-        public static void DataStreamGSR()
-        {
-            string DataStream = "gsr";
-            SynchronousTCPClient instance = new SynchronousTCPClient();
-            instance.ConnectEmpatica(DataStream);
-        }
+        //}
 
-        public static void DataStreamIBI()
-        {
-            string DataStream = "ibi";
-            SynchronousTCPClient instance = new SynchronousTCPClient();
-            instance.ConnectEmpatica(DataStream);
-        }
+        //static void DataStreamGSR()
+        //{
+        //    string DataStream = "gsr";
+        //    ASyncTCPClient instance = new ASyncTCPClient();
+        //    instance.StartClient(DataStream);
+        //    Console.WriteLine("GSR Datastream started");
 
-        public static void DataStreamTMP()
-        {
-            string DataStream = "tmp";
-            SynchronousTCPClient instance = new SynchronousTCPClient();
-            instance.ConnectEmpatica(DataStream);
-        }
+        //}
 
-        public static void DataStreamTag()
-        {
-            string DataStream = "tag";
-            SynchronousTCPClient instance = new SynchronousTCPClient();
-            instance.ConnectEmpatica(DataStream);
-        }
+        //static void DataStreamIBI()
+        //{
+        //    string DataStream = "ibi";
+        //    ASyncTCPClient instance = new ASyncTCPClient();
+        //    instance.StartClient(DataStream);
+        //    Console.WriteLine("IBI Datastream started");
+
+        //}
+
+        //static void DataStreamTMP()
+        //{
+        //    string DataStream = "tmp";
+        //    ASyncTCPClient instance = new ASyncTCPClient();
+        //    instance.StartClient(DataStream);
+        //    Console.WriteLine("TEMP Datastream started");
+
+        //}
+
+        //static void DataStreamTag()
+        //{
+        //    string DataStream = "tag";
+        //    ASyncTCPClient instance = new ASyncTCPClient();
+        //    instance.StartClient(DataStream);
+        //    Console.WriteLine("TAG Datastream started");
     }
 }
