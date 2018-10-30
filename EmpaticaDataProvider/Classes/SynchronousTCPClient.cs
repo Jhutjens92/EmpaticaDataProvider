@@ -249,6 +249,7 @@ public class SynchronousTCPClient
             while (tcpStep < 5)
             {
                 SendTCPMessage(CreateTcpCmd());
+                ReceiveTCPMessage();
                 ChkReceivedMsg();
             }
         }
@@ -262,7 +263,7 @@ public class SynchronousTCPClient
     {
         while (Globals.IsRecordingData == true)
         {
-            ChkReceivedMsg();
+            ReceiveTCPMessage();
             switch (DataStreamStored)
             {
                 case "acc":
