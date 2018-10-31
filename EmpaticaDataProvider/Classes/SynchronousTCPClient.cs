@@ -226,8 +226,8 @@ public class SynchronousTCPClient
         try
         {
             // Receive the response from the remote device.  
-            int bytesSend = client.Receive(receivedBytes);
-            receivedStr = Encoding.UTF8.GetString(receivedBytes, 0, bytesSend);
+            int byteCount = client.Receive(receivedBytes);
+            receivedStr = Encoding.UTF8.GetString(receivedBytes, 0, byteCount);
             Console.WriteLine("Received the following message: {0}", receivedStr);
             ReceivedStrFiltered = receivedStr.Split(null);
         }
@@ -265,8 +265,12 @@ public class SynchronousTCPClient
     {
         while (Globals.IsRecordingData == true)
         {
-            //DataStreamStored = Datastream;
-            //SendTCPMessage(CreateTcpCmd());
+            //if (tcpStep == 4)
+            //{
+            //    SendTCPMessage(CreateTcpCmd());
+            //    ReceiveTCPMessage();
+            //    ChkReceivedMsg();
+            //}
             ReceiveTCPMessage();
             switch (Datastream)
             {

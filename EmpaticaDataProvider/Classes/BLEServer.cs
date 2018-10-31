@@ -13,12 +13,12 @@ namespace EmpaticaDataProvider.Classes
         static readonly string cParams = "a389709ed28b4138985821a5ac90c893 127.0.0.1 5555";
         #endregion
 
-        public static void StartBLEServer()
+        public void StartBLEServer()
         {
             Process.Start(filename, cParams);
         }
 
-        public static void CheckBLEServer()
+        public void CheckBLEServer()
         {
             Process[] empaticaBLEServer = Process.GetProcessesByName("EmpaticaBLEServer");
             if (empaticaBLEServer.Length == 0)

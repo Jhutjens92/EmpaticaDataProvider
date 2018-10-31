@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using System.Threading.Tasks;
 using EmpaticaDataProvider.Model;
 using EmpaticaDataProvider.Classes;
 using static EmpaticaDataProvider.Classes.TCPThreads;
@@ -14,8 +15,14 @@ namespace EmpaticaDataProvider.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
-        Datastreams datastream;
+        #region Instance declaration
+
+        Datastreams datastream  = new Datastreams();
         TCPThreads tcpthreads = new TCPThreads();
+        BLEServer bleserver = new BLEServer();
+
+        #endregion
+
 
         #region Vars & Properties
         private int _Tag;
@@ -125,9 +132,8 @@ namespace EmpaticaDataProvider.ViewModel
         #region Constructor
         public MainWindowViewModel()
         {
-            datastream = new Datastreams();
-            datastream.instance.AccelerometerChanged += IUpdateAccelerometer;
-            datastream.instance2.GSRSensorChanged += IUpdateGSRSensor;
+            datastream.instance1.AccelerometerChanged += IUpdateAccelerometer;
+            //datastream.instance2.GSRSensorChanged += IUpdateGSRSensor;
             //tcpclient.BVPSensorChanged += IUpdatePPGSensor;
             //tcpclient.IBISensorChanged += IUpdateIBISensor;
             //tcpclient.TemperatureSensorChanged += IUpdateTemperatureSenser;
@@ -137,7 +143,7 @@ namespace EmpaticaDataProvider.ViewModel
             HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
             Application.Current.MainWindow.Closing += MainWindow_Closing;
             SetValueNames();
-            BLEServer.CheckBLEServer();
+            bleserver.CheckBLEServer();
             tcpthreads.CreateTCPThreads();
             tcpthreads.StartTcpThreads();
         }
@@ -152,8 +158,7 @@ namespace EmpaticaDataProvider.ViewModel
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
-                datastream.instance.GetEmpaticaData("acc");
-                Console.WriteLine("test");
+                new Task(() => { datastream.instance1.GetEmpaticaData("acc"); }).Start();
                 //datastream.instance2.GetEmpaticaData();
             }
             else if (Globals.IsRecordingData == true)
@@ -163,8 +168,8 @@ namespace EmpaticaDataProvider.ViewModel
                 ButtonColor = new SolidColorBrush(Colors.White);
             }
         }
-
         #endregion
+
 
         #region UI Event Handlers
         private ICommand _buttonClicked;
