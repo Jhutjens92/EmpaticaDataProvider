@@ -63,7 +63,8 @@
     </ApplicationDefinition>
     <Compile Include="Classes\BLEServer.cs" />
     <Compile Include="Classes\Datastreams.cs" />
-    <Compile Include="Classes\SynchronousTCPClient.cs" />
+    <Compile Include="Classes\StateObject.cs" />
+    <Compile Include="Classes\TCPHandler.cs" />
     <Compile Include="ViewModel\Globals.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Page Include="MainWindowView.xaml">

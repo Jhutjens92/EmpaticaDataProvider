@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 using EmpaticaDataProvider.Model;
 using EmpaticaDataProvider.Classes;
 using static EmpaticaDataProvider.Classes.TCPThreads;
-using static SynchronousTCPClient;
+using static TCPHandler;
 
 namespace EmpaticaDataProvider.ViewModel
 {
     class MainWindowViewModel : BindableBase
     {
         #region Instance declaration
-
+        TCPHandler synctcp = new TCPHandler();
         Datastreams datastream  = new Datastreams();
         TCPThreads tcpthreads = new TCPThreads();
         BLEServer bleserver = new BLEServer();
@@ -153,7 +153,14 @@ namespace EmpaticaDataProvider.ViewModel
 
         public void StartRecordingData()
         {
-            if (Globals.IsRecordingData == false)
+            if (Globals.IsRecordingData)
+            {
+                Globals.IsRecordingData = false;
+                ButtonText = "Start Recording";
+                ButtonColor = new SolidColorBrush(Colors.White);
+            }
+
+            else
             {
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
@@ -161,12 +168,7 @@ namespace EmpaticaDataProvider.ViewModel
                 new Task(() => { datastream.instance1.GetEmpaticaData("acc"); }).Start();
                 //datastream.instance2.GetEmpaticaData();
             }
-            else if (Globals.IsRecordingData == true)
-            {
-                Globals.IsRecordingData = false;
-                ButtonText = "Start Recording";
-                ButtonColor = new SolidColorBrush(Colors.White);
-            }
+
         }
         #endregion
 
@@ -243,7 +245,7 @@ namespace EmpaticaDataProvider.ViewModel
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            SynchronousTCPClient.CloseTCPConnection();
+            synctcp.CloseTCPConnection();
             CloseApp();
             Environment.Exit(Environment.ExitCode);
         }

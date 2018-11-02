@@ -3,10 +3,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
+using EmpaticaDataProvider;
 using EmpaticaDataProvider.Classes;
 using EmpaticaDataProvider.ViewModel;
 
-public class SynchronousTCPClient
+public class TCPHandler
 {
     #region Variables
     // The server ip for the BLE Empatica Server.
@@ -22,11 +24,15 @@ public class SynchronousTCPClient
 
     int tcpStepCount = 0;
 
+    /// <summary>   ManualResetEvent instances signal completion. receive done. </summary>
+    private readonly ManualResetEvent ReceiveDone = new ManualResetEvent(false);
+
     string DataStreamStored;
 
     #endregion
 
     #region Events
+
     public class TagCreatedEventArgs : EventArgs
     {
 
@@ -146,6 +152,7 @@ public class SynchronousTCPClient
     #endregion
 
     #region Methods
+
     // Create a TCP/IP  socket.  
     static Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
@@ -186,7 +193,7 @@ public class SynchronousTCPClient
         }
     }
 
-    public static void CloseTCPConnection()
+    public void CloseTCPConnection()
     {
         try
         {
@@ -200,7 +207,7 @@ public class SynchronousTCPClient
         }
     }
 
-    private void SendTCPMessage(string TCPCommandStr)
+    private void SyncSend(string TCPCommandStr)
     {
         try
         {
@@ -216,7 +223,7 @@ public class SynchronousTCPClient
         }
     }
 
-    private string ReceiveTCPMessage()
+    private string SyncReceive()
     {
         // Data buffer converted to string.
         string receivedStr = string.Empty;
@@ -227,7 +234,7 @@ public class SynchronousTCPClient
         {
             // Receive the response from the remote device.  
             int byteCount = client.Receive(receivedBytes);
-            receivedStr = Encoding.UTF8.GetString(receivedBytes, 0, byteCount);
+            receivedStr = Encoding.UTF8.GetString(receivedBytes, 0 , byteCount);
             Console.WriteLine("Received the following message: {0}", receivedStr);
             ReceivedStrFiltered = receivedStr.Split(null);
         }
@@ -237,6 +244,68 @@ public class SynchronousTCPClient
         }
 
         return receivedStr;
+    }
+
+    private void ASyncReceive(Socket client)
+    {
+        try
+        {
+            // Create the state object.
+            var state = new StateObject { WorkSocket = client };
+
+            // Begin receiving the data from the remote device.
+            client.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, ASyncReceiveCallback, state);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+    }
+
+    private void ASyncReceiveCallback(IAsyncResult ar)
+    {
+        // Data buffer converted to string.
+        string receivedStr = string.Empty;
+
+        try
+        {
+            // Retrieve the state object and the client socket 
+            // from the asynchronous state object.
+            var state = (StateObject)ar.AsyncState;
+            var client = state.WorkSocket;
+
+            // Read data from the remote device.
+            var bytesRead = client.EndReceive(ar);
+
+            if (bytesRead > 0)
+            {
+                // There might be more data, so store the data received so far.
+                state.Sb.Append(Encoding.ASCII.GetString(state.Buffer, 0, bytesRead));
+                receivedStr = state.Sb.ToString();
+                state.Sb.Clear();
+                ReceivedStrFiltered = receivedStr.Split(null);
+                ReceiveDone.Set();
+
+                // Get the rest of the data.
+                client.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, ASyncReceiveCallback, state);
+            }
+            else
+            {
+                // All the data has arrived; put it in response.
+                if (state.Sb.Length > 1)
+                {
+                    receivedStr = state.Sb.ToString();
+                    ReceivedStrFiltered = receivedStr.Split(null);
+                }
+                // Signal that all bytes have been received.
+                ReceivedStrFiltered = receivedStr.Split(null);
+                ReceiveDone.Set();
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
     }
 
     public void ConnectEmpatica(string DataStream)
@@ -250,8 +319,8 @@ public class SynchronousTCPClient
             }
             while (tcpStep < 5)
             {
-                SendTCPMessage(CreateTcpCmd());
-                ReceiveTCPMessage();
+                SyncSend(CreateTcpCmd());
+                SyncReceive();
                 ChkReceivedMsg();
             }
         }
@@ -263,15 +332,9 @@ public class SynchronousTCPClient
 
     public void GetEmpaticaData(string Datastream)
     {
-        while (Globals.IsRecordingData == true)
+        while (Globals.IsRecordingData)
         {
-            //if (tcpStep == 4)
-            //{
-            //    SendTCPMessage(CreateTcpCmd());
-            //    ReceiveTCPMessage();
-            //    ChkReceivedMsg();
-            //}
-            ReceiveTCPMessage();
+            ASyncReceive(client);
             switch (Datastream)
             {
                 case "acc":
@@ -301,18 +364,18 @@ public class SynchronousTCPClient
         switch (tcpStep)
         {
             case 0:
-                tcpStepCount++;
+               // tcpStepCount++;
                 if (int.Parse(ReceivedStrFiltered[2]) > 0)
                 {
                     tcpStep = 1;
                 }
-                if (int.Parse(ReceivedStrFiltered[2]) == 0)
-                {
-                    if (tcpStepCount == 5)
-                    {
-                        tcpStep = 2;
-                    }
-                }
+                //if (int.Parse(ReceivedStrFiltered[2]) == 0)
+                //{
+                //    if (tcpStepCount == 5)
+                //    {
+                //        tcpStep = 2;
+                //    }
+                //}
                 break;
             case 1:
                 if (ReceivedStrFiltered[2] == "OK") tcpStep = 2;

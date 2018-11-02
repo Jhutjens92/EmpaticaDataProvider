@@ -8,12 +8,12 @@ namespace EmpaticaDataProvider.Classes
 {
     class Datastreams
     {
-        public SynchronousTCPClient instance1 = new SynchronousTCPClient();
-        public SynchronousTCPClient instance2 = new SynchronousTCPClient();
-        public SynchronousTCPClient instance3 = new SynchronousTCPClient();
-        public SynchronousTCPClient instance4 = new SynchronousTCPClient();
-        public SynchronousTCPClient instance5 = new SynchronousTCPClient();
-        public SynchronousTCPClient instance6 = new SynchronousTCPClient();
+        public TCPHandler instance1 = new TCPHandler();
+        public TCPHandler instance2 = new TCPHandler();
+        public TCPHandler instance3 = new TCPHandler();
+        public TCPHandler instance4 = new TCPHandler();
+        public TCPHandler instance5 = new TCPHandler();
+        public TCPHandler instance6 = new TCPHandler();
 
 
         public void DataStreamAcc()
