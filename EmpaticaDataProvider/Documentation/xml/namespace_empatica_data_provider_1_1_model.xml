@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_empatica_data_provider_1_1_model" kind="namespace" language="C#">
+    <compoundname>EmpaticaDataProvider::Model</compoundname>
+    <innerclass refid="class_empatica_data_provider_1_1_model_1_1_bindable_base" prot="public">EmpaticaDataProvider::Model::BindableBase</innerclass>
+    <innerclass refid="class_empatica_data_provider_1_1_model_1_1_hub_connector" prot="public">EmpaticaDataProvider::Model::HubConnector</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" line="11" column="1"/>
+  </compounddef>
+</doxygen>

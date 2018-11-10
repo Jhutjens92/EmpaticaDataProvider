@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_model_1_1_hub_connector" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Model::HubConnector</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a269130247852d7577a2605480fdba754" prot="private" static="yes" mutable="no">
+        <type>ConnectorHub.ConnectorHub</type>
+        <definition>ConnectorHub.ConnectorHub EmpaticaDataProvider.Model.HubConnector.myConnector</definition>
+        <argsstring></argsstring>
+        <name>myConnector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" line="17" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_model_1_1_hub_connector_1ae041ccb0583c088a0b092b7742c39c1b" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>ConnectorHub.ConnectorHub</type>
+        <definition>ConnectorHub.ConnectorHub EmpaticaDataProvider.Model.HubConnector.MyConnector</definition>
+        <argsstring></argsstring>
+        <name>MyConnector</name>
+        <briefdescription>
+<para>Gets my connector. </para>        </briefdescription>
+        <detaileddescription>
+<para>my connector. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" line="25" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" bodystart="26" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a30d188cc25a9525e6aafa37307b8084a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EmpaticaDataProvider.Model.HubConnector.StartConnection</definition>
+        <argsstring>()</argsstring>
+        <name>StartConnection</name>
+        <briefdescription>
+<para>Method to start the connection to the Learning Hub. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 26-10-2018. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" line="43" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a1305891e3dbc87005cbc98f75ffba068" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EmpaticaDataProvider.Model.HubConnector.SendData</definition>
+        <argsstring>(List&lt; string &gt; values)</argsstring>
+        <name>SendData</name>
+        <param>
+          <type>List&lt; string &gt;</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+<para>Method to send the data to the Learning Hub. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 26-10-2018. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The values. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" line="60" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a3b7a8abb00c68bfc79d58fc51663585c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EmpaticaDataProvider.Model.HubConnector.SetValuesName</definition>
+        <argsstring>(List&lt; string &gt; names)</argsstring>
+        <name>SetValuesName</name>
+        <param>
+          <type>List&lt; string &gt;</type>
+          <declname>names</declname>
+        </param>
+        <briefdescription>
+<para>Method to start the set the value descriptions used in the JSON file. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 26-10-2018. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>names</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The names. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" line="73" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" bodystart="73" bodyend="76"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Hub Connector developed by Jan Schneider </para>    </briefdescription>
+    <detaileddescription>
+<para>Jordi Hutjens, 26-10-2018. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="28">
+        <label>EmpaticaDataProvider.Model.HubConnector</label>
+        <childnode refid="29" relation="usage">
+          <edgelabel>myConnector</edgelabel>
+        </childnode>
+      </node>
+      <node id="29">
+        <label>static</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" line="16" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/HubConnector.cs" bodystart="15" bodyend="77"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a269130247852d7577a2605480fdba754" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Model::HubConnector</scope><name>myConnector</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1ae041ccb0583c088a0b092b7742c39c1b" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Model::HubConnector</scope><name>MyConnector</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a1305891e3dbc87005cbc98f75ffba068" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Model::HubConnector</scope><name>SendData</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a3b7a8abb00c68bfc79d58fc51663585c" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Model::HubConnector</scope><name>SetValuesName</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a30d188cc25a9525e6aafa37307b8084a" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Model::HubConnector</scope><name>StartConnection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

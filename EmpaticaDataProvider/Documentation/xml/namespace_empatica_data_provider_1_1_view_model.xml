@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_empatica_data_provider_1_1_view_model" kind="namespace" language="C#">
+    <compoundname>EmpaticaDataProvider::ViewModel</compoundname>
+    <innerclass refid="class_empatica_data_provider_1_1_view_model_1_1_globals" prot="public">EmpaticaDataProvider::ViewModel::Globals</innerclass>
+    <innerclass refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model" prot="public">EmpaticaDataProvider::ViewModel::MainWindowViewModel</innerclass>
+    <innerclass refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command" prot="public">EmpaticaDataProvider::ViewModel::RelayCommand</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="10" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_classes_1_1_check_parameters" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Classes::CheckParameters</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a4750f94359e0c4764d54da52eb5c51f5" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters" kindref="compound">CheckParameters</ref></type>
+        <definition>CheckParameters EmpaticaDataProvider.Classes.CheckParameters.instance</definition>
+        <argsstring></argsstring>
+        <name>instance</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="19" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a6f651cd6b3cc3074b2600437f03a6d2e" prot="private" static="yes" mutable="no">
+        <type>readonly object</type>
+        <definition>readonly object EmpaticaDataProvider.Classes.CheckParameters.padlock</definition>
+        <argsstring></argsstring>
+        <name>padlock</name>
+        <initializer>= new object()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="21" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1ad59458ff8119b88c9901b4aeccd450d8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.CheckParameters.DataStream</definition>
+        <argsstring></argsstring>
+        <name>DataStream</name>
+        <briefdescription>
+<para>Gets the datastream. </para>        </briefdescription>
+        <detaileddescription>
+<para>Datastream (acc/tmp/ibi/bvp/tag/gsr) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="27" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a7b8d16babf550654ead2b967c4a0c089" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.CheckParameters.ApiKey</definition>
+        <argsstring></argsstring>
+        <name>ApiKey</name>
+        <briefdescription>
+<para>Gets the API key. </para>        </briefdescription>
+        <detaileddescription>
+<para>The API key. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="38" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a56e53e9d31dc0fa1a7984a2ffcf24715" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int EmpaticaDataProvider.Classes.CheckParameters.ServerPort</definition>
+        <argsstring></argsstring>
+        <name>ServerPort</name>
+        <briefdescription>
+<para>Gets the Server port. </para>        </briefdescription>
+        <detaileddescription>
+<para>The Server port. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="48" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a5023a61deb34d5f49e7e2e25b97e74f6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.CheckParameters.ServerIP</definition>
+        <argsstring></argsstring>
+        <name>ServerIP</name>
+        <briefdescription>
+<para>Gets the Server IP. </para>        </briefdescription>
+        <detaileddescription>
+<para>The Server IP. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="58" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="59" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a74bfdf57d7e545901371dd9f81baadc7" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters" kindref="compound">CheckParameters</ref></type>
+        <definition>CheckParameters EmpaticaDataProvider.Classes.CheckParameters.Instance</definition>
+        <argsstring></argsstring>
+        <name>Instance</name>
+        <briefdescription>
+<para>Singleton instance.</para>        </briefdescription>
+        <detaileddescription>
+<para>The instance.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="148" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="149" bodyend="161"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a33a71d3f92709d87a56cdcb835595376" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string EmpaticaDataProvider.Classes.CheckParameters.dataStream</definition>
+        <argsstring></argsstring>
+        <name>dataStream</name>
+        <initializer>= &quot;acc&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="31" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a9e361a3113e494816f2bb62076e43046" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.CheckParameters.apiKey</definition>
+        <argsstring></argsstring>
+        <name>apiKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="42" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1ad6efc9ef17801403539d3f6d356f51a6" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int EmpaticaDataProvider.Classes.CheckParameters.serverPort</definition>
+        <argsstring></argsstring>
+        <name>serverPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="52" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a075cae15b2432d04897959f3e2726403" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.CheckParameters.serverIP</definition>
+        <argsstring></argsstring>
+        <name>serverIP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="62" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1aeec3d4c4c71c82f1976a5b66c87e70f1" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.Classes.CheckParameters.sipPar</definition>
+        <argsstring></argsstring>
+        <name>sipPar</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Checks if the Server IP is set by parameters. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="66" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1aa6d08729f4b170e25cdb12d36e92ebd8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.Classes.CheckParameters.spPar</definition>
+        <argsstring></argsstring>
+        <name>spPar</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Checks if the Server Port is set by parameters. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="69" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a8c363df84c803c6c3cccab165278028d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.Classes.CheckParameters.akPar</definition>
+        <argsstring></argsstring>
+        <name>akPar</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Checks if the API key is set by parameters. Without this the program can&apos;t run.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="72" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a47fca35ad197f4b8e64b3d47c7f54b19" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.CheckParameters.CheckStartupParameters</definition>
+        <argsstring>()</argsstring>
+        <name>CheckStartupParameters</name>
+        <briefdescription>
+<para>Check startup parameters.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="85" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="85" bodyend="142"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a7637dadbab0a04c52549ecb0f90ed00f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EmpaticaDataProvider.Classes.CheckParameters.CheckParameters</definition>
+        <argsstring>()</argsstring>
+        <name>CheckParameters</name>
+        <briefdescription>
+<para>Constructor that prevents a default instance of this class from being created.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="167" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="167" bodyend="170"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class checks the startup parameters (Singleton). </para>    </briefdescription>
+    <detaileddescription>
+<para>Jordi Hutjens, 26-10-2018. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="18">
+        <label>EmpaticaDataProvider.Classes.CheckParameters</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>padlock</edgelabel>
+          <edgelabel>instance</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>static</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" line="15" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/CheckParameters.cs" bodystart="14" bodyend="172"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a8c363df84c803c6c3cccab165278028d" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>akPar</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a7b8d16babf550654ead2b967c4a0c089" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>ApiKey</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a9e361a3113e494816f2bb62076e43046" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>apiKey</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a7637dadbab0a04c52549ecb0f90ed00f" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>CheckParameters</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a47fca35ad197f4b8e64b3d47c7f54b19" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>CheckStartupParameters</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1ad59458ff8119b88c9901b4aeccd450d8" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>DataStream</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a33a71d3f92709d87a56cdcb835595376" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>dataStream</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a4750f94359e0c4764d54da52eb5c51f5" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>instance</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a74bfdf57d7e545901371dd9f81baadc7" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>Instance</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a6f651cd6b3cc3074b2600437f03a6d2e" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>padlock</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a5023a61deb34d5f49e7e2e25b97e74f6" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>ServerIP</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a075cae15b2432d04897959f3e2726403" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>serverIP</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a56e53e9d31dc0fa1a7984a2ffcf24715" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>ServerPort</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1ad6efc9ef17801403539d3f6d356f51a6" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>serverPort</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1aeec3d4c4c71c82f1976a5b66c87e70f1" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>sipPar</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1aa6d08729f4b170e25cdb12d36e92ebd8" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::CheckParameters</scope><name>spPar</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_f74b0f80388205fe35602f4d65ada5bf" kind="dir">
+    <compoundname>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider</compoundname>
+    <innerdir refid="dir_054fcbd4b45cc5cc7549a93f2808db9a">C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes</innerdir>
+    <innerdir refid="dir_cacbc3cc94a4e37de1a95d77d68e5977">C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model</innerdir>
+    <innerdir refid="dir_475284c99824208114052ecce6e28e1d">C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj</innerdir>
+    <innerdir refid="dir_6cab84c8e38dd28681ce1713651ec534">C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Properties</innerdir>
+    <innerdir refid="dir_df4747d4cd64e4fbc01d9f96dc0bd33d">C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel</innerdir>
+    <innerfile refid="_app_8xaml_8cs">App.xaml.cs</innerfile>
+    <innerfile refid="_main_window_view_8xaml_8cs">MainWindowView.xaml.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/"/>
+  </compounddef>
+</doxygen>

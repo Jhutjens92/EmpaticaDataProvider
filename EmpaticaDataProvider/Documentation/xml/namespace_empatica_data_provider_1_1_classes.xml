@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="namespace_empatica_data_provider_1_1_classes" kind="namespace" language="C#">
+    <compoundname>EmpaticaDataProvider::Classes</compoundname>
+    <innerclass refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server" prot="public">EmpaticaDataProvider::Classes::BLEServer</innerclass>
+    <innerclass refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters" prot="public">EmpaticaDataProvider::Classes::CheckParameters</innerclass>
+    <innerclass refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" prot="public">EmpaticaDataProvider::Classes::SetLHJson</innerclass>
+    <innerclass refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler" prot="public">EmpaticaDataProvider::Classes::TCPHandler</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="7" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_cacbc3cc94a4e37de1a95d77d68e5977" kind="dir">
+    <compoundname>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model</compoundname>
+    <innerfile refid="_bindable_base_8cs">BindableBase.cs</innerfile>
+    <innerfile refid="_hub_connector_8cs">HubConnector.cs</innerfile>
+    <innerfile refid="_relay_command_8cs">RelayCommand.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">EventArgs</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a44ed4416f0efc53a2657258009b9402a" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs.accelerometerX</definition>
+        <argsstring></argsstring>
+        <name>accelerometerX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="52" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1ad45e9168aa38dd8b1307ba50cd00c5b1" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs.accelerometerY</definition>
+        <argsstring></argsstring>
+        <name>accelerometerY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="58" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a61dd36bd1f492b7f8b4680e186ab6e7c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs.accelerometerZ</definition>
+        <argsstring></argsstring>
+        <name>accelerometerZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="65" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1ace42138910f7781172353c8a74002ae9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs.AccelerometerX</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="53" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a0d6bf6479dbf484b132c0e52ac572b80" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs.AccelerometerY</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="59" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a2e1c6d8d9ca979cd2a267a7e22dd17ef" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs.AccelerometerZ</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="66" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="67" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Accelerometer changed events + vars.</para>    </briefdescription>
+    <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>EventArgs</label>
+      </node>
+      <node id="0">
+        <label>EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>EventArgs</label>
+      </node>
+      <node id="2">
+        <label>EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChangedEventArgs</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="51" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="50" bodyend="71"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a44ed4416f0efc53a2657258009b9402a" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</scope><name>accelerometerX</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1ace42138910f7781172353c8a74002ae9" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</scope><name>AccelerometerX</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a0d6bf6479dbf484b132c0e52ac572b80" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</scope><name>AccelerometerY</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1ad45e9168aa38dd8b1307ba50cd00c5b1" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</scope><name>accelerometerY</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a2e1c6d8d9ca979cd2a267a7e22dd17ef" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</scope><name>AccelerometerZ</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a61dd36bd1f492b7f8b4680e186ab6e7c" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</scope><name>accelerometerZ</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_view_model_1_1_globals" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::ViewModel::Globals</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_globals_1aeb7bec77e364e9d2e9653c5d4efbcfd0" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.ViewModel.Globals._isRecordingData</definition>
+        <argsstring></argsstring>
+        <name>_isRecordingData</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/Globals.cs" line="11" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/Globals.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_globals_1a7a7eb2b19355fd5bc8dd9cafacbca99f" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.ViewModel.Globals.IsRecordingData</definition>
+        <argsstring></argsstring>
+        <name>IsRecordingData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/Globals.cs" line="12" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/Globals.cs" bodystart="13" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="26">
+        <label>static</label>
+      </node>
+      <node id="25">
+        <label>EmpaticaDataProvider.ViewModel.Globals</label>
+        <childnode refid="26" relation="usage">
+          <edgelabel>_isRecordingData</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/Globals.cs" line="10" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/Globals.cs" bodystart="9" bodyend="20"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_globals_1aeb7bec77e364e9d2e9653c5d4efbcfd0" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::Globals</scope><name>_isRecordingData</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_globals_1a7a7eb2b19355fd5bc8dd9cafacbca99f" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::Globals</scope><name>IsRecordingData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

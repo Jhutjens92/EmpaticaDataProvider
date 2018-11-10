@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_054fcbd4b45cc5cc7549a93f2808db9a" kind="dir">
+    <compoundname>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes</compoundname>
+    <innerfile refid="_b_l_e_server_8cs">BLEServer.cs</innerfile>
+    <innerfile refid="_check_parameters_8cs">CheckParameters.cs</innerfile>
+    <innerfile refid="_set_l_h_json_8cs">SetLHJson.cs</innerfile>
+    <innerfile refid="_state_object_8cs">StateObject.cs</innerfile>
+    <innerfile refid="_t_c_p_handler_8cs">TCPHandler.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/"/>
+  </compounddef>
+</doxygen>

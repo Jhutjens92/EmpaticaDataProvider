@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_main_window_view" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::MainWindowView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_main_window_view_1af685473debcf3f277b8d04b102bde0e8" prot="package" static="no" mutable="no">
+        <type>System.Windows.Controls.Button</type>
+        <definition>System Windows Controls Button EmpaticaDataProvider.MainWindowView::BtnRecord</definition>
+        <argsstring></argsstring>
+        <name>BtnRecord</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" line="45" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_main_window_view_1a91e80b52c2abbfaa0a6b8747e1ed7cf5" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.MainWindowView::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" line="50" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_main_window_view_1aa84646fa8ef5b31dc6beb3b6bf7f4379" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.MainWindowView.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" line="57" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" bodystart="57" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_main_window_view_1aa84646fa8ef5b31dc6beb3b6bf7f4379" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.MainWindowView.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.i.cs" line="57" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.i.cs" bodystart="57" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_main_window_view_1a0d4bbc4f6c533cf0bdd7bbce94fbb360" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. EmpaticaDataProvider.MainWindowView.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" line="77" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.cs" bodystart="77" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_main_window_view_1a0d4bbc4f6c533cf0bdd7bbce94fbb360" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. EmpaticaDataProvider.MainWindowView.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.i.cs" line="77" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/MainWindowView.g.i.cs" bodystart="77" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="class_empatica_data_provider_1_1_main_window_view" kindref="compound">MainWindowView</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="31">
+        <label>System::Windows::Window</label>
+      </node>
+      <node id="33">
+        <label>Window</label>
+      </node>
+      <node id="32">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="30">
+        <label>EmpaticaDataProvider.MainWindowView</label>
+        <link refid="class_empatica_data_provider_1_1_main_window_view"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="35">
+        <label>System::Windows::Window</label>
+      </node>
+      <node id="37">
+        <label>Window</label>
+      </node>
+      <node id="38">
+        <label>System</label>
+      </node>
+      <node id="36">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="34">
+        <label>EmpaticaDataProvider.MainWindowView</label>
+        <link refid="class_empatica_data_provider_1_1_main_window_view"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+        <childnode refid="36" relation="public-inheritance">
+        </childnode>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+        <childnode refid="38" relation="usage">
+          <edgelabel>BtnRecord</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/MainWindowView.xaml.cs" line="7" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/MainWindowView.xaml.cs" bodystart="6" bodyend="9"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_main_window_view_1a91e80b52c2abbfaa0a6b8747e1ed7cf5" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::MainWindowView</scope><name>_contentLoaded</name></member>
+      <member refid="class_empatica_data_provider_1_1_main_window_view_1af685473debcf3f277b8d04b102bde0e8" prot="package" virt="non-virtual"><scope>EmpaticaDataProvider::MainWindowView</scope><name>BtnRecord</name></member>
+      <member refid="class_empatica_data_provider_1_1_main_window_view_1a0d4bbc4f6c533cf0bdd7bbce94fbb360" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::MainWindowView</scope><name>Connect</name></member>
+      <member refid="class_empatica_data_provider_1_1_main_window_view_1a0d4bbc4f6c533cf0bdd7bbce94fbb360" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::MainWindowView</scope><name>Connect</name></member>
+      <member refid="class_empatica_data_provider_1_1_main_window_view_1aa84646fa8ef5b31dc6beb3b6bf7f4379" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::MainWindowView</scope><name>InitializeComponent</name></member>
+      <member refid="class_empatica_data_provider_1_1_main_window_view_1aa84646fa8ef5b31dc6beb3b6bf7f4379" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::MainWindowView</scope><name>InitializeComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

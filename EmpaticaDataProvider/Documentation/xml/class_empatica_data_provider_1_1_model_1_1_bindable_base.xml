@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_model_1_1_bindable_base" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Model::BindableBase</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">INotifyPropertyChanged</basecompoundref>
+    <derivedcompoundref refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model" prot="public" virt="non-virtual">EmpaticaDataProvider.ViewModel.MainWindowViewModel</derivedcompoundref>
+      <sectiondef kind="event">
+      <memberdef kind="event" id="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a853ca740b63a67f9d519981c5e003ff7" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>PropertyChangedEventHandler</type>
+        <definition>PropertyChangedEventHandler EmpaticaDataProvider.Model.BindableBase.PropertyChanged</definition>
+        <argsstring></argsstring>
+        <name>PropertyChanged</name>
+        <initializer>= delegate { }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" line="33" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a85824f5a2d7102e927b13d790e95dfe8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void EmpaticaDataProvider.Model.BindableBase.SetProperty&lt; T &gt;</definition>
+        <argsstring>(ref T member, T val, [CallerMemberName] string propertyName=null)</argsstring>
+        <name>SetProperty&lt; T &gt;</name>
+        <param>
+          <type>ref T</type>
+          <declname>member</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <attributes>[CallerMemberName]</attributes>
+          <type>string</type>
+          <declname>propertyName</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" line="19" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" bodystart="19" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a5aa93759cdbfa0a2c809470f4b9f86e5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void EmpaticaDataProvider.Model.BindableBase.OnPropertyChanged</definition>
+        <argsstring>(string propertyName)</argsstring>
+        <name>OnPropertyChanged</name>
+        <param>
+          <type>string</type>
+          <declname>propertyName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" line="28" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" bodystart="28" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class encapsulates the INotifyPropertyChanged implementation and provides helper methods to the derived class so that they can easily trigger the appropriate notifications </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="12">
+        <label>EmpaticaDataProvider.ViewModel.MainWindowViewModel</label>
+        <link refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>EmpaticaDataProvider.Model.BindableBase</label>
+        <link refid="class_empatica_data_provider_1_1_model_1_1_bindable_base"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>INotifyPropertyChanged</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="13">
+        <label>EmpaticaDataProvider.Model.BindableBase</label>
+        <link refid="class_empatica_data_provider_1_1_model_1_1_bindable_base"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>INotifyPropertyChanged</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" line="18" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/BindableBase.cs" bodystart="17" bodyend="35"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a5aa93759cdbfa0a2c809470f4b9f86e5" prot="protected" virt="virtual"><scope>EmpaticaDataProvider::Model::BindableBase</scope><name>OnPropertyChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a853ca740b63a67f9d519981c5e003ff7" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Model::BindableBase</scope><name>PropertyChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a85824f5a2d7102e927b13d790e95dfe8" prot="protected" virt="virtual"><scope>EmpaticaDataProvider::Model::BindableBase</scope><name>SetProperty&lt; T &gt;</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

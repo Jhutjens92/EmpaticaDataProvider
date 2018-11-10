@@ -8,148 +8,121 @@ using System.Windows.Threading;
 using System.Threading.Tasks;
 using EmpaticaDataProvider.Model;
 using EmpaticaDataProvider.Classes;
-using static EmpaticaDataProvider.Classes.TCPThreads;
-using static TCPHandler;
+using static EmpaticaDataProvider.Classes.TCPHandler;
 
 namespace EmpaticaDataProvider.ViewModel
 {
+    /// <summary>   Class containing the GUI functions. </summary>
+    ///
+    /// <remarks>   Jordi Hutjens, 10-11-2018. </remarks>
     class MainWindowViewModel : BindableBase
     {
         #region Instance declaration
+
         TCPHandler synctcp = new TCPHandler();
-        Datastreams datastream  = new Datastreams();
-        TCPThreads tcpthreads = new TCPThreads();
         BLEServer bleserver = new BLEServer();
+        SetLHJson lhjson = new SetLHJson();
 
         #endregion
-
 
         #region Vars & Properties
-        private int _Tag;
-        public int Tag
-        {
-            get { return _Tag; }
-            set { _Tag = value; }
-        }
 
-        private float _BloodVolumePulse;
-        public float BloodVolumePulse
-        {
-            get { return _BloodVolumePulse; }
-            set { _BloodVolumePulse = value;
-                OnPropertyChanged("Empatica_BVP");
-            }
-        }
+        /// <summary>Gets or sets the accelerometer x coordinate.</summary>
+        ///
+        /// <value>The accelerometer x coordinate.</value>
 
-        private float _InterBeatInterval;
-        public float InterBeatInterval
-        {
-            get { return _InterBeatInterval; }
-            set { _InterBeatInterval = value;
-                OnPropertyChanged("Empatica_IBI");
-            }
-        }
-        private float _HearthRateVariability;
-        public float HearthRateVariability
-        {
-            get { return _HearthRateVariability; }
-            set { _HearthRateVariability = value;
-                OnPropertyChanged("Empatica_HRV");
-            }
-        }
-
-        private float _AccelerometerX;
         public float AccelerometerX
         {
-            get { return _AccelerometerX; }
-            set { _AccelerometerX = value;
-                OnPropertyChanged("AccelerometerX");
-            }
+            get { return accelerometerX; }
+            set { SetProperty(ref accelerometerX, value); }
         }
-        private float _AccelerometerY;
+
+        /// <summary>The accelerometer x coordinate.</summary>
+        private float accelerometerX;
+
+        /// <summary>Gets or sets the accelerometer y coordinate.</summary>
+        ///
+        /// <value>The accelerometer y coordinate.</value>
+
         public float AccelerometerY
         {
-            get { return _AccelerometerY; }
-            set { _AccelerometerY = value;
-                OnPropertyChanged("AccelerometerY");
-            }
+            get { return accelerometerY; }
+            set { SetProperty(ref accelerometerY, value); }
         }
 
-        private float _AccelerometerZ;
+        /// <summary>The accelerometer y coordinate.</summary>
+        private float accelerometerY;
+
+        /// <summary>Gets or sets the accelerometer z coordinate.</summary>
+        ///
+        /// <value>The accelerometer z coordinate.</value>
+
         public float AccelerometerZ
         {
-            get { return _AccelerometerZ; }
-            set { _AccelerometerZ = value;
-                OnPropertyChanged("AccelerometerZ");
-            }
+            get { return accelerometerZ; }
+            set { SetProperty(ref accelerometerZ, value); }
         }
 
-        private float _GalvanicSkinResponse;
-        public float GalvanicSkinResponse
-        {
-            get { return _GalvanicSkinResponse; }
-            set { _GalvanicSkinResponse = value;
-                OnPropertyChanged("Empatica_GSR");
-            }
-        }
-     
-        private float _SkinTemperature;
-        public float SkinTemperature
-        {
-            get { return _SkinTemperature; }
-            set { _SkinTemperature = value;
-                OnPropertyChanged("Empatica_Skin_Temp");
-            }
+        /// <summary>The accelerometer z coordinate.</summary>
+        private float accelerometerZ;
 
-        }
- 
-        private string _buttonText = "Start Recording";
+        /// <summary>Gets or sets the button text.</summary>
+        ///
+        /// <value>The button text.</value>
+
         public string ButtonText
         {
-            get { return _buttonText; }
-            set
-            {
-                _buttonText = value;
-                OnPropertyChanged("ButtonText");
-
-            }
+            get { return buttonText; }
+            set { SetProperty(ref buttonText, value); }
         }
 
-        private Brush _buttonColor = new SolidColorBrush(Colors.White);
+        /// <summary>The button text.</summary>
+        private string buttonText = "Start Recording";
+
+        /// <summary>Gets or sets the color of the button.</summary>
+        ///
+        /// <value>The color of the button.</value>
+
         public Brush ButtonColor
         {
-            get { return _buttonColor; }
-            set
-            {
-                _buttonColor = value;
-                OnPropertyChanged("ButtonColor");
-
-            }
+            get { return buttonColor; }
+            set { SetProperty(ref buttonColor, value); }
         }
 
+        /// <summary>The button color.</summary>
+        private Brush buttonColor = new SolidColorBrush(Colors.White);
+
         #endregion
-        
+
         #region Constructor
+
+        /// <summary>MainWindowViewModel constructor.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
+
         public MainWindowViewModel()
         {
-            datastream.instance1.AccelerometerChanged += IUpdateAccelerometer;
-            //datastream.instance2.GSRSensorChanged += IUpdateGSRSensor;
-            //tcpclient.BVPSensorChanged += IUpdatePPGSensor;
-            //tcpclient.IBISensorChanged += IUpdateIBISensor;
-            //tcpclient.TemperatureSensorChanged += IUpdateTemperatureSenser;
-            //tcpclient.TagCreatedEvent += IUpdateTagCreated;
-            HubConnector.StartConnection();
-            HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
-            HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
+            Process[] LearningHub = Process.GetProcessesByName("HubDesktop");
+            if (LearningHub.Length > 0)
+            {
+                HubConnector.StartConnection();
+                HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
+                HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
+                lhjson.SetValueNames();
+            }
             Application.Current.MainWindow.Closing += MainWindow_Closing;
-            SetValueNames();
+            synctcp.AccelerometerChanged += IUpdateAccelerometer;
+            CheckParameters.Instance.CheckStartupParameters();
             bleserver.CheckBLEServer();
-            tcpthreads.CreateTCPThreads();
-            tcpthreads.StartTcpThreads();
+            synctcp.ConnectEmpatica();
         }
         #endregion
 
-        #region UI Handlers
+        #region UI Methods
+
+        /// <summary>Starts or stops recording data method.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
 
         public void StartRecordingData()
         {
@@ -159,22 +132,26 @@ namespace EmpaticaDataProvider.ViewModel
                 ButtonText = "Start Recording";
                 ButtonColor = new SolidColorBrush(Colors.White);
             }
-
             else
             {
                 Globals.IsRecordingData = true;
                 ButtonText = "Stop Recording";
                 ButtonColor = new SolidColorBrush(Colors.Green);
-                new Task(() => { datastream.instance1.GetEmpaticaData("acc"); }).Start();
-                //datastream.instance2.GetEmpaticaData();
+                new Task(() => { synctcp.GetEmpaticaData(); }).Start();
             }
 
         }
         #endregion
 
-
         #region UI Event Handlers
+
+        /// <summary>The button clicked.</summary>
         private ICommand _buttonClicked;
+
+        /// <summary>Gets the on button clicked.</summary>
+        ///
+        /// <value>The on button clicked.</value>
+
         public ICommand OnButtonClicked
         {
             get
@@ -186,91 +163,45 @@ namespace EmpaticaDataProvider.ViewModel
             }
         }
 
+        /// <summary>Updates the accelerometer.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
+        ///
+        /// <param name="sender">Source of the event.</param>
+        /// <param name="acc">   Accelerometer changed event information.</param>
+
         private void IUpdateAccelerometer(object sender, AccelerometerChangedEventArgs acc)
         {
             AccelerometerX = acc.AccelerometerX;
             AccelerometerY = acc.AccelerometerY;
             AccelerometerZ = acc.AccelerometerZ;
-            if (Globals.IsRecordingData == true)
-            {
-                SendData();
-            }
         }
 
-        private void IUpdateGSRSensor(object sender, GSRSensorChangedEventArgs gsr)
-        {
-            GalvanicSkinResponse = gsr.GSR;
-            if (Globals.IsRecordingData == true)
-            {
-                SendData();
-            }
-        }
-
-        private void IUpdateIBISensor(object sender, IBISensorChangedEventArgs ibi)
-        {
-            InterBeatInterval = ibi.InterBeatInterval;
-            HearthRateVariability = ibi.HearthRateVariability;
-            if (Globals.IsRecordingData == true)
-            {
-                SendData();
-            }
-        }
-
-        private void IUpdatePPGSensor(object sender, BVPSensorChangedEventArgs bvp)
-        {
-            BloodVolumePulse = bvp.BloodVolumePulse;
-            if (Globals.IsRecordingData == true)
-            {
-                SendData();
-            }
-        }
-
-        private void IUpdateTemperatureSenser(object sender, TemperatureSensorChangedEventArgs tmp)
-        {
-            SkinTemperature = tmp.SkinTemperature;
-            if (Globals.IsRecordingData == true)
-            {
-                SendData();
-            }
-        }
-
-        private void IUpdateTagCreated(object sender, TagCreatedEventArgs tag)
-        {
-            Tag = tag.Tag;
-            if (Globals.IsRecordingData == true)
-            {
-                SendData();
-            }
-        }
+        /// <summary>Event handler. Called by MainWindow for closing events.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
+        ///
+        /// <param name="sender">Source of the event.</param>
+        /// <param name="e">     Cancel event information.</param>
 
         private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            synctcp.CloseEmpaticaConnection();
             synctcp.CloseTCPConnection();
-            CloseApp();
+            bleserver.CloseBLEServer();
             Environment.Exit(Environment.ExitCode);
         }
-
-        public void CloseApp()
-        {
-            try
-            {
-                Process[] empaticaDataProviderProcess = Process.GetProcessesByName("EmpaticaDataProvider");
-                empaticaDataProviderProcess[0].CloseMainWindow();
-
-                Process[] empaticaBLEProcess = Process.GetProcessesByName("EmpaticaBLEServer");
-                empaticaBLEProcess[0].Kill();
-
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("I got an exception after closing App" + e);
-            }
-        }
-
 
         #endregion
 
         #region Learning Hub Event Handlers
+
+        /// <summary>My connector stop recording event.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
+        ///
+        /// <param name="sender">Source of the event.</param>
+
         private void MyConnector_stopRecordingEvent(object sender)
         {
             Application.Current.Dispatcher.BeginInvoke(
@@ -280,6 +211,12 @@ namespace EmpaticaDataProvider.ViewModel
                 }));
         }
 
+        /// <summary>My connector start recording event.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
+        ///
+        /// <param name="sender">Source of the event.</param>
+
         private void MyConnector_startRecordingEvent(object sender)
         {
             Application.Current.Dispatcher.BeginInvoke(
@@ -287,50 +224,6 @@ namespace EmpaticaDataProvider.ViewModel
                  new Action(() => {
                      this.StartRecordingData();
                  }));
-        }
-        #endregion
-
-        #region Learning Hub Send Data
-        public void SetValueNames()
-        {
-            var names = new List<string>
-            {
-                "empatica_AccX",
-                "empatica_AccY",
-                "empatica_AccZ",
-                "empatica_Skin_Temp",
-                "empatica_IBI",
-                "empatica_BVP",
-                "empatica_HRV",
-                "empatica_GSR",
-                "empatica_Tag"
-            };
-            HubConnector.SetValuesName(names);
-
-        }
-
-        public void SendData()
-        {
-            try
-            {
-                var values = new List<string>
-                {
-                    AccelerometerX.ToString(),
-                    AccelerometerY.ToString(),
-                    AccelerometerZ.ToString(),
-                    SkinTemperature.ToString(),
-                    InterBeatInterval.ToString(),
-                    BloodVolumePulse.ToString(),
-                    HearthRateVariability.ToString(),
-                    GalvanicSkinResponse.ToString(),
-                    Tag.ToString()
-                };
-                HubConnector.SendData(values);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.StackTrace);
-            }
         }
         #endregion
     }

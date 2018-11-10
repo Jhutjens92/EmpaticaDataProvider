@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_app" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::App</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Application</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Application</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Application</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_app_1a67f15765706aad3503e5236952777f9f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.App::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.cs" line="44" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_app_1a36ff4b28e2b438cac1b3c5f0eb4797d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.App.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.cs" line="51" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.cs" bodystart="51" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_app_1a36ff4b28e2b438cac1b3c5f0eb4797d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.App.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.i.cs" line="51" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.i.cs" bodystart="51" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_app_1a4970a7686548d99c80a63cccf79b1608" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EmpaticaDataProvider.App.Main</definition>
+        <argsstring>()</argsstring>
+        <name>Main</name>
+        <briefdescription>
+<para>Application Entry Point. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.cs" line="77" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.cs" bodystart="77" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_app_1a4970a7686548d99c80a63cccf79b1608" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void EmpaticaDataProvider.App.Main</definition>
+        <argsstring>()</argsstring>
+        <name>Main</name>
+        <briefdescription>
+<para>Application Entry Point. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.i.cs" line="77" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug/App.g.i.cs" bodystart="77" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for App.xaml </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_empatica_data_provider_1_1_app" kindref="compound">App</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>System::Windows::Application</label>
+      </node>
+      <node id="6">
+        <label>Application</label>
+      </node>
+      <node id="4">
+        <label>EmpaticaDataProvider.App</label>
+        <link refid="class_empatica_data_provider_1_1_app"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="8">
+        <label>System::Windows::Application</label>
+      </node>
+      <node id="9">
+        <label>Application</label>
+      </node>
+      <node id="7">
+        <label>EmpaticaDataProvider.App</label>
+        <link refid="class_empatica_data_provider_1_1_app"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/App.xaml.cs" line="15" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/App.xaml.cs" bodystart="14" bodyend="16"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_app_1a67f15765706aad3503e5236952777f9f" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::App</scope><name>_contentLoaded</name></member>
+      <member refid="class_empatica_data_provider_1_1_app_1a36ff4b28e2b438cac1b3c5f0eb4797d2" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::App</scope><name>InitializeComponent</name></member>
+      <member refid="class_empatica_data_provider_1_1_app_1a36ff4b28e2b438cac1b3c5f0eb4797d2" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::App</scope><name>InitializeComponent</name></member>
+      <member refid="class_empatica_data_provider_1_1_app_1a4970a7686548d99c80a63cccf79b1608" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::App</scope><name>Main</name></member>
+      <member refid="class_empatica_data_provider_1_1_app_1a4970a7686548d99c80a63cccf79b1608" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::App</scope><name>Main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

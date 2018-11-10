@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Classes::BLEServer</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1ac94f84945837ce6ada395c671fad1022" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string EmpaticaDataProvider.Classes.BLEServer.filename1</definition>
+        <argsstring></argsstring>
+        <name>filename1</name>
+        <initializer>= &quot;C:/Program Files/Empatica/EmpaticaBLEServer/EmpaticaBLEServer.exe&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="15" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a54ba15daf38981aa813425b406945425" prot="private" static="no" mutable="no">
+        <type>readonly string</type>
+        <definition>readonly string EmpaticaDataProvider.Classes.BLEServer.filename2</definition>
+        <argsstring></argsstring>
+        <name>filename2</name>
+        <initializer>= &quot;C:/Program Files (x86)/Empatica/EmpaticaBLEServer/EmpaticaBLEServer.exe&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="16" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1aa1796781e13892a0dac78bf729a9cbf1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.BLEServer.StartBLEServer</definition>
+        <argsstring>()</argsstring>
+        <name>StartBLEServer</name>
+        <briefdescription>
+<para>Starts the Empatica BLE Server based on the startup parameters given. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 8-11-2018. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="22" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" bodystart="22" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a7919f62021a64cadddd3c0612e2df93f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.BLEServer.CheckBLEServer</definition>
+        <argsstring>()</argsstring>
+        <name>CheckBLEServer</name>
+        <briefdescription>
+<para>Checks if the Empatica BLE server is running. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 8-11-2018. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="59" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" bodystart="59" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a170dac7b0e823ed84fbc38387940009e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.BLEServer.CloseBLEServer</definition>
+        <argsstring>()</argsstring>
+        <name>CloseBLEServer</name>
+        <briefdescription>
+<para>Closes the Empatica BLE Server application. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 8-11-2018. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="74" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" bodystart="74" bodyend="85"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Main class to check and start and stop the Empatica BLE Server. </para>    </briefdescription>
+    <detaileddescription>
+<para>Jordi Hutjens, 8-11-2018. </para>    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" line="12" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/BLEServer.cs" bodystart="11" bodyend="86"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a7919f62021a64cadddd3c0612e2df93f" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::BLEServer</scope><name>CheckBLEServer</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a170dac7b0e823ed84fbc38387940009e" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::BLEServer</scope><name>CloseBLEServer</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1ac94f84945837ce6ada395c671fad1022" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::BLEServer</scope><name>filename1</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a54ba15daf38981aa813425b406945425" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::BLEServer</scope><name>filename2</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1aa1796781e13892a0dac78bf729a9cbf1" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::BLEServer</scope><name>StartBLEServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

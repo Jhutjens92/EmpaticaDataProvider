@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['initializecomponent',['InitializeComponent',['../class_empatica_data_provider_1_1_app.html#a36ff4b28e2b438cac1b3c5f0eb4797d2',1,'EmpaticaDataProvider.App.InitializeComponent()'],['../class_empatica_data_provider_1_1_app.html#a36ff4b28e2b438cac1b3c5f0eb4797d2',1,'EmpaticaDataProvider.App.InitializeComponent()'],['../class_empatica_data_provider_1_1_main_window_view.html#aa84646fa8ef5b31dc6beb3b6bf7f4379',1,'EmpaticaDataProvider.MainWindowView.InitializeComponent()'],['../class_empatica_data_provider_1_1_main_window_view.html#aa84646fa8ef5b31dc6beb3b6bf7f4379',1,'EmpaticaDataProvider.MainWindowView.InitializeComponent()']]],
+  ['instance',['Instance',['../class_empatica_data_provider_1_1_classes_1_1_check_parameters.html#a74bfdf57d7e545901371dd9f81baadc7',1,'EmpaticaDataProvider.Classes.CheckParameters.Instance()'],['../class_empatica_data_provider_1_1_classes_1_1_check_parameters.html#a4750f94359e0c4764d54da52eb5c51f5',1,'EmpaticaDataProvider.Classes.CheckParameters.instance()']]],
+  ['iupdateaccelerometer',['IUpdateAccelerometer',['../class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model.html#a7c5ed5fc970bfeda4da0ca01ce524890',1,'EmpaticaDataProvider::ViewModel::MainWindowViewModel']]]
+];

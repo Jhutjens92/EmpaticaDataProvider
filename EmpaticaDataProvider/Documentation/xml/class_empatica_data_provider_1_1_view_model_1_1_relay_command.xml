@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_view_model_1_1_relay_command" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::ViewModel::RelayCommand</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ICommand</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a1978ab63e2a00c6143144c58778671c3" prot="private" static="no" mutable="no">
+        <type>readonly Action&lt; object &gt;</type>
+        <definition>readonly Action&lt;object&gt; EmpaticaDataProvider.ViewModel.RelayCommand._execute</definition>
+        <argsstring></argsstring>
+        <name>_execute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="19" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a1178df99d4bedc17c4b60b0acc38f6fc" prot="private" static="no" mutable="no">
+        <type>readonly Predicate&lt; object &gt;</type>
+        <definition>readonly Predicate&lt;object&gt; EmpaticaDataProvider.ViewModel.RelayCommand._canExecute</definition>
+        <argsstring></argsstring>
+        <name>_canExecute</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="20" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1aa53f78b3f4c092bcfbcbe549812ea47d" prot="public" static="no" readable="no" writable="no" gettable="no" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>EventHandler</type>
+        <definition>EventHandler EmpaticaDataProvider.ViewModel.RelayCommand.CanExecuteChanged</definition>
+        <argsstring></argsstring>
+        <name>CanExecuteChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="60" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="61" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1ab361accf1172cd1fbcc655b9dd53bc9c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EmpaticaDataProvider.ViewModel.RelayCommand.RelayCommand</definition>
+        <argsstring>(Action&lt; object &gt; execute)</argsstring>
+        <name>RelayCommand</name>
+        <param>
+          <type>Action&lt; object &gt;</type>
+          <declname>execute</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new command that can always execute. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>execute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The execution logic.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="30" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a2325bb928c42b11302fc617abcbd199f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EmpaticaDataProvider.ViewModel.RelayCommand.RelayCommand</definition>
+        <argsstring>(Action&lt; object &gt; execute, Predicate&lt; object &gt; canExecute)</argsstring>
+        <name>RelayCommand</name>
+        <param>
+          <type>Action&lt; object &gt;</type>
+          <declname>execute</declname>
+        </param>
+        <param>
+          <type>Predicate&lt; object &gt;</type>
+          <declname>canExecute</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>execute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The execution logic.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>canExecute</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The execution status logic.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="40" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="40" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1ae6da866816484c094994938371101d6e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.ViewModel.RelayCommand.CanExecute</definition>
+        <argsstring>(object parameters)</argsstring>
+        <name>CanExecute</name>
+        <param>
+          <type>object</type>
+          <declname>parameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="55" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1afca5b2c6bc0db4f1e5806d59d9ee259b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.ViewModel.RelayCommand.Execute</definition>
+        <argsstring>(object parameters)</argsstring>
+        <name>Execute</name>
+        <param>
+          <type>object</type>
+          <declname>parameters</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="66" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="66" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A command whose sole purpose is to relay its functionality to other objects by invoking delegates. The default return value for the CanExecute method is &apos;true&apos;. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="50">
+        <label>ICommand</label>
+      </node>
+      <node id="49">
+        <label>EmpaticaDataProvider.ViewModel.RelayCommand</label>
+        <link refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="52">
+        <label>ICommand</label>
+      </node>
+      <node id="51">
+        <label>EmpaticaDataProvider.ViewModel.RelayCommand</label>
+        <link refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" line="16" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model/RelayCommand.cs" bodystart="15" bodyend="76"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a1178df99d4bedc17c4b60b0acc38f6fc" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>_canExecute</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a1978ab63e2a00c6143144c58778671c3" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>_execute</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1ae6da866816484c094994938371101d6e" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>CanExecute</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1aa53f78b3f4c092bcfbcbe549812ea47d" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>CanExecuteChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1afca5b2c6bc0db4f1e5806d59d9ee259b" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>Execute</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1ab361accf1172cd1fbcc655b9dd53bc9c" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>RelayCommand</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a2325bb928c42b11302fc617abcbd199f" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::RelayCommand</scope><name>RelayCommand</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

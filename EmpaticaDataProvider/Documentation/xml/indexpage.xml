@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Empatica Data Provider</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The <ref refid="namespace_empatica_data_provider" kindref="compound">EmpaticaDataProvider</ref> is an application designed to automatically connect to a specific datastream for an Empatica E4 watch. It get&apos;s all the data by connecting to the Empatica BLE server, sets up a BLE connection with the Empatica E4 and connects the device.</para><para><ndash/> WARNING <ndash/> Currently the app is still under development and the only datastream currently available is the &quot;acc&quot; datastream.</para><para><heading level="3">Prerequisites</heading>
+</para><para><itemizedlist>
+<listitem><para>Download the Learning Hub: <ulink url="https://github.com/janschneiderou/LearningHub">https://github.com/janschneiderou/LearningHub</ulink></para></listitem><listitem><para>Installed the Empatica BLE Server: <ulink url="http://developer.empatica.com/windows-ble-server.html">http://developer.empatica.com/windows-ble-server.html</ulink></para></listitem><listitem><para>Empatica E4 watch</para></listitem></itemizedlist>
+</para><para><heading level="2">Getting Started</heading>
+</para><para>The datastream is currently limited only to the acc datastream (Accelerometer). This is due to constrains on the Learning Hub side. The <ref refid="namespace_empatica_data_provider" kindref="compound">EmpaticaDataProvider</ref> will automatically start the Empatica BLE Server with the parameters which need to be provided.</para><para>You can test the <ref refid="namespace_empatica_data_provider" kindref="compound">EmpaticaDataProvider</ref> without using the Learning Hub by just starting the executable and press &quot;Start Recording&quot; Currently it does not provide any logging when you run it seperatly. It only shows the received values in the textboxes.</para><para>If you want to use it with the Learning Hub combined then make you sure have the Learning Hub set up accordingly. A complete how to guide can be found here: <ulink url="https://docs.google.com/document/d/1FbTd6wjqa9P_6O51gjZRU2ubiCA94nMZr001NkgBZ5s/edit#">https://docs.google.com/document/d/1FbTd6wjqa9P_6O51gjZRU2ubiCA94nMZr001NkgBZ5s/edit#</ulink></para><para><heading level="2">Startup Parameters (Learning Hub/CMD)</heading>
+</para><para>-sip is used to define the server IP on which you want the Empatica BLE Server to run. -sp is used to define the server port on which you want the Empatica BLE Server to run. -ak is used to provide the Api Key which is need to start the application with a watch. Please check the Empatica website on how to receive your API-key for your registered watch.</para><para>The default values for the Server IP and Port are 127.0.0.1:5555. the API-Key is required as a parameter, else the application won&apos;t work.</para><para><heading level="2">Startup Parameters Examples</heading>
+</para><para>-sip 127.0.0.1 -sp 5555 -ak a389709e458C4155985821a5ac90c893</para><para><heading level="2">Authors</heading>
+</para><para><itemizedlist>
+<listitem><para><bold>Jordi Hutjens</bold> -(<ulink url="https://github.com/jhutjens92">https://github.com/jhutjens92</ulink>) </para></listitem></itemizedlist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,314 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
+  <compound refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args" kind="class"><name>EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</name>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a44ed4416f0efc53a2657258009b9402a" kind="variable"><name>accelerometerX</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1ad45e9168aa38dd8b1307ba50cd00c5b1" kind="variable"><name>accelerometerY</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a61dd36bd1f492b7f8b4680e186ab6e7c" kind="variable"><name>accelerometerZ</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1ace42138910f7781172353c8a74002ae9" kind="property"><name>AccelerometerX</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a0d6bf6479dbf484b132c0e52ac572b80" kind="property"><name>AccelerometerY</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args_1a2e1c6d8d9ca979cd2a267a7e22dd17ef" kind="property"><name>AccelerometerZ</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_app" kind="class"><name>EmpaticaDataProvider::App</name>
+    <member refid="class_empatica_data_provider_1_1_app_1a67f15765706aad3503e5236952777f9f" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="class_empatica_data_provider_1_1_app_1a36ff4b28e2b438cac1b3c5f0eb4797d2" kind="function"><name>InitializeComponent</name></member>
+    <member refid="class_empatica_data_provider_1_1_app_1a36ff4b28e2b438cac1b3c5f0eb4797d2" kind="function"><name>InitializeComponent</name></member>
+    <member refid="class_empatica_data_provider_1_1_app_1a4970a7686548d99c80a63cccf79b1608" kind="function"><name>Main</name></member>
+    <member refid="class_empatica_data_provider_1_1_app_1a4970a7686548d99c80a63cccf79b1608" kind="function"><name>Main</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_model_1_1_bindable_base" kind="class"><name>EmpaticaDataProvider::Model::BindableBase</name>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a853ca740b63a67f9d519981c5e003ff7" kind="event"><name>PropertyChanged</name></member>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a85824f5a2d7102e927b13d790e95dfe8" kind="function"><name>SetProperty&lt; T &gt;</name></member>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a5aa93759cdbfa0a2c809470f4b9f86e5" kind="function"><name>OnPropertyChanged</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server" kind="class"><name>EmpaticaDataProvider::Classes::BLEServer</name>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1ac94f84945837ce6ada395c671fad1022" kind="variable"><name>filename1</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a54ba15daf38981aa813425b406945425" kind="variable"><name>filename2</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1aa1796781e13892a0dac78bf729a9cbf1" kind="function"><name>StartBLEServer</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a7919f62021a64cadddd3c0612e2df93f" kind="function"><name>CheckBLEServer</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server_1a170dac7b0e823ed84fbc38387940009e" kind="function"><name>CloseBLEServer</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters" kind="class"><name>EmpaticaDataProvider::Classes::CheckParameters</name>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a4750f94359e0c4764d54da52eb5c51f5" kind="variable"><name>instance</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a6f651cd6b3cc3074b2600437f03a6d2e" kind="variable"><name>padlock</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1ad59458ff8119b88c9901b4aeccd450d8" kind="property"><name>DataStream</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a7b8d16babf550654ead2b967c4a0c089" kind="property"><name>ApiKey</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a56e53e9d31dc0fa1a7984a2ffcf24715" kind="property"><name>ServerPort</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a5023a61deb34d5f49e7e2e25b97e74f6" kind="property"><name>ServerIP</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a74bfdf57d7e545901371dd9f81baadc7" kind="property"><name>Instance</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a33a71d3f92709d87a56cdcb835595376" kind="variable"><name>dataStream</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a9e361a3113e494816f2bb62076e43046" kind="variable"><name>apiKey</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1ad6efc9ef17801403539d3f6d356f51a6" kind="variable"><name>serverPort</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a075cae15b2432d04897959f3e2726403" kind="variable"><name>serverIP</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1aeec3d4c4c71c82f1976a5b66c87e70f1" kind="variable"><name>sipPar</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1aa6d08729f4b170e25cdb12d36e92ebd8" kind="variable"><name>spPar</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a8c363df84c803c6c3cccab165278028d" kind="variable"><name>akPar</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a47fca35ad197f4b8e64b3d47c7f54b19" kind="function"><name>CheckStartupParameters</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_check_parameters_1a7637dadbab0a04c52549ecb0f90ed00f" kind="function"><name>CheckParameters</name></member>
+  </compound>
+  <compound refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper" kind="class"><name>XamlGeneratedNamespace::GeneratedInternalTypeHelper</name>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1aefb7a98fceb9c287cef4756942f441d1" kind="function"><name>CreateInstance</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1afdc9fe15b56607d02082908d934480c6" kind="function"><name>GetPropertyValue</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1ade0f04c0f7b18dd5b170e071d5534d38" kind="function"><name>SetPropertyValue</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a8ec4c37e82d9f4e867e9655f4eac3a78" kind="function"><name>CreateDelegate</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" kind="function"><name>AddEventHandler</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1aefb7a98fceb9c287cef4756942f441d1" kind="function"><name>CreateInstance</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1afdc9fe15b56607d02082908d934480c6" kind="function"><name>GetPropertyValue</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1ade0f04c0f7b18dd5b170e071d5534d38" kind="function"><name>SetPropertyValue</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a8ec4c37e82d9f4e867e9655f4eac3a78" kind="function"><name>CreateDelegate</name></member>
+    <member refid="class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" kind="function"><name>AddEventHandler</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_view_model_1_1_globals" kind="class"><name>EmpaticaDataProvider::ViewModel::Globals</name>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_globals_1aeb7bec77e364e9d2e9653c5d4efbcfd0" kind="variable"><name>_isRecordingData</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_globals_1a7a7eb2b19355fd5bc8dd9cafacbca99f" kind="property"><name>IsRecordingData</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_model_1_1_hub_connector" kind="class"><name>EmpaticaDataProvider::Model::HubConnector</name>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a269130247852d7577a2605480fdba754" kind="variable"><name>myConnector</name></member>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1ae041ccb0583c088a0b092b7742c39c1b" kind="property"><name>MyConnector</name></member>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a30d188cc25a9525e6aafa37307b8084a" kind="function"><name>StartConnection</name></member>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a1305891e3dbc87005cbc98f75ffba068" kind="function"><name>SendData</name></member>
+    <member refid="class_empatica_data_provider_1_1_model_1_1_hub_connector_1a3b7a8abb00c68bfc79d58fc51663585c" kind="function"><name>SetValuesName</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_main_window_view" kind="class"><name>EmpaticaDataProvider::MainWindowView</name>
+    <member refid="class_empatica_data_provider_1_1_main_window_view_1af685473debcf3f277b8d04b102bde0e8" kind="variable"><name>BtnRecord</name></member>
+    <member refid="class_empatica_data_provider_1_1_main_window_view_1a91e80b52c2abbfaa0a6b8747e1ed7cf5" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="class_empatica_data_provider_1_1_main_window_view_1aa84646fa8ef5b31dc6beb3b6bf7f4379" kind="function"><name>InitializeComponent</name></member>
+    <member refid="class_empatica_data_provider_1_1_main_window_view_1aa84646fa8ef5b31dc6beb3b6bf7f4379" kind="function"><name>InitializeComponent</name></member>
+    <member refid="class_empatica_data_provider_1_1_main_window_view_1a0d4bbc4f6c533cf0bdd7bbce94fbb360" kind="function"><name>Connect</name></member>
+    <member refid="class_empatica_data_provider_1_1_main_window_view_1a0d4bbc4f6c533cf0bdd7bbce94fbb360" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model" kind="class"><name>EmpaticaDataProvider::ViewModel::MainWindowViewModel</name>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8484aa31fe166a260b147ce419d200b5" kind="variable"><name>synctcp</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8a1b5311a9a4a314e6a9693938409d83" kind="variable"><name>bleserver</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aa5bdee9e15b4500ad0f6a419fc5ef70a" kind="variable"><name>lhjson</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8606e1cff398d20785867fd92c8826ba" kind="variable"><name>accelerometerX</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a0a143b10612e0c92e90b4672a5af9701" kind="variable"><name>accelerometerY</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aab5cf52a6ba1444c3537019b6bdcc74f" kind="variable"><name>accelerometerZ</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a0587ce0425654343e295ac4cbb2bf02e" kind="variable"><name>buttonText</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1ad3ce19119a7e72adfef645f2ee39bab7" kind="variable"><name>buttonColor</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a87609d4c15cb6e6daaff9ebacc93c732" kind="variable"><name>_buttonClicked</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aef3df0d1bf268a4a7ff3ae5ee4f2d8ef" kind="property"><name>AccelerometerX</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aabf3b3edddadb0122a6ed88fb6ad406c" kind="property"><name>AccelerometerY</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a890790517133e0c224ac04c3ba2b0c67" kind="property"><name>AccelerometerZ</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aec9e86221198eaa8a591db481bed7118" kind="property"><name>ButtonText</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1acdb651eb7afa1013c21241f009027e31" kind="property"><name>ButtonColor</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a81a4de48d9ae572add56f9345b4f535c" kind="property"><name>OnButtonClicked</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1ae6a175505802a22c2baaa5c5b26d4e90" kind="function"><name>MainWindowViewModel</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aa7592aa9b99bd3dc007b8de048c1f10b" kind="function"><name>StartRecordingData</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a7c5ed5fc970bfeda4da0ca01ce524890" kind="function"><name>IUpdateAccelerometer</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a21d77c51509cf4559c468ba30caaa464" kind="function"><name>MainWindow_Closing</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1af12dd924c523c2285ebe99d1f6abf44a" kind="function"><name>MyConnector_stopRecordingEvent</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1acf56b8e32041efeaf43b6e5b66bbabcf" kind="function"><name>MyConnector_startRecordingEvent</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command" kind="class"><name>EmpaticaDataProvider::ViewModel::RelayCommand</name>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a1978ab63e2a00c6143144c58778671c3" kind="variable"><name>_execute</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a1178df99d4bedc17c4b60b0acc38f6fc" kind="variable"><name>_canExecute</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1aa53f78b3f4c092bcfbcbe549812ea47d" kind="property"><name>CanExecuteChanged</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1ab361accf1172cd1fbcc655b9dd53bc9c" kind="function"><name>RelayCommand</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1a2325bb928c42b11302fc617abcbd199f" kind="function"><name>RelayCommand</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1ae6da866816484c094994938371101d6e" kind="function"><name>CanExecute</name></member>
+    <member refid="class_empatica_data_provider_1_1_view_model_1_1_relay_command_1afca5b2c6bc0db4f1e5806d59d9ee259b" kind="function"><name>Execute</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_properties_1_1_resources" kind="class"><name>EmpaticaDataProvider::Properties::Resources</name>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_resources_1ab70ceba4b4727efaefbfb2ed480ce400" kind="variable"><name>resourceMan</name></member>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_resources_1a5bbf9356113e23433f503168669df628" kind="variable"><name>resourceCulture</name></member>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_resources_1a2a5cd5d823612e4f2333b4962c54f24e" kind="property"><name>ResourceManager</name></member>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_resources_1aca82e09ff169d43322830d69e89d7557" kind="property"><name>Culture</name></member>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_resources_1a9f6abdebb689e22f7895074a3a0fdebd" kind="function"><name>Resources</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" kind="class"><name>EmpaticaDataProvider::Classes::SetLHJson</name>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json_1a19189de1c5cd7b67b9aca8a6f0ce66d3" kind="function"><name>SetValueNames</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json_1a1b6dfce087cff060b3845c5003e86656" kind="function"><name>SendDataToLH</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_properties_1_1_settings" kind="class"><name>EmpaticaDataProvider::Properties::Settings</name>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_settings_1ada8775a7ca03debf33ba5a3b3845e21e" kind="variable"><name>defaultInstance</name></member>
+    <member refid="class_empatica_data_provider_1_1_properties_1_1_settings_1a745ab1410245dcacb7b3ad4b0a9a7212" kind="property"><name>Default</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_state_object" kind="class"><name>EmpaticaDataProvider::StateObject</name>
+    <member refid="class_empatica_data_provider_1_1_state_object_1a1dbd83e1c8efedc80384784f261fcd18" kind="variable"><name>WorkSocket</name></member>
+    <member refid="class_empatica_data_provider_1_1_state_object_1ad009faa72598ca795902e79ea9bd9093" kind="variable"><name>BufferSize</name></member>
+    <member refid="class_empatica_data_provider_1_1_state_object_1a076a2c8a8b94dea53b05ef88298d8f22" kind="variable"><name>Buffer</name></member>
+    <member refid="class_empatica_data_provider_1_1_state_object_1ab7c98e1b97aad936f4bc424ca099ef4e" kind="variable"><name>Sb</name></member>
+  </compound>
+  <compound refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler" kind="class"><name>EmpaticaDataProvider::Classes::TCPHandler</name>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ad4f476dbc7da9e956522675d20d775d9" kind="variable"><name>lhsend</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a4e6813d00e576580cbecfa2416befedd" kind="variable"><name>receivedStr</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a2fce27fda3ff53aae9e889898412152d" kind="variable"><name>tcpClientConnected</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ac8a8c93625e2b93175c31f300169e15a" kind="variable"><name>receivedStrFiltered</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1af702e3d186298758c2b1434baf815133" kind="variable"><name>tcpStep</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a725497f66ff415309f939b60ba94fa93" kind="variable"><name>empaticaID</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ab956de4a1b7bc4d8c6bd503e9aea5119" kind="variable"><name>client</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a4bb23a9fbb2243eaaf1ace52d6016440" kind="variable"><name>ReceiveDone</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a8bcdd1d8bc4f4b6d9ebbe3e0d8179617" kind="event"><name>AccelerometerChanged</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a88cb89433687eac815e26e4674db0abe" kind="function"><name>OnAccelerometerChanged</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a75ec05f26ee6ee9d5add74593ae39f98" kind="function"><name>ConnectEmpatica</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a7f863d71fd32f1b7abaa2ddc60b44200" kind="function"><name>GetEmpaticaData</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a53fa4abfc547828eb2e1b6091b7dab06" kind="function"><name>CloseEmpaticaConnection</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a9d8b2c14ab8a5f32b9f89ae45db6fbcd" kind="function"><name>CloseTCPConnection</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a6463c176046e93dc5c4b5415b26a7067" kind="function"><name>ChkReceivedMsg</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a5de264fe6aebbef25703e83bcc5f096a" kind="function"><name>CreateTcpCmd</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ace322f793f4cb92f2f0d436714e6b85a" kind="function"><name>StartSyncTCPClient</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ab9de374767ed12d43b4e4e5e2dcf19d2" kind="function"><name>SyncSend</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a2e8b409ff30cce8f1e37f72d6dc44865" kind="function"><name>SyncReceive</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a188b56e6a8f297e6ea04b381877b0f18" kind="function"><name>ASyncReceive</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a6733106a7cc5d41c1b796110646bc792" kind="function"><name>ASyncReceiveCallback</name></member>
+    <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a28805b1e25709aad089ac583259833ca" kind="function"><name>UpdateAccValues</name></member>
+  </compound>
+  <compound refid="namespace_empatica_data_provider" kind="namespace"><name>EmpaticaDataProvider</name>
+  </compound>
+  <compound refid="namespace_empatica_data_provider_1_1_classes" kind="namespace"><name>EmpaticaDataProvider::Classes</name>
+  </compound>
+  <compound refid="namespace_empatica_data_provider_1_1_classes_1_1_t_c_p_handler" kind="namespace"><name>EmpaticaDataProvider::Classes::TCPHandler</name>
+  </compound>
+  <compound refid="namespace_empatica_data_provider_1_1_model" kind="namespace"><name>EmpaticaDataProvider::Model</name>
+  </compound>
+  <compound refid="namespace_empatica_data_provider_1_1_properties" kind="namespace"><name>EmpaticaDataProvider::Properties</name>
+  </compound>
+  <compound refid="namespace_empatica_data_provider_1_1_view_model" kind="namespace"><name>EmpaticaDataProvider::ViewModel</name>
+  </compound>
+  <compound refid="namespacestatic" kind="namespace"><name>static</name>
+  </compound>
+  <compound refid="namespace_system" kind="namespace"><name>System</name>
+  </compound>
+  <compound refid="namespace_system_1_1_collections_1_1_generic" kind="namespace"><name>System::Collections::Generic</name>
+  </compound>
+  <compound refid="namespace_system_1_1_component_model" kind="namespace"><name>System::ComponentModel</name>
+  </compound>
+  <compound refid="namespace_system_1_1_configuration" kind="namespace"><name>System::Configuration</name>
+  </compound>
+  <compound refid="namespace_system_1_1_data" kind="namespace"><name>System::Data</name>
+  </compound>
+  <compound refid="namespace_system_1_1_diagnostics" kind="namespace"><name>System::Diagnostics</name>
+  </compound>
+  <compound refid="namespace_system_1_1_i_o" kind="namespace"><name>System::IO</name>
+  </compound>
+  <compound refid="namespace_system_1_1_linq" kind="namespace"><name>System::Linq</name>
+  </compound>
+  <compound refid="namespace_system_1_1_net" kind="namespace"><name>System::Net</name>
+  </compound>
+  <compound refid="namespace_system_1_1_net_1_1_sockets" kind="namespace"><name>System::Net::Sockets</name>
+  </compound>
+  <compound refid="namespace_system_1_1_reflection" kind="namespace"><name>System::Reflection</name>
+  </compound>
+  <compound refid="namespace_system_1_1_resources" kind="namespace"><name>System::Resources</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
+  </compound>
+  <compound refid="namespace_system_1_1_text_1_1_regular_expressions" kind="namespace"><name>System::Text::RegularExpressions</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading" kind="namespace"><name>System::Threading</name>
+  </compound>
+  <compound refid="namespace_system_1_1_threading_1_1_tasks" kind="namespace"><name>System::Threading::Tasks</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows" kind="namespace"><name>System::Windows</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_automation" kind="namespace"><name>System::Windows::Automation</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_controls" kind="namespace"><name>System::Windows::Controls</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_controls_1_1_primitives" kind="namespace"><name>System::Windows::Controls::Primitives</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_data" kind="namespace"><name>System::Windows::Data</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_documents" kind="namespace"><name>System::Windows::Documents</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_ink" kind="namespace"><name>System::Windows::Ink</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_input" kind="namespace"><name>System::Windows::Input</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_markup" kind="namespace"><name>System::Windows::Markup</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_media" kind="namespace"><name>System::Windows::Media</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_media_1_1_animation" kind="namespace"><name>System::Windows::Media::Animation</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_media_1_1_effects" kind="namespace"><name>System::Windows::Media::Effects</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_media_1_1_imaging" kind="namespace"><name>System::Windows::Media::Imaging</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_media_1_1_media3_d" kind="namespace"><name>System::Windows::Media::Media3D</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_media_1_1_text_formatting" kind="namespace"><name>System::Windows::Media::TextFormatting</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_navigation" kind="namespace"><name>System::Windows::Navigation</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_shapes" kind="namespace"><name>System::Windows::Shapes</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_shell" kind="namespace"><name>System::Windows::Shell</name>
+  </compound>
+  <compound refid="namespace_system_1_1_windows_1_1_threading" kind="namespace"><name>System::Windows::Threading</name>
+  </compound>
+  <compound refid="namespace_xaml_generated_namespace" kind="namespace"><name>XamlGeneratedNamespace</name>
+  </compound>
+  <compound refid="_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
+  </compound>
+  <compound refid="_b_l_e_server_8cs" kind="file"><name>BLEServer.cs</name>
+  </compound>
+  <compound refid="_check_parameters_8cs" kind="file"><name>CheckParameters.cs</name>
+  </compound>
+  <compound refid="_set_l_h_json_8cs" kind="file"><name>SetLHJson.cs</name>
+  </compound>
+  <compound refid="_state_object_8cs" kind="file"><name>StateObject.cs</name>
+  </compound>
+  <compound refid="_t_c_p_handler_8cs" kind="file"><name>TCPHandler.cs</name>
+  </compound>
+  <compound refid="_main_window_view_8xaml_8cs" kind="file"><name>MainWindowView.xaml.cs</name>
+  </compound>
+  <compound refid="_bindable_base_8cs" kind="file"><name>BindableBase.cs</name>
+  </compound>
+  <compound refid="_hub_connector_8cs" kind="file"><name>HubConnector.cs</name>
+  </compound>
+  <compound refid="_relay_command_8cs" kind="file"><name>RelayCommand.cs</name>
+  </compound>
+  <compound refid="_app_8g_8cs" kind="file"><name>App.g.cs</name>
+  </compound>
+  <compound refid="_app_8g_8i_8cs" kind="file"><name>App.g.i.cs</name>
+  </compound>
+  <compound refid="_generated_internal_type_helper_8g_8cs" kind="file"><name>GeneratedInternalTypeHelper.g.cs</name>
+  </compound>
+  <compound refid="_generated_internal_type_helper_8g_8i_8cs" kind="file"><name>GeneratedInternalTypeHelper.g.i.cs</name>
+  </compound>
+  <compound refid="_main_window_view_8g_8cs" kind="file"><name>MainWindowView.g.cs</name>
+  </compound>
+  <compound refid="_main_window_view_8g_8i_8cs" kind="file"><name>MainWindowView.g.i.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  </compound>
+  <compound refid="_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  </compound>
+  <compound refid="_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
+  </compound>
+  <compound refid="_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="_globals_8cs" kind="file"><name>Globals.cs</name>
+  </compound>
+  <compound refid="_main_window_view_model_8cs" kind="file"><name>MainWindowViewModel.cs</name>
+  </compound>
+  <compound refid="dir_054fcbd4b45cc5cc7549a93f2808db9a" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes</name>
+  </compound>
+  <compound refid="dir_104f193efde4fa134ed77d87ec5fe50c" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj/Debug</name>
+  </compound>
+  <compound refid="dir_f74b0f80388205fe35602f4d65ada5bf" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider</name>
+  </compound>
+  <compound refid="dir_57aab4e1333d1a636992f58f8c9d8483" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider</name>
+  </compound>
+  <compound refid="dir_cacbc3cc94a4e37de1a95d77d68e5977" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Model</name>
+  </compound>
+  <compound refid="dir_475284c99824208114052ecce6e28e1d" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/obj</name>
+  </compound>
+  <compound refid="dir_6cab84c8e38dd28681ce1713651ec534" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Properties</name>
+  </compound>
+  <compound refid="dir_df4747d4cd64e4fbc01d9f96dc0bd33d" kind="dir"><name>C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

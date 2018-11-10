@@ -1,0 +1,463 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::ViewModel::MainWindowViewModel</compoundname>
+    <basecompoundref refid="class_empatica_data_provider_1_1_model_1_1_bindable_base" prot="public" virt="non-virtual">EmpaticaDataProvider.Model.BindableBase</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8484aa31fe166a260b147ce419d200b5" prot="private" static="no" mutable="no">
+        <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler" kindref="compound">TCPHandler</ref></type>
+        <definition>TCPHandler EmpaticaDataProvider.ViewModel.MainWindowViewModel.synctcp</definition>
+        <argsstring></argsstring>
+        <name>synctcp</name>
+        <initializer>= new <ref refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler" kindref="compound">TCPHandler</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="22" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8a1b5311a9a4a314e6a9693938409d83" prot="private" static="no" mutable="no">
+        <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server" kindref="compound">BLEServer</ref></type>
+        <definition>BLEServer EmpaticaDataProvider.ViewModel.MainWindowViewModel.bleserver</definition>
+        <argsstring></argsstring>
+        <name>bleserver</name>
+        <initializer>= new <ref refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server" kindref="compound">BLEServer</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="23" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aa5bdee9e15b4500ad0f6a419fc5ef70a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" kindref="compound">SetLHJson</ref></type>
+        <definition>SetLHJson EmpaticaDataProvider.ViewModel.MainWindowViewModel.lhjson</definition>
+        <argsstring></argsstring>
+        <name>lhjson</name>
+        <initializer>= new <ref refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" kindref="compound">SetLHJson</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="24" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8606e1cff398d20785867fd92c8826ba" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.ViewModel.MainWindowViewModel.accelerometerX</definition>
+        <argsstring></argsstring>
+        <name>accelerometerX</name>
+        <briefdescription>
+<para>The accelerometer x coordinate.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="41" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a0a143b10612e0c92e90b4672a5af9701" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.ViewModel.MainWindowViewModel.accelerometerY</definition>
+        <argsstring></argsstring>
+        <name>accelerometerY</name>
+        <briefdescription>
+<para>The accelerometer y coordinate.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="54" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aab5cf52a6ba1444c3537019b6bdcc74f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.ViewModel.MainWindowViewModel.accelerometerZ</definition>
+        <argsstring></argsstring>
+        <name>accelerometerZ</name>
+        <briefdescription>
+<para>The accelerometer z coordinate.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="67" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a0587ce0425654343e295ac4cbb2bf02e" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.ViewModel.MainWindowViewModel.buttonText</definition>
+        <argsstring></argsstring>
+        <name>buttonText</name>
+        <initializer>= &quot;Start Recording&quot;</initializer>
+        <briefdescription>
+<para>The button text.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="80" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1ad3ce19119a7e72adfef645f2ee39bab7" prot="private" static="no" mutable="no">
+        <type>Brush</type>
+        <definition>Brush EmpaticaDataProvider.ViewModel.MainWindowViewModel.buttonColor</definition>
+        <argsstring></argsstring>
+        <name>buttonColor</name>
+        <initializer>= new SolidColorBrush(Colors.White)</initializer>
+        <briefdescription>
+<para>The button color.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="93" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a87609d4c15cb6e6daaff9ebacc93c732" prot="private" static="no" mutable="no">
+        <type>ICommand</type>
+        <definition>ICommand EmpaticaDataProvider.ViewModel.MainWindowViewModel._buttonClicked</definition>
+        <argsstring></argsstring>
+        <name>_buttonClicked</name>
+        <briefdescription>
+<para>The button clicked.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="149" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aef3df0d1bf268a4a7ff3ae5ee4f2d8ef" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.ViewModel.MainWindowViewModel.AccelerometerX</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerX</name>
+        <briefdescription>
+<para>Gets or sets the accelerometer x coordinate.</para>        </briefdescription>
+        <detaileddescription>
+<para>The accelerometer x coordinate.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="34" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aabf3b3edddadb0122a6ed88fb6ad406c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.ViewModel.MainWindowViewModel.AccelerometerY</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerY</name>
+        <briefdescription>
+<para>Gets or sets the accelerometer y coordinate.</para>        </briefdescription>
+        <detaileddescription>
+<para>The accelerometer y coordinate.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="47" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a890790517133e0c224ac04c3ba2b0c67" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>float</type>
+        <definition>float EmpaticaDataProvider.ViewModel.MainWindowViewModel.AccelerometerZ</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerZ</name>
+        <briefdescription>
+<para>Gets or sets the accelerometer z coordinate.</para>        </briefdescription>
+        <detaileddescription>
+<para>The accelerometer z coordinate.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="60" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aec9e86221198eaa8a591db481bed7118" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.ViewModel.MainWindowViewModel.ButtonText</definition>
+        <argsstring></argsstring>
+        <name>ButtonText</name>
+        <briefdescription>
+<para>Gets or sets the button text.</para>        </briefdescription>
+        <detaileddescription>
+<para>The button text.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="73" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1acdb651eb7afa1013c21241f009027e31" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Brush</type>
+        <definition>Brush EmpaticaDataProvider.ViewModel.MainWindowViewModel.ButtonColor</definition>
+        <argsstring></argsstring>
+        <name>ButtonColor</name>
+        <briefdescription>
+<para>Gets or sets the color of the button.</para>        </briefdescription>
+        <detaileddescription>
+<para>The color of the button.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="86" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="property" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a81a4de48d9ae572add56f9345b4f535c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>ICommand</type>
+        <definition>ICommand EmpaticaDataProvider.ViewModel.MainWindowViewModel.OnButtonClicked</definition>
+        <argsstring></argsstring>
+        <name>OnButtonClicked</name>
+        <briefdescription>
+<para>Gets the on button clicked.</para>        </briefdescription>
+        <detaileddescription>
+<para>The on button clicked.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="155" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="156" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1ae6a175505802a22c2baaa5c5b26d4e90" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>EmpaticaDataProvider.ViewModel.MainWindowViewModel.MainWindowViewModel</definition>
+        <argsstring>()</argsstring>
+        <name>MainWindowViewModel</name>
+        <briefdescription>
+<para><ref refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model" kindref="compound">MainWindowViewModel</ref> constructor.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="103" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="103" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aa7592aa9b99bd3dc007b8de048c1f10b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.ViewModel.MainWindowViewModel.StartRecordingData</definition>
+        <argsstring>()</argsstring>
+        <name>StartRecordingData</name>
+        <briefdescription>
+<para>Starts or stops recording data method.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="127" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="127" bodyend="143"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a7c5ed5fc970bfeda4da0ca01ce524890" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.ViewModel.MainWindowViewModel.IUpdateAccelerometer</definition>
+        <argsstring>(object sender, AccelerometerChangedEventArgs acc)</argsstring>
+        <name>IUpdateAccelerometer</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>AccelerometerChangedEventArgs</type>
+          <declname>acc</declname>
+        </param>
+        <briefdescription>
+<para>Updates the accelerometer.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>acc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accelerometer changed event information.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="173" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="173" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a21d77c51509cf4559c468ba30caaa464" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.ViewModel.MainWindowViewModel.MainWindow_Closing</definition>
+        <argsstring>(object sender, System.ComponentModel.CancelEventArgs e)</argsstring>
+        <name>MainWindow_Closing</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>System.ComponentModel.CancelEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Event handler. Called by MainWindow for closing events.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Cancel event information.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="187" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="187" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1af12dd924c523c2285ebe99d1f6abf44a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.ViewModel.MainWindowViewModel.MyConnector_stopRecordingEvent</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>MyConnector_stopRecordingEvent</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+<para>My connector stop recording event.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="205" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="205" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1acf56b8e32041efeaf43b6e5b66bbabcf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.ViewModel.MainWindowViewModel.MyConnector_startRecordingEvent</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>MyConnector_startRecordingEvent</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+<para>My connector start recording event.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source of the event.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="220" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="220" bodyend="227"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class containing the GUI functions. </para>    </briefdescription>
+    <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="39">
+        <label>EmpaticaDataProvider.ViewModel.MainWindowViewModel</label>
+        <link refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>INotifyPropertyChanged</label>
+      </node>
+      <node id="40">
+        <label>BindableBase</label>
+        <link refid="class_empatica_data_provider_1_1_model_1_1_bindable_base"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="42">
+        <label>EmpaticaDataProvider.ViewModel.MainWindowViewModel</label>
+        <link refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+        <childnode refid="45" relation="usage">
+          <edgelabel>synctcp</edgelabel>
+        </childnode>
+        <childnode refid="48" relation="usage">
+          <edgelabel>bleserver</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>lhjson</edgelabel>
+        </childnode>
+      </node>
+      <node id="47">
+        <label>EmpaticaDataProvider.Classes.SetLHJson</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json"/>
+      </node>
+      <node id="44">
+        <label>INotifyPropertyChanged</label>
+      </node>
+      <node id="48">
+        <label>EmpaticaDataProvider.Classes.BLEServer</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_b_l_e_server"/>
+      </node>
+      <node id="45">
+        <label>EmpaticaDataProvider.Classes.TCPHandler</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler"/>
+        <childnode refid="46" relation="usage">
+          <edgelabel>ReceiveDone</edgelabel>
+          <edgelabel>tcpClientConnected</edgelabel>
+          <edgelabel>client</edgelabel>
+          <edgelabel>tcpStep</edgelabel>
+          <edgelabel>empaticaID</edgelabel>
+          <edgelabel>receivedStrFiltered</edgelabel>
+        </childnode>
+        <childnode refid="47" relation="usage">
+          <edgelabel>lhsend</edgelabel>
+        </childnode>
+      </node>
+      <node id="43">
+        <label>BindableBase</label>
+        <link refid="class_empatica_data_provider_1_1_model_1_1_bindable_base"/>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>static</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" line="19" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/ViewModel/MainWindowViewModel.cs" bodystart="18" bodyend="229"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a87609d4c15cb6e6daaff9ebacc93c732" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>_buttonClicked</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8606e1cff398d20785867fd92c8826ba" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>accelerometerX</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aef3df0d1bf268a4a7ff3ae5ee4f2d8ef" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>AccelerometerX</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aabf3b3edddadb0122a6ed88fb6ad406c" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>AccelerometerY</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a0a143b10612e0c92e90b4672a5af9701" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>accelerometerY</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a890790517133e0c224ac04c3ba2b0c67" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>AccelerometerZ</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aab5cf52a6ba1444c3537019b6bdcc74f" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>accelerometerZ</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8a1b5311a9a4a314e6a9693938409d83" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>bleserver</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1acdb651eb7afa1013c21241f009027e31" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>ButtonColor</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1ad3ce19119a7e72adfef645f2ee39bab7" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>buttonColor</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aec9e86221198eaa8a591db481bed7118" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>ButtonText</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a0587ce0425654343e295ac4cbb2bf02e" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>buttonText</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a7c5ed5fc970bfeda4da0ca01ce524890" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>IUpdateAccelerometer</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aa5bdee9e15b4500ad0f6a419fc5ef70a" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>lhjson</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a21d77c51509cf4559c468ba30caaa464" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>MainWindow_Closing</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1ae6a175505802a22c2baaa5c5b26d4e90" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>MainWindowViewModel</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1acf56b8e32041efeaf43b6e5b66bbabcf" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>MyConnector_startRecordingEvent</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1af12dd924c523c2285ebe99d1f6abf44a" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>MyConnector_stopRecordingEvent</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a81a4de48d9ae572add56f9345b4f535c" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>OnButtonClicked</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a5aa93759cdbfa0a2c809470f4b9f86e5" prot="protected" virt="virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>OnPropertyChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a853ca740b63a67f9d519981c5e003ff7" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>PropertyChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_model_1_1_bindable_base_1a85824f5a2d7102e927b13d790e95dfe8" prot="protected" virt="virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>SetProperty&lt; T &gt;</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1aa7592aa9b99bd3dc007b8de048c1f10b" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>StartRecordingData</name></member>
+      <member refid="class_empatica_data_provider_1_1_view_model_1_1_main_window_view_model_1a8484aa31fe166a260b147ce419d200b5" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::ViewModel::MainWindowViewModel</scope><name>synctcp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Empatica<sp/>Data<sp/>Provider</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>EmpaticaDataProvider<sp/>is<sp/>an<sp/>application<sp/>designed<sp/>to<sp/>automatically<sp/>connect<sp/>to<sp/>a<sp/>specific<sp/>datastream<sp/>for<sp/>an<sp/>Empatica<sp/>E4<sp/>watch.<sp/></highlight></codeline>
+<codeline><highlight class="normal">It<sp/>get&apos;s<sp/>all<sp/>the<sp/>data<sp/>by<sp/>connecting<sp/>to<sp/>the<sp/>Empatica<sp/>BLE<sp/>server,<sp/>sets<sp/>up<sp/>a<sp/>BLE<sp/>connection<sp/>with<sp/>the<sp/>Empatica<sp/>E4<sp/>and<sp/>connects<sp/>the<sp/>device.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">--<sp/>WARNING<sp/>--</highlight></codeline>
+<codeline><highlight class="normal">Currently<sp/>the<sp/>app<sp/>is<sp/>still<sp/>under<sp/>development<sp/>and<sp/>the<sp/>only<sp/>datastream<sp/>currently<sp/>available<sp/>is<sp/>the<sp/>&quot;acc&quot;<sp/>datastream.</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Prerequisites</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Download<sp/>the<sp/>Learning<sp/>Hub:<sp/>https://github.com/janschneiderou/LearningHub</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Installed<sp/>the<sp/>Empatica<sp/>BLE<sp/>Server:<sp/>http://developer.empatica.com/windows-ble-server.html</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Empatica<sp/>E4<sp/>watch</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>datastream<sp/>is<sp/>currently<sp/>limited<sp/>only<sp/>to<sp/>the<sp/>acc<sp/>datastream<sp/>(Accelerometer).<sp/>This<sp/>is<sp/>due<sp/>to<sp/>constrains<sp/>on<sp/>the<sp/>Learning<sp/>Hub<sp/>side.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>EmpaticaDataProvider<sp/>will<sp/>automatically<sp/>start<sp/>the<sp/>Empatica<sp/>BLE<sp/>Server<sp/>with<sp/>the<sp/>parameters<sp/>which<sp/>need<sp/>to<sp/>be<sp/>provided.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>test<sp/>the<sp/>EmpaticaDataProvider<sp/>without<sp/>using<sp/>the<sp/>Learning<sp/>Hub<sp/>by<sp/>just<sp/>starting<sp/>the<sp/>executable<sp/>and<sp/>press<sp/>&quot;Start<sp/>Recording&quot;</highlight></codeline>
+<codeline><highlight class="normal">Currently<sp/>it<sp/>does<sp/>not<sp/>provide<sp/>any<sp/>logging<sp/>when<sp/>you<sp/>run<sp/>it<sp/>seperatly.<sp/>It<sp/>only<sp/>shows<sp/>the<sp/>received<sp/>values<sp/>in<sp/>the<sp/>textboxes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>want<sp/>to<sp/>use<sp/>it<sp/>with<sp/>the<sp/>Learning<sp/>Hub<sp/>combined<sp/>then<sp/>make<sp/>you<sp/>sure<sp/>have<sp/>the<sp/>Learning<sp/>Hub<sp/>set<sp/>up<sp/>accordingly.<sp/></highlight></codeline>
+<codeline><highlight class="normal">A<sp/>complete<sp/>how<sp/>to<sp/>guide<sp/>can<sp/>be<sp/>found<sp/>here:<sp/>https://docs.google.com/document/d/1FbTd6wjqa9P_6O51gjZRU2ubiCA94nMZr001NkgBZ5s/edit#</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Startup<sp/>Parameters<sp/>(Learning<sp/>Hub/CMD)</highlight></codeline>
+<codeline><highlight class="normal">-sip<sp/>is<sp/>used<sp/>to<sp/>define<sp/>the<sp/>server<sp/>IP<sp/>on<sp/>which<sp/>you<sp/>want<sp/>the<sp/>Empatica<sp/>BLE<sp/>Server<sp/>to<sp/>run.</highlight></codeline>
+<codeline><highlight class="normal">-sp<sp/>is<sp/>used<sp/>to<sp/>define<sp/>the<sp/>server<sp/>port<sp/>on<sp/>which<sp/>you<sp/>want<sp/>the<sp/>Empatica<sp/>BLE<sp/>Server<sp/>to<sp/>run.</highlight></codeline>
+<codeline><highlight class="normal">-ak<sp/>is<sp/>used<sp/>to<sp/>provide<sp/>the<sp/>Api<sp/>Key<sp/>which<sp/>is<sp/>need<sp/>to<sp/>start<sp/>the<sp/>application<sp/>with<sp/>a<sp/>watch.<sp/>Please<sp/>check<sp/>the<sp/>Empatica<sp/>website<sp/>on<sp/>how<sp/>to<sp/>receive<sp/>your<sp/>API-key<sp/>for<sp/>your<sp/>registered<sp/>watch.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>default<sp/>values<sp/>for<sp/>the<sp/>Server<sp/>IP<sp/>and<sp/>Port<sp/>are<sp/>127.0.0.1:5555.</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>API-Key<sp/>is<sp/>required<sp/>as<sp/>a<sp/>parameter,<sp/>else<sp/>the<sp/>application<sp/>won&apos;t<sp/>work.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Startup<sp/>Parameters<sp/>Examples</highlight></codeline>
+<codeline><highlight class="normal">-sip<sp/>127.0.0.1<sp/></highlight></codeline>
+<codeline><highlight class="normal">-sp<sp/>5555</highlight></codeline>
+<codeline><highlight class="normal">-ak<sp/>a389709e458C4155985821a5ac90c893<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Authors</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>**Jordi<sp/>Hutjens**<sp/>-(https://github.com/jhutjens92)</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/README.md"/>
+  </compounddef>
+</doxygen>

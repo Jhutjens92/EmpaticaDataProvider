@@ -5,13 +5,16 @@ namespace EmpaticaDataProvider
 {
     public class StateObject
     {
-        // Client socket.
+        /// <summary>Client socket.</summary>
         public Socket WorkSocket;
-        // Size of receive buffer.
+        
+        /// <summary>Size of receive buffer.</summary>
         public const int BufferSize = 4096;
-        // Receive buffer.
+        
+        /// <summary>Receive buffer.</summary>
         public readonly byte[] Buffer = new byte[BufferSize];
-        // Received data string.
+        
+        /// <summary>Received data string.</summary>   
         public readonly StringBuilder Sb = new StringBuilder();
     }
 }

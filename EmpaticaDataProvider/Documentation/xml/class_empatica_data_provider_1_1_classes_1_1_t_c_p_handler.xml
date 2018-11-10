@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Classes::TCPHandler</compoundname>
+    <innerclass refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args" prot="public">EmpaticaDataProvider::Classes::TCPHandler::AccelerometerChangedEventArgs</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ad4f476dbc7da9e956522675d20d775d9" prot="private" static="no" mutable="no">
+        <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" kindref="compound">SetLHJson</ref></type>
+        <definition>SetLHJson EmpaticaDataProvider.Classes.TCPHandler.lhsend</definition>
+        <argsstring></argsstring>
+        <name>lhsend</name>
+        <initializer>= new <ref refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" kindref="compound">SetLHJson</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="17" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a4e6813d00e576580cbecfa2416befedd" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.TCPHandler.receivedStr</definition>
+        <argsstring></argsstring>
+        <name>receivedStr</name>
+        <initializer>= string.Empty</initializer>
+        <briefdescription>
+<para>The received tcp string.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="40" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a2fce27fda3ff53aae9e889898412152d" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool EmpaticaDataProvider.Classes.TCPHandler.tcpClientConnected</definition>
+        <argsstring></argsstring>
+        <name>tcpClientConnected</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>True if the TCPClient is connected to the Empatica BLE Server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="22" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ac8a8c93625e2b93175c31f300169e15a" prot="private" static="yes" mutable="no">
+        <type>string []</type>
+        <definition>string [] EmpaticaDataProvider.Classes.TCPHandler.receivedStrFiltered</definition>
+        <argsstring></argsstring>
+        <name>receivedStrFiltered</name>
+        <initializer>= { }</initializer>
+        <briefdescription>
+<para>// String containing the filtered message split on null. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="25" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1af702e3d186298758c2b1434baf815133" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int EmpaticaDataProvider.Classes.TCPHandler.tcpStep</definition>
+        <argsstring></argsstring>
+        <name>tcpStep</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Int step counter to verify what to send next. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="28" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a725497f66ff415309f939b60ba94fa93" prot="private" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int EmpaticaDataProvider.Classes.TCPHandler.empaticaID</definition>
+        <argsstring></argsstring>
+        <name>empaticaID</name>
+        <briefdescription>
+<para>Identifier for the empatica.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="31" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ab956de4a1b7bc4d8c6bd503e9aea5119" prot="private" static="yes" mutable="no">
+        <type>Socket</type>
+        <definition>Socket EmpaticaDataProvider.Classes.TCPHandler.client</definition>
+        <argsstring></argsstring>
+        <name>client</name>
+        <initializer>= new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp)</initializer>
+        <briefdescription>
+<para>Create a TCP/IP socket. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="34" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a4bb23a9fbb2243eaaf1ace52d6016440" prot="private" static="yes" mutable="no">
+        <type>readonly ManualResetEvent</type>
+        <definition>readonly ManualResetEvent EmpaticaDataProvider.Classes.TCPHandler.ReceiveDone</definition>
+        <argsstring></argsstring>
+        <name>ReceiveDone</name>
+        <initializer>= new ManualResetEvent(false)</initializer>
+        <briefdescription>
+<para>ManualResetEvent instances signal completion.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="37" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="event">
+      <memberdef kind="event" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a8bcdd1d8bc4f4b6d9ebbe3e0d8179617" prot="public" static="no" add="no" remove="no" raise="no">
+        <type>EventHandler&lt; <ref refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args" kindref="compound">AccelerometerChangedEventArgs</ref> &gt;</type>
+        <definition>EventHandler&lt;AccelerometerChangedEventArgs&gt; EmpaticaDataProvider.Classes.TCPHandler.AccelerometerChanged</definition>
+        <argsstring></argsstring>
+        <name>AccelerometerChanged</name>
+        <briefdescription>
+<para>Event queue for all listeners interested in AccelerometerChanged events.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="75" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a88cb89433687eac815e26e4674db0abe" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void EmpaticaDataProvider.Classes.TCPHandler.OnAccelerometerChanged</definition>
+        <argsstring>(AccelerometerChangedEventArgs e)</argsstring>
+        <name>OnAccelerometerChanged</name>
+        <param>
+          <type><ref refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1_1_accelerometer_changed_event_args" kindref="compound">AccelerometerChangedEventArgs</ref></type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Raises the accelerometer changed event.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Event information to send to registered event handlers.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="83" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="83" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a75ec05f26ee6ee9d5add74593ae39f98" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.ConnectEmpatica</definition>
+        <argsstring>()</argsstring>
+        <name>ConnectEmpatica</name>
+        <briefdescription>
+<para>Connects the empatica.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 9-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="96" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="96" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a7f863d71fd32f1b7abaa2ddc60b44200" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.GetEmpaticaData</definition>
+        <argsstring>()</argsstring>
+        <name>GetEmpaticaData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="118" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="118" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a53fa4abfc547828eb2e1b6091b7dab06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.CloseEmpaticaConnection</definition>
+        <argsstring>()</argsstring>
+        <name>CloseEmpaticaConnection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="221" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="221" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a9d8b2c14ab8a5f32b9f89ae45db6fbcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.CloseTCPConnection</definition>
+        <argsstring>()</argsstring>
+        <name>CloseTCPConnection</name>
+        <briefdescription>
+<para>Closes TCP connection.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="274" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="274" bodyend="286"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a6463c176046e93dc5c4b5415b26a7067" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.ChkReceivedMsg</definition>
+        <argsstring>()</argsstring>
+        <name>ChkReceivedMsg</name>
+        <briefdescription>
+<para>Check received message.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 9-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="133" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="133" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a5de264fe6aebbef25703e83bcc5f096a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.TCPHandler.CreateTcpCmd</definition>
+        <argsstring>()</argsstring>
+        <name>CreateTcpCmd</name>
+        <briefdescription>
+<para>Creates TCP command.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 9-11-2018.</para><para><simplesect kind="return"><para>The new TCP command.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="188" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="188" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ace322f793f4cb92f2f0d436714e6b85a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.StartSyncTCPClient</definition>
+        <argsstring>()</argsstring>
+        <name>StartSyncTCPClient</name>
+        <briefdescription>
+<para>Starts synchronise TCP client.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="235" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="235" bodyend="268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ab9de374767ed12d43b4e4e5e2dcf19d2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.SyncSend</definition>
+        <argsstring>(string TCPCommandStr)</argsstring>
+        <name>SyncSend</name>
+        <param>
+          <type>string</type>
+          <declname>TCPCommandStr</declname>
+        </param>
+        <briefdescription>
+<para>Synchronous send tcp.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>TCPCommandStr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The TCP command string.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="294" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="294" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a2e8b409ff30cce8f1e37f72d6dc44865" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string EmpaticaDataProvider.Classes.TCPHandler.SyncReceive</definition>
+        <argsstring>()</argsstring>
+        <name>SyncReceive</name>
+        <briefdescription>
+<para>Synchronous receive tcp.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><simplesect kind="return"><para>A string.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="316" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="316" bodyend="334"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a188b56e6a8f297e6ea04b381877b0f18" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.ASyncReceive</definition>
+        <argsstring>(Socket client)</argsstring>
+        <name>ASyncReceive</name>
+        <param>
+          <type>Socket</type>
+          <declname>client</declname>
+        </param>
+        <briefdescription>
+<para>A sync receive tcp function. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Create a TCP/IP socket.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="342" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="342" bodyend="356"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a6733106a7cc5d41c1b796110646bc792" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.ASyncReceiveCallback</definition>
+        <argsstring>(IAsyncResult ar)</argsstring>
+        <name>ASyncReceiveCallback</name>
+        <param>
+          <type>IAsyncResult</type>
+          <declname>ar</declname>
+        </param>
+        <briefdescription>
+<para>Async receive callback, called bij asynchronise receive.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The result of the asynchronous operation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="364" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="364" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a28805b1e25709aad089ac583259833ca" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.TCPHandler.UpdateAccValues</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateAccValues</name>
+        <briefdescription>
+<para>Updates the accelerometer values and trigger the event.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 10-11-2018.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="419" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="419" bodyend="445"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="68">
+        <label>EmpaticaDataProvider.Classes.SetLHJson</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json"/>
+      </node>
+      <node id="66">
+        <label>EmpaticaDataProvider.Classes.TCPHandler</label>
+        <link refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>ReceiveDone</edgelabel>
+          <edgelabel>tcpClientConnected</edgelabel>
+          <edgelabel>client</edgelabel>
+          <edgelabel>tcpStep</edgelabel>
+          <edgelabel>empaticaID</edgelabel>
+          <edgelabel>receivedStrFiltered</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>lhsend</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>static</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" line="14" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/TCPHandler.cs" bodystart="13" bodyend="447"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a8bcdd1d8bc4f4b6d9ebbe3e0d8179617" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>AccelerometerChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a188b56e6a8f297e6ea04b381877b0f18" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>ASyncReceive</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a6733106a7cc5d41c1b796110646bc792" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>ASyncReceiveCallback</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a6463c176046e93dc5c4b5415b26a7067" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>ChkReceivedMsg</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ab956de4a1b7bc4d8c6bd503e9aea5119" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>client</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a53fa4abfc547828eb2e1b6091b7dab06" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>CloseEmpaticaConnection</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a9d8b2c14ab8a5f32b9f89ae45db6fbcd" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>CloseTCPConnection</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a75ec05f26ee6ee9d5add74593ae39f98" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>ConnectEmpatica</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a5de264fe6aebbef25703e83bcc5f096a" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>CreateTcpCmd</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a725497f66ff415309f939b60ba94fa93" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>empaticaID</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a7f863d71fd32f1b7abaa2ddc60b44200" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>GetEmpaticaData</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ad4f476dbc7da9e956522675d20d775d9" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>lhsend</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a88cb89433687eac815e26e4674db0abe" prot="protected" virt="virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>OnAccelerometerChanged</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a4bb23a9fbb2243eaaf1ace52d6016440" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>ReceiveDone</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a4e6813d00e576580cbecfa2416befedd" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>receivedStr</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ac8a8c93625e2b93175c31f300169e15a" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>receivedStrFiltered</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ace322f793f4cb92f2f0d436714e6b85a" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>StartSyncTCPClient</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a2e8b409ff30cce8f1e37f72d6dc44865" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>SyncReceive</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1ab9de374767ed12d43b4e4e5e2dcf19d2" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>SyncSend</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a2fce27fda3ff53aae9e889898412152d" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>tcpClientConnected</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1af702e3d186298758c2b1434baf815133" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>tcpStep</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_t_c_p_handler_1a28805b1e25709aad089ac583259833ca" prot="private" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::TCPHandler</scope><name>UpdateAccValues</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

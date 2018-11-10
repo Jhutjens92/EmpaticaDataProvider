@@ -1,0 +1,312 @@
+<Project>
+  <Name>EmpaticaDataProvider</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>EmpaticaDataProvider.exe</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>GeneratedInternalTypeHelper</Name>
+        <Access>Public</Access>
+        <Location left="1675" top="258" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public GeneratedInternalTypeHelper()</Member>
+        <Member type="Method">protected virtual Object CreateInstance(Type type, CultureInfo culture)</Member>
+        <Member type="Method">protected virtual Object GetPropertyValue(PropertyInfo propertyInfo, Object target, CultureInfo culture)</Member>
+        <Member type="Method">protected virtual Void SetPropertyValue(PropertyInfo propertyInfo, Object target, Object value, CultureInfo culture)</Member>
+        <Member type="Method">protected virtual Delegate CreateDelegate(Type delegateType, Object target, String handler)</Member>
+        <Member type="Method">protected virtual Void AddEventHandler(EventInfo eventInfo, Object target, Delegate handler)</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>StateObject</Name>
+        <Access>Public</Access>
+        <Location left="1848" top="258" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">public Socket WorkSocket</Member>
+        <Member type="Field">public readonly Byte[] Buffer</Member>
+        <Member type="Field">public readonly StringBuilder Sb</Member>
+        <Member type="Field">public const Int32 BufferSize = 4096</Member>
+        <Member type="Constructor">public StateObject()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>App</Name>
+        <Access>Public</Access>
+        <Location left="1848" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Constructor">public App()</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">public static Void Main()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MainWindowView</Name>
+        <Access>Public</Access>
+        <Location left="2017" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">internal Button BtnRecord</Member>
+        <Member type="Field">private Boolean _contentLoaded</Member>
+        <Member type="Constructor">public MainWindowView()</Member>
+        <Member type="Method">public Void InitializeComponent()</Member>
+        <Member type="Method">Void System.Windows.Markup.IComponentConnector.Connect(Int32 connectionId, Object target)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BindableBase</Name>
+        <Access>Internal</Access>
+        <Location left="755" top="423" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Event">public event PropertyChangedEventHandler PropertyChanged</Member>
+        <Member type="Constructor">public BindableBase()</Member>
+        <Member type="Method">protected virtual Void SetProperty(ref T member, T val, String propertyName)</Member>
+        <Member type="Method">protected virtual Void OnPropertyChanged(String propertyName)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>HubConnector</Name>
+        <Access>Internal</Access>
+        <Location left="1675" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static ConnectorHub myConnector</Member>
+        <Member type="Property">public static ConnectorHub MyConnector { get; }</Member>
+        <Member type="Method">public static Void StartConnection()</Member>
+        <Member type="Method">public static Void SendData(List&lt;String&gt; values)</Member>
+        <Member type="Method">public static Void SetValuesName(List&lt;String&gt; names)</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Globals</Name>
+        <Access>Public</Access>
+        <Location left="2017" top="258" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private static Boolean _isRecordingData</Member>
+        <Member type="Property">public static Boolean IsRecordingData { get; set; }</Member>
+        <Member type="Constructor">static Globals()</Member>
+        <Modifier>Static</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MainWindowViewModel</Name>
+        <Access>Internal</Access>
+        <Location left="505" top="327" />
+        <Size width="162" height="434" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private TCPHandler synctcp</Member>
+        <Member type="Field">private BLEServer bleserver</Member>
+        <Member type="Field">private SetLHJson lhjson</Member>
+        <Member type="Field">private Single accelerometerX</Member>
+        <Member type="Field">private Single accelerometerY</Member>
+        <Member type="Field">private Single accelerometerZ</Member>
+        <Member type="Field">private String buttonText</Member>
+        <Member type="Field">private Brush buttonColor</Member>
+        <Member type="Field">private ICommand _buttonClicked</Member>
+        <Member type="Property">public Single AccelerometerX { get; set; }</Member>
+        <Member type="Property">public Single AccelerometerY { get; set; }</Member>
+        <Member type="Property">public Single AccelerometerZ { get; set; }</Member>
+        <Member type="Property">public String ButtonText { get; set; }</Member>
+        <Member type="Property">public Brush ButtonColor { get; set; }</Member>
+        <Member type="Property">public ICommand OnButtonClicked { get; }</Member>
+        <Member type="Constructor">public MainWindowViewModel()</Member>
+        <Member type="Method">public Void StartRecordingData()</Member>
+        <Member type="Method">private Void IUpdateAccelerometer(Object sender, AccelerometerChangedEventArgs acc)</Member>
+        <Member type="Method">private Void MainWindow_Closing(Object sender, CancelEventArgs e)</Member>
+        <Member type="Method">private Void MyConnector_stopRecordingEvent(Object sender)</Member>
+        <Member type="Method">private Void MyConnector_startRecordingEvent(Object sender)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RelayCommand</Name>
+        <Access>Public</Access>
+        <Location left="1494" top="35" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly Action&lt;Object&gt; _execute</Member>
+        <Member type="Field">private readonly Predicate&lt;Object&gt; _canExecute</Member>
+        <Member type="Event">public event EventHandler CanExecuteChanged</Member>
+        <Member type="Constructor">public RelayCommand(Action&lt;Object&gt; execute)</Member>
+        <Member type="Constructor">public RelayCommand(Action&lt;Object&gt; execute, Predicate&lt;Object&gt; canExecute)</Member>
+        <Member type="Method">public Boolean CanExecute(Object parameters)</Member>
+        <Member type="Method">public Void Execute(Object parameters)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BLEServer</Name>
+        <Access>Internal</Access>
+        <Location left="526" top="837" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly String filename1</Member>
+        <Member type="Field">private readonly String filename2</Member>
+        <Member type="Constructor">public BLEServer()</Member>
+        <Member type="Method">private Void StartBLEServer()</Member>
+        <Member type="Method">public Void CheckBLEServer()</Member>
+        <Member type="Method">public Void CloseBLEServer()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>CheckParameters</Name>
+        <Access>Public</Access>
+        <Location left="755" top="12" />
+        <Size width="162" height="366" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private readonly String dataStream</Member>
+        <Member type="Field">private String apiKey</Member>
+        <Member type="Field">private Int32 serverPort</Member>
+        <Member type="Field">private String serverIP</Member>
+        <Member type="Field">private Boolean sipPar</Member>
+        <Member type="Field">private Boolean spPar</Member>
+        <Member type="Field">private Boolean akPar</Member>
+        <Member type="Field">private static CheckParameters instance</Member>
+        <Member type="Field">private Object padlock</Member>
+        <Member type="Property">public String DataStream { get; }</Member>
+        <Member type="Property">public String ApiKey { get; }</Member>
+        <Member type="Property">public Int32 ServerPort { get; }</Member>
+        <Member type="Property">public String ServerIP { get; }</Member>
+        <Member type="Property">public static CheckParameters Instance { get; }</Member>
+        <Member type="Constructor">private CheckParameters()</Member>
+        <Member type="Constructor">static CheckParameters()</Member>
+        <Member type="Method">public Void CheckStartupParameters()</Member>
+        <Modifier>Sealed</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SetLHJson</Name>
+        <Access>Internal</Access>
+        <Location left="505" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public SetLHJson()</Member>
+        <Member type="Method">public Void SetValueNames()</Member>
+        <Member type="Method">public Void SendDataToLH(AccelerometerChangedEventArgs acc)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>TCPHandler</Name>
+        <Access>Public</Access>
+        <Location left="219" top="212" />
+        <Size width="162" height="485" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private SetLHJson lhsend</Member>
+        <Member type="Field">private String receivedStr</Member>
+        <Member type="Field">private static Boolean tcpClientConnected</Member>
+        <Member type="Field">private static String[] receivedStrFiltered</Member>
+        <Member type="Field">private static Int32 tcpStep</Member>
+        <Member type="Field">private static Int32 empaticaID</Member>
+        <Member type="Field">private static Socket client</Member>
+        <Member type="Field">private ManualResetEvent ReceiveDone</Member>
+        <Member type="Event">public event EventHandler&lt;AccelerometerChangedEventArgs&gt; AccelerometerChanged</Member>
+        <Member type="Constructor">public TCPHandler()</Member>
+        <Member type="Constructor">static TCPHandler()</Member>
+        <Member type="Method">protected virtual Void OnAccelerometerChanged(AccelerometerChangedEventArgs e)</Member>
+        <Member type="Method">public Void ConnectEmpatica()</Member>
+        <Member type="Method">public Void GetEmpaticaData()</Member>
+        <Member type="Method">private Void ChkReceivedMsg()</Member>
+        <Member type="Method">private String CreateTcpCmd()</Member>
+        <Member type="Method">public Void CloseEmpaticaConnection()</Member>
+        <Member type="Method">private Void StartSyncTCPClient()</Member>
+        <Member type="Method">public Void CloseTCPConnection()</Member>
+        <Member type="Method">private Void SyncSend(String TCPCommandStr)</Member>
+        <Member type="Method">private String SyncReceive()</Member>
+        <Member type="Method">private Void ASyncReceive(Socket client)</Member>
+        <Member type="Method">private Void ASyncReceiveCallback(IAsyncResult ar)</Member>
+        <Member type="Method">private Void UpdateAccValues()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AccelerometerChangedEventArgs</Name>
+        <Access>Public</Access>
+        <Location left="12" top="12" />
+        <Size width="162" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private Single accelerometerX</Member>
+        <Member type="Field">private Single accelerometerY</Member>
+        <Member type="Field">private Single accelerometerZ</Member>
+        <Member type="Property">public Single AccelerometerX { get; set; }</Member>
+        <Member type="Property">public Single AccelerometerY { get; set; }</Member>
+        <Member type="Property">public Single AccelerometerZ { get; set; }</Member>
+        <Member type="Constructor">public AccelerometerChangedEventArgs()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Nesting" first="12" second="13">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="7" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="7" second="12">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>532</X>
+          <Y>786</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>synctcp</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="9">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>611</X>
+          <Y>788</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>bleserver</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="7" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>lhjson</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="10" second="10">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>instance</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+      <Relationship type="Association" first="12" second="11">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+        <StartRole>lhsend</StartRole>
+        <EndMultiplicity>1</EndMultiplicity>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>

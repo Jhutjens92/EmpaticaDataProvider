@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_state_object" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::StateObject</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_state_object_1a1dbd83e1c8efedc80384784f261fcd18" prot="public" static="no" mutable="no">
+        <type>Socket</type>
+        <definition>Socket EmpaticaDataProvider.StateObject.WorkSocket</definition>
+        <argsstring></argsstring>
+        <name>WorkSocket</name>
+        <briefdescription>
+<para>Client socket.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" line="9" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_state_object_1ad009faa72598ca795902e79ea9bd9093" prot="public" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int EmpaticaDataProvider.StateObject.BufferSize</definition>
+        <argsstring></argsstring>
+        <name>BufferSize</name>
+        <initializer>= 4096</initializer>
+        <briefdescription>
+<para>Size of receive buffer.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" line="12" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_state_object_1a076a2c8a8b94dea53b05ef88298d8f22" prot="public" static="no" mutable="no">
+        <type>readonly byte []</type>
+        <definition>readonly byte [] EmpaticaDataProvider.StateObject.Buffer</definition>
+        <argsstring></argsstring>
+        <name>Buffer</name>
+        <initializer>= new byte[<ref refid="class_empatica_data_provider_1_1_state_object_1ad009faa72598ca795902e79ea9bd9093" kindref="member">BufferSize</ref>]</initializer>
+        <briefdescription>
+<para>Receive buffer.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" line="15" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_empatica_data_provider_1_1_state_object_1ab7c98e1b97aad936f4bc424ca099ef4e" prot="public" static="no" mutable="no">
+        <type>readonly StringBuilder</type>
+        <definition>readonly StringBuilder EmpaticaDataProvider.StateObject.Sb</definition>
+        <argsstring></argsstring>
+        <name>Sb</name>
+        <initializer>= new StringBuilder()</initializer>
+        <briefdescription>
+<para>Received data string.</para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" line="18" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" line="7" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/StateObject.cs" bodystart="6" bodyend="19"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_state_object_1a076a2c8a8b94dea53b05ef88298d8f22" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::StateObject</scope><name>Buffer</name></member>
+      <member refid="class_empatica_data_provider_1_1_state_object_1ad009faa72598ca795902e79ea9bd9093" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::StateObject</scope><name>BufferSize</name></member>
+      <member refid="class_empatica_data_provider_1_1_state_object_1ab7c98e1b97aad936f4bc424ca099ef4e" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::StateObject</scope><name>Sb</name></member>
+      <member refid="class_empatica_data_provider_1_1_state_object_1a1dbd83e1c8efedc80384784f261fcd18" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::StateObject</scope><name>WorkSocket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json" kind="class" language="C#" prot="public">
+    <compoundname>EmpaticaDataProvider::Classes::SetLHJson</compoundname>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json_1a19189de1c5cd7b67b9aca8a6f0ce66d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.SetLHJson.SetValueNames</definition>
+        <argsstring>()</argsstring>
+        <name>SetValueNames</name>
+        <briefdescription>
+<para>Sets value names. </para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 8-11-2018. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/SetLHJson.cs" line="18" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/SetLHJson.cs" bodystart="18" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json_1a1b6dfce087cff060b3845c5003e86656" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void EmpaticaDataProvider.Classes.SetLHJson.SendDataToLH</definition>
+        <argsstring>(AccelerometerChangedEventArgs acc)</argsstring>
+        <name>SendDataToLH</name>
+        <param>
+          <type>AccelerometerChangedEventArgs</type>
+          <declname>acc</declname>
+        </param>
+        <briefdescription>
+<para>Sends a data to lh.</para>        </briefdescription>
+        <detaileddescription>
+<para>Jordi Hutjens, 9-11-2018.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>acc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Accelerometer changed event information.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/SetLHJson.cs" line="66" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/SetLHJson.cs" bodystart="66" bodyend="111"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class containing functions to set the values and names used in the Learning Hub JSON File. </para>    </briefdescription>
+    <detaileddescription>
+<para>Jordi Hutjens, 26-10-2018. </para>    </detaileddescription>
+    <location file="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/SetLHJson.cs" line="12" column="1" bodyfile="C:/Users/Jordi Hutjens/Documents/GitHub/EmpaticaDataProvider/EmpaticaDataProvider/Classes/SetLHJson.cs" bodystart="11" bodyend="113"/>
+    <listofallmembers>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json_1a1b6dfce087cff060b3845c5003e86656" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::SetLHJson</scope><name>SendDataToLH</name></member>
+      <member refid="class_empatica_data_provider_1_1_classes_1_1_set_l_h_json_1a19189de1c5cd7b67b9aca8a6f0ce66d3" prot="public" virt="non-virtual"><scope>EmpaticaDataProvider::Classes::SetLHJson</scope><name>SetValueNames</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
