@@ -70,9 +70,94 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>InterBeatInterval changed events + vars.</summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        public class IBISensorChangedEventArgs : EventArgs
+        {
+            private float interBeatInterval;
+            public float InterBeatInterval
+            {
+                get { return interBeatInterval; }
+                set { interBeatInterval = value; }
+            }
+            private float hearthRateVariability;
+            public float HearthRateVariability
+            {
+                get { return hearthRateVariability; }
+                set { hearthRateVariability = value; }
+            }
+        }
+
+        /// <summary>GalvanicSkinResponse changed events + vars.</summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        public class GSRSensorChangedEventArgs : EventArgs
+        {
+            private float galvanicSkinResponse;
+            public float GalvanicSkinResponse
+            {
+                get { return galvanicSkinResponse; }
+                set { galvanicSkinResponse = value; }
+            }
+        }
+
+        /// <summary>Temperature Sensor changed events + vars.</summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        public class TemperatureSensorChangedEventArgs : EventArgs
+        {
+            private float skinTemperature;
+            public float SkinTemperature
+            {
+                get { return skinTemperature; }
+                set { skinTemperature = value; }
+            }
+        }
+
+        /// <summary>BloodVolumePulse changed events + vars.</summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        public class BVPSensorChangedEventArgs : EventArgs
+        {
+            private float bloodVolumePulse;
+            public float BloodVolumePulse
+            {
+                get { return bloodVolumePulse; }
+                set { bloodVolumePulse = value; }
+            }
+        }
+
+        /// <summary>Tag changed events + vars.</summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        public class TagCreatedEventArgs : EventArgs
+        {
+            private int tag;
+            public int Tag
+            {
+                get { return tag; }
+                set { tag = value; }
+            }
+        }            
 
         /// <summary>Event queue for all listeners interested in AccelerometerChanged events.</summary>
         public event EventHandler<AccelerometerChangedEventArgs> AccelerometerChanged;
+
+        /// <summary>   Event queue for all listeners interested in IBISensorChanged events. </summary>
+        public event EventHandler<IBISensorChangedEventArgs> IBISensorChanged;
+
+        /// <summary>   Event queue for all listeners interested in BVPSensorChanged events. </summary>
+        public event EventHandler<BVPSensorChangedEventArgs> BVPSensorChanged;
+
+        /// <summary>   Event queue for all listeners interested in GSRSensorChanged events. </summary>
+        public event EventHandler<GSRSensorChangedEventArgs> GSRSensorChanged;
+
+        /// <summary>   Event queue for all listeners interested in TemperatureSensorChanged events. </summary>
+        public event EventHandler<TemperatureSensorChangedEventArgs> TemperatureSensorChanged;
+
+        /// <summary>   Event queue for all listeners interested in tagCreated events. </summary>
+        public event EventHandler<TagCreatedEventArgs> TagCreatedEvent;
 
         /// <summary>Raises the accelerometer changed event.</summary>
         ///
@@ -83,6 +168,56 @@ namespace EmpaticaDataProvider.Classes
         protected virtual void OnAccelerometerChanged(AccelerometerChangedEventArgs e)
         {
             AccelerometerChanged?.Invoke(this, e);
+        }
+
+        /// <summary>   Raises the bvp sensor changed event. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        ///
+        /// <param name="e">    Event information to send to registered event handlers. </param>
+        protected virtual void OnBVPSensorChanged(BVPSensorChangedEventArgs e)
+        {
+            BVPSensorChanged?.Invoke(this, e);
+        }
+
+        /// <summary>   Raises the ibi sensor changed event. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        ///
+        /// <param name="e">    Event information to send to registered event handlers. </param>
+        protected virtual void OnIBISensorChanged(IBISensorChangedEventArgs e)
+        {
+            IBISensorChanged?.Invoke(this, e);
+        }
+
+        /// <summary>   Raises the gsr sensor changed event. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        ///
+        /// <param name="e">    Event information to send to registered event handlers. </param>
+        protected virtual void OnGSRSensorChanged(GSRSensorChangedEventArgs e)
+        {
+            GSRSensorChanged?.Invoke(this, e);
+        }
+
+        /// <summary>   Raises the temperature sensor changed event. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        ///
+        /// <param name="e">    Event information to send to registered event handlers. </param>
+        protected virtual void OnTemperatureSensorChanged(TemperatureSensorChangedEventArgs e)
+        {
+            TemperatureSensorChanged?.Invoke(this, e);
+        }
+
+        /// <summary>   Raises the tag created event. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 12-11-2018. </remarks>
+        ///
+        /// <param name="e">    Event information to send to registered event handlers. </param>
+        protected virtual void OnTagCreated(TagCreatedEventArgs e)
+        {
+            TagCreatedEvent?.Invoke(this, e);
         }
 
         #endregion
@@ -219,9 +354,9 @@ namespace EmpaticaDataProvider.Classes
 
 
         public void CloseEmpaticaConnection()
-        {   
+        {
             SyncSend(CreateTcpCmd());
-            ChkReceivedMsg();           
+            ChkReceivedMsg();
         }
 
         #endregion
@@ -277,7 +412,7 @@ namespace EmpaticaDataProvider.Classes
             {
                 client.Shutdown(SocketShutdown.Both);
                 // Release the socket. 
-                client.Close();      
+                client.Close();
             }
             catch (Exception e) // add the catch exception explanation https://stackoverflow.com/questions/4662553/how-to-abort-sockets-beginreceive
             {
@@ -405,7 +540,7 @@ namespace EmpaticaDataProvider.Classes
             //Console.WriteLine(receivedStr);
             if (Globals.IsRecordingData)
             {
-                UpdateAccValues(); 
+                UpdateAccValues();
             }
         }
         #endregion
@@ -420,7 +555,6 @@ namespace EmpaticaDataProvider.Classes
         {
             try
             {
-
                 AccelerometerChangedEventArgs args = new AccelerometerChangedEventArgs
                 {
                     AccelerometerX = float.Parse(receivedStrFiltered[2]),
@@ -429,7 +563,7 @@ namespace EmpaticaDataProvider.Classes
 
                 };
                 OnAccelerometerChanged(args);
-                lhsend.SendDataToLH(args);
+                lhsend.SendAccDataToLH(args);
 
             }
             catch (Exception)
@@ -443,6 +577,116 @@ namespace EmpaticaDataProvider.Classes
                 OnAccelerometerChanged(args);
             }
         }
+
+        private void UpdateIbiValues()
+        {
+            try
+            {
+                IBISensorChangedEventArgs args = new IBISensorChangedEventArgs
+                {
+                    InterBeatInterval = float.Parse(receivedStrFiltered[2]),
+                    HearthRateVariability = float.Parse(receivedStrFiltered[3])
+
+                };
+                OnIBISensorChanged(args);
+                lhsend.SendIbiDataToLH(args);
+
+            }
+            catch (Exception)
+            {
+                IBISensorChangedEventArgs args = new IBISensorChangedEventArgs
+                {
+                    InterBeatInterval = 0.0F,
+                    HearthRateVariability = 0.0F
+                };
+                OnIBISensorChanged(args);
+            }
+        }
+
+        private void UpdateBvpValues()
+        {
+            try
+            {
+                BVPSensorChangedEventArgs args = new BVPSensorChangedEventArgs
+                {
+                    BloodVolumePulse = float.Parse(receivedStrFiltered[2])
+                };
+                OnBVPSensorChanged(args);
+                lhsend.SendBvpDataToLH(args);
+            }
+            catch (Exception)
+            {
+                BVPSensorChangedEventArgs args = new BVPSensorChangedEventArgs
+                {
+                    BloodVolumePulse = 0.0F
+                };
+                OnBVPSensorChanged(args);
+            }
+        }
+
+        private void UpdateGsrValues()
+        {
+            try
+            {
+                GSRSensorChangedEventArgs args = new GSRSensorChangedEventArgs
+                {
+                    GalvanicSkinResponse = float.Parse(receivedStrFiltered[2])
+                };
+                OnGSRSensorChanged(args);
+                lhsend.SendGsrDataToLH(args);
+            }
+            catch (Exception)
+            {
+                GSRSensorChangedEventArgs args = new GSRSensorChangedEventArgs
+                {
+                    GalvanicSkinResponse = 0.0F
+                };
+                OnGSRSensorChanged(args);
+            }
+        }
+
+        private void UpdateTmpValues()
+        {
+            try
+            {
+                TemperatureSensorChangedEventArgs args = new TemperatureSensorChangedEventArgs
+                {
+                    SkinTemperature = float.Parse(receivedStrFiltered[2])
+                };
+                OnTemperatureSensorChanged(args);
+                lhsend.SendTmpDataToLH(args);
+            }
+            catch (Exception)
+            {
+                TemperatureSensorChangedEventArgs args = new TemperatureSensorChangedEventArgs
+                {
+                    SkinTemperature = 0.0F
+                };
+                OnTemperatureSensorChanged(args);
+            }
+        }
+
+        private void UpdateTagValues()
+        {
+            try
+            {
+                TagCreatedEventArgs args = new TagCreatedEventArgs
+                {
+                    Tag = Int32.Parse(receivedStrFiltered[2])
+                };
+                OnTagCreated(args);
+                lhsend.SendTagDataToLH(args);
+            }
+            catch (Exception)
+            {
+                TagCreatedEventArgs args = new TagCreatedEventArgs
+                {
+                    Tag = 0
+                };
+                OnTagCreated(args);
+            }
+        }
+
         #endregion
     }
 }

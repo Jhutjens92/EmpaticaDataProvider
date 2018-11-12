@@ -19,36 +19,29 @@ namespace EmpaticaDataProvider.Classes
         {
             try
             {
-                var names = new List<string>
+                List<string> names = new List<string>();
+                if (CheckParameters.Instance.DataStream == "acc")
                 {
-                    "Empatica_AccX",
-                    "Empatica_AccY",
-                    "Empatica_AccZ",
-                };
-
-                //List<string> names = new List<string>();
-                //if (chkpara.DataStream == "acc")
-                //{
-                //    names.Add("Empatica_AccX");
-                //    names.Add("Empatica_AccY");
-                //    names.Add("Empatica_AccZ");
-                //}
-                //if (chkpara.DataStream == "tmp")
-                //{
-                //    names.Add("Empatica_Temp");
-                //}
-                //if (chkpara.DataStream == "bvp")
-                //{
-                //    names.Add("Empatica_Bvp");
-                //}
-                //if (chkpara.DataStream == "ibi")
-                //{
-                //    names.Add("Empatica_Ibi");
-                //}
-                //if (chkpara.DataStream == "tag")
-                //{
-                //    names.Add("Empatica_Tag");
-                //}
+                    names.Add("Empatica_AccX");
+                    names.Add("Empatica_AccY");
+                    names.Add("Empatica_AccZ");
+                }
+                if (CheckParameters.Instance.DataStream == "tmp")
+                {
+                    names.Add("Empatica_Temp");
+                }
+                if (CheckParameters.Instance.DataStream == "bvp")
+                {
+                    names.Add("Empatica_Bvp");
+                }
+                if (CheckParameters.Instance.DataStream == "ibi")
+                {
+                    names.Add("Empatica_Ibi");
+                }
+                if (CheckParameters.Instance.DataStream == "tag")
+                {
+                    names.Add("Empatica_Tag");
+                }
                 HubConnector.SetValuesName(names);
             }
             catch (Exception ex)
@@ -63,7 +56,7 @@ namespace EmpaticaDataProvider.Classes
         ///
         /// <param name="acc">Accelerometer changed event information.</param>
 
-        public void SendDataToLH(AccelerometerChangedEventArgs acc)
+        public void SendAccDataToLH(AccelerometerChangedEventArgs acc)
         {
             try
             {
@@ -71,37 +64,8 @@ namespace EmpaticaDataProvider.Classes
                 {
                     acc.AccelerometerX.ToString(),
                     acc.AccelerometerY.ToString(),
-                    acc.AccelerometerZ.ToString(),
+                    acc.AccelerometerZ.ToString()
                 };
-
-                //List<string> values = new List<string>();
-                //if (chkpara.DataStream == "acc")
-                //{
-                //    values.Add(acc.AccelerometerX.ToString());
-                //    values.Add(acc.AccelerometerY.ToString());
-                //    values.Add(acc.AccelerometerZ.ToString());
-                //}
-                //if (chkpara.DataStream == "tmp")
-                //{
-                //    values.Add(tmp.SkinTemperature.ToString());
-                //}
-                //if (chkpara.DataStream == "bvp")
-                //{
-                //    values.Add(bvp.BloodVolumePulse.ToString());
-                //}
-                //if (chkpara.DataStream == "ibi")
-                //{
-                //    values.Add(ibi.InterBeatInterval.ToString());
-                //    values.Add(ibi.HearthRateVariability.ToString());
-                //}
-                //if (chkpara.DataStream == "gsr")
-                //{
-                //    values.Add(gsr.GalvanicSkinResponse.ToString());
-                //}
-                //if (chkpara.DataStream == "tag")
-                //{
-                //    values.Add(tag.Tag.ToString());
-                //}
                 HubConnector.SendData(values);
             }
             catch (Exception ex)
@@ -109,6 +73,89 @@ namespace EmpaticaDataProvider.Classes
                 Console.WriteLine(ex.ToString());
             }
         }
+
+        public void SendTmpDataToLH(TemperatureSensorChangedEventArgs tmp)
+        {
+            try
+            {
+                var values = new List<string>
+                {
+                    tmp.SkinTemperature.ToString()
+                };
+                HubConnector.SendData(values);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void SendIbiDataToLH(IBISensorChangedEventArgs ibi)
+        {
+            try
+            {
+                var values = new List<string>
+                {
+                    ibi.InterBeatInterval.ToString(),
+                    ibi.HearthRateVariability.ToString()
+
+                };
+                HubConnector.SendData(values);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void SendGsrDataToLH(GSRSensorChangedEventArgs gsr)
+        {
+            try
+            {
+                var values = new List<string>
+                {
+                    gsr.GalvanicSkinResponse.ToString()
+                };
+                HubConnector.SendData(values);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void SendTagDataToLH(TagCreatedEventArgs tag)
+        {
+            try
+            {
+                var values = new List<string>
+                {
+                    tag.Tag.ToString()
+                };
+                HubConnector.SendData(values);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void SendBvpDataToLH(BVPSensorChangedEventArgs bvp)
+        {
+            try
+            {
+                var values = new List<string>
+                {
+                    bvp.BloodVolumePulse.ToString()
+                };
+                HubConnector.SendData(values);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
         #endregion
     }
 }

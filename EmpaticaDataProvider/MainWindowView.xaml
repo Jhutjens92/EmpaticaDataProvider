@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="EmpaticaDataProvider"
     Width="450"
-    Height="167.333"
+    Height="330"
     DataContext="{StaticResource MainWindowViewModel}"
     mc:Ignorable="d">
     <Window.Resources>
@@ -14,45 +14,109 @@
     </Window.Resources>
     <Grid
         Width="450"
-        Height="126"
+        Height="372"
         HorizontalAlignment="Left"
-        VerticalAlignment="Top" Margin="0,0,-8,0">
+        VerticalAlignment="Top" Margin="0,-39,-8,0">
         <Label
-            Margin="154,10,154,0"
+            Margin="154,42,154,0"
             VerticalAlignment="Top"
             Content="Empatica Sensor Data"
             RenderTransformOrigin="2.77,-3.548" />
         <Label
-            Margin="10,49,298,0"
+            Margin="10,73,298,0"
             VerticalAlignment="Top"
             Content="Accelerometer X/Y/Z"
             RenderTransformOrigin="2.77,-3.548" />
         <TextBox
             Height="23"
-            Margin="140,52,234,0"
+            Margin="144,75,230,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
             Text="{Binding AccelerometerX}"
             TextWrapping="Wrap" />
         <TextBox
             Height="23"
-            Margin="221,52,153,0"
+            Margin="229,75,145,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
             Text="{Binding AccelerometerY}"
             TextWrapping="Wrap" />
         <TextBox
             Height="23"
-            Margin="302,52,72,0"
+            Margin="314,75,60,0"
             VerticalAlignment="Top"
             IsReadOnly="True"
             Text="{Binding AccelerometerZ}"
             TextWrapping="Wrap" />
+        <Label
+            Margin="10,103,298,0"
+            VerticalAlignment="Top"
+            Content="Blood Volume Pulse"
+            RenderTransformOrigin="2.77,-3.548" />
+        <TextBox
+            Height="23"
+            Margin="144,105,230,0"
+            VerticalAlignment="Top"
+            IsReadOnly="True"
+            Text="{Binding BloodVolumePulse}"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="10,133,298,0"
+            VerticalAlignment="Top"
+            Content="Hearth Rate Variability"
+            RenderTransformOrigin="2.77,-3.548" />
+        <TextBox
+            Height="23"
+            Margin="144,135,230,0"
+            VerticalAlignment="Top"
+            IsReadOnly="True"
+            Text="{Binding HearthRateVariability}"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="10,163,298,0"
+            VerticalAlignment="Top"
+            Content="Inter Beat Interval"
+            RenderTransformOrigin="2.77,-3.548" />
+        <TextBox
+            Height="23"
+            Margin="144,165,230,0"
+            VerticalAlignment="Top"
+            IsReadOnly="True"
+            Text="{Binding InterBeatInterval}"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="10,193,298,0"
+            VerticalAlignment="Top"
+            Content="Skin Temperature"
+            RenderTransformOrigin="2.77,-3.548" />
+        <TextBox
+            Height="23"
+            Margin="144,195,230,0"
+            VerticalAlignment="Top"
+            IsReadOnly="True"
+            Text="{Binding SkinTemperature}"
+            TextWrapping="Wrap" />
+        <Label
+            Margin="10,223,298,0"
+            VerticalAlignment="Top"
+            Content="Galvanic Skin Response"
+            RenderTransformOrigin="2.77,-3.548" />
+        <TextBox
+            Height="23"
+            Margin="144,225,230,0"
+            VerticalAlignment="Top"
+            IsReadOnly="True"
+            Text="{Binding GalvanicSkinResponse}"
+            TextWrapping="Wrap" />
         <Button
             x:Name="BtnRecord"
-            Margin="154,80,154,-2"
+            Width="142"
+            Height="48"
+            Margin="154,270,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
             Background="{Binding ButtonColor}"
             Command="{Binding OnButtonClicked}"
-            Content="{Binding ButtonText}" Height="48" VerticalAlignment="Top" />
+            Content="{Binding ButtonText}" />
     </Grid>
-</Window>
+</Window> 

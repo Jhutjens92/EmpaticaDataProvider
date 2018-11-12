@@ -28,7 +28,7 @@ namespace EmpaticaDataProvider.Classes
         {
             get { return dataStream; }
         }
-        private readonly string dataStream = "acc";
+        private string dataStream;
 
 
         /// <summary>   Gets the API key. </summary>
@@ -72,7 +72,7 @@ namespace EmpaticaDataProvider.Classes
         private bool akPar = false;
 
         ///// <summary>   Checks if the datastream is set by parameters. </summary>
-        //private  bool dsPar = false;
+        private bool dsPar = false;
 
         #endregion
 
@@ -105,19 +105,19 @@ namespace EmpaticaDataProvider.Classes
                     serverIP = StartupPar[ParIndex + 1];
                     sipPar = true;
                 }
-                //if (StartupPar.Any(s => s.Contains("-ds")))
-                //{
-                //    int ParIndex = Array.IndexOf(StartupPar, "-ds");
-                //    dataStream = StartupPar[ParIndex + 1];
-                //    dsPar = true;
-                //}
+                if (StartupPar.Any(s => s.Contains("-ds")))
+                {
+                    int ParIndex = Array.IndexOf(StartupPar, "-ds");
+                    dataStream = StartupPar[ParIndex + 1];
+                    dsPar = true;
+                }
                 else
                 {
-                    //if (!dsPar)
-                    //{
-                    //    dataStream = "acc";
-                    //    Console.WriteLine("No datastream entered. Showing Accelerometer datastream (acc).");
-                    //}
+                    if (!dsPar)
+                    {
+                        dataStream = "acc";
+                        Console.WriteLine("No datastream entered. Showing Accelerometer datastream (acc).");
+                    }
                     if (!spPar)
                     {
                         serverPort = 5555;
