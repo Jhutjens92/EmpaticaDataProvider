@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -19,22 +20,31 @@ namespace EmpaticaDataProvider.Classes
 
         #region Variables
         /// <summary>   True if the TCPClient is connected to the Empatica BLE Server. </summary>
-        private static bool tcpClientConnected = false;
+        private bool tcpClientConnected = false;
 
-        /// <summary>   // String containing the filtered message split on null. </summary>
-        private static string[] receivedStrFiltered = { };
+        /// <summary>   // String array containing the filtered message split on null. </summary>
+        private string[] receivedStrFiltered = { };
+
+        /// <summary>   // String array containing the filtered IBI message split on null. </summary>
+        List<string> receivedStrFilteredIBI = new List<string>();
 
         /// <summary>   Int step counter to verify what to send next. </summary>
-        private static int tcpStep = 0;
+        private int tcpStep = 0;
+
+        /// <summary>   Number of TCP tries before checking if the BLE might be connected. </summary>
+        private int tcpTryCount = 0;
 
         /// <summary>Identifier for the empatica.</summary>
-        private static int empaticaID;
+        private int empaticaID;
+
+        /// <summary>   Counts the amount of times the CheckIfIBIStream functions has executed. </summary>
+        private int ibiStreamCount = 0;
 
         /// <summary>   Create a TCP/IP  socket. </summary>
-        private static Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        private Socket client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
         /// <summary>ManualResetEvent instances signal completion.</summary>
-        private static readonly ManualResetEvent ReceiveDone = new ManualResetEvent(false);
+        private readonly ManualResetEvent ReceiveDone = new ManualResetEvent(false);
 
         /// <summary>The received tcp string.</summary>
         string receivedStr = string.Empty;
@@ -46,7 +56,6 @@ namespace EmpaticaDataProvider.Classes
         /// <summary>Accelerometer changed events + vars.</summary>
         ///
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
-
         public class AccelerometerChangedEventArgs : EventArgs
         {
             private float accelerometerX;
@@ -139,7 +148,7 @@ namespace EmpaticaDataProvider.Classes
                 get { return tag; }
                 set { tag = value; }
             }
-        }            
+        }
 
         /// <summary>Event queue for all listeners interested in AccelerometerChanged events.</summary>
         public event EventHandler<AccelerometerChangedEventArgs> AccelerometerChanged;
@@ -164,7 +173,6 @@ namespace EmpaticaDataProvider.Classes
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
         ///
         /// <param name="e">Event information to send to registered event handlers.</param>
-
         protected virtual void OnAccelerometerChanged(AccelerometerChangedEventArgs e)
         {
             AccelerometerChanged?.Invoke(this, e);
@@ -227,15 +235,13 @@ namespace EmpaticaDataProvider.Classes
         /// <summary>Connects the empatica.</summary>
         ///
         /// <remarks>Jordi Hutjens, 9-11-2018.</remarks>
-
         public void ConnectEmpatica()
         {
             try
             {
-                if (!tcpClientConnected)
+                while (!tcpClientConnected)
                 {
                     StartSyncTCPClient();
-                    tcpClientConnected = true;
                 }
                 while (tcpStep < 4)
                 {
@@ -250,6 +256,9 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>   Gets the empatica data (Start recording button). </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         public void GetEmpaticaData()
         {
             SyncSend(CreateTcpCmd());
@@ -264,7 +273,6 @@ namespace EmpaticaDataProvider.Classes
         /// <summary>Check received message.</summary>
         ///
         /// <remarks>Jordi Hutjens, 9-11-2018.</remarks>
-
         private void ChkReceivedMsg()
         {
             switch (tcpStep)
@@ -274,6 +282,11 @@ namespace EmpaticaDataProvider.Classes
                     {
                         tcpStep = 1;
                     }
+                    if (int.Parse(receivedStrFiltered[2]) == 0)
+                    {
+                        tcpTryCount++;
+                        if (tcpTryCount == 5) { tcpStep = 2; }
+                    }
                     break;
                 case 1:
                     if (receivedStrFiltered[2] == "OK")
@@ -281,12 +294,22 @@ namespace EmpaticaDataProvider.Classes
                         tcpStep = 2;
                         Console.WriteLine("Empatica Bluetooth connected.\n");
                     }
+                    else if (receivedStrFiltered[2] == "ERR" && receivedStrFiltered[7] == "connected")
+                    {
+                        tcpStep = 2;
+                        Console.WriteLine("Empatica Bluetooth already connected.\n");
+                    }
                     break;
                 case 2:
                     if (Int32.Parse(receivedStrFiltered[2]) > 0)
                     {
                         tcpStep = 3;
                         empaticaID = Int32.Parse(receivedStrFiltered[4]);
+                    }
+                    if (tcpTryCount != 0 && Int32.Parse(receivedStrFiltered[2]) == 0)
+                    {
+                        tcpTryCount--;
+                        if (tcpTryCount == 0) { tcpStep = 0; }
                     }
                     break;
                 case 3:
@@ -319,7 +342,6 @@ namespace EmpaticaDataProvider.Classes
         /// <remarks>Jordi Hutjens, 9-11-2018.</remarks>
         ///
         /// <returns>The new TCP command.</returns>
-
         private string CreateTcpCmd()
         {
             var tcpCommandStr = "";
@@ -352,11 +374,69 @@ namespace EmpaticaDataProvider.Classes
             return tcpCommandStr;
         }
 
+        /// <summary>   Checks which updates values event we should create. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
+        private void CheckUpdateValues()
+        {
+            if (Globals.IsRecordingData)
+            {
+                switch (CheckParameters.Instance.DataStream)
+                {
+                    case "acc":
+                        UpdateAccValues();
+                        break;
+                    case "gsr":
+                        UpdateGsrValues();
+                        break;
+                    case "tag":
+                        UpdateTagValues();
+                        break;
+                    case "bvp":
+                        UpdateBvpValues();
+                        break;
+                    case "tmp":
+                        UpdateTmpValues();
+                        break;
+                    case "ibi":
+                        UpdateIbiValues();
+                        break;
+                }
+            }
+        }
 
+        /// <summary>   Closes empatica connection. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         public void CloseEmpaticaConnection()
         {
-            SyncSend(CreateTcpCmd());
-            ChkReceivedMsg();
+            if (tcpStep == 5)
+            {
+                SyncSend(CreateTcpCmd());
+                ChkReceivedMsg();
+            }
+        }
+
+        /// <summary>   Check if the subscribed stream is IBI. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
+        private void CheckIfIBIStream()
+        {
+            if (CheckParameters.Instance.DataStream == "ibi" && ibiStreamCount == 0)
+            {
+                receivedStrFilteredIBI.Add(receivedStrFiltered[2]);
+                ibiStreamCount++;
+            }
+            else if (CheckParameters.Instance.DataStream == "ibi" && ibiStreamCount == 1)
+            {
+                receivedStrFilteredIBI.Add(receivedStrFiltered[2]);
+                ibiStreamCount = 0;
+                CheckUpdateValues();
+            }
+            else
+            {
+                CheckUpdateValues();
+            }
         }
 
         #endregion
@@ -366,46 +446,38 @@ namespace EmpaticaDataProvider.Classes
         /// <summary>Starts synchronise TCP client.</summary>
         ///
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
-
         private void StartSyncTCPClient()
         {
-            // Connect to a remote device.  
+            // Establish the remote endpoint for the socket.  
+            var ipHostInfo = new IPHostEntry { AddressList = new[] { IPAddress.Parse(CheckParameters.Instance.ServerIP) } };
+            var ipAddress = ipHostInfo.AddressList[0];
+            var remoteEP = new IPEndPoint(ipAddress, CheckParameters.Instance.ServerPort);
+
+            // Connect the socket to the remote endpoint. Catch any errors.  
             try
             {
-                // Establish the remote endpoint for the socket.  
-                var ipHostInfo = new IPHostEntry { AddressList = new[] { IPAddress.Parse(CheckParameters.Instance.ServerIP) } };
-                var ipAddress = ipHostInfo.AddressList[0];
-                var remoteEP = new IPEndPoint(ipAddress, CheckParameters.Instance.ServerPort);
-
-                // Connect the socket to the remote endpoint. Catch any errors.  
-                try
-                {
-                    client.Connect(remoteEP);
-                    Console.WriteLine("Socket connected to {0}", client.RemoteEndPoint.ToString());
-                }
-                catch (ArgumentNullException ane)
-                {
-                    Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
-                }
-                catch (SocketException se)
-                {
-                    Console.WriteLine("SocketException : {0}", se.ToString());
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Unexpected exception : {0}", e.ToString());
-                }
+                client.Connect(remoteEP);
+                Console.WriteLine("Socket connected to {0}", client.RemoteEndPoint.ToString());
+                tcpClientConnected = true;
+            }
+            catch (ArgumentNullException ane)
+            {
+                Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
+            }
+            catch (SocketException se)
+            {
+                Console.WriteLine("SocketException : {0}", se.ToString());
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.ToString());
+                Console.WriteLine("Unexpected exception : {0}", e.ToString());
             }
         }
+
 
         /// <summary>Closes TCP connection.</summary>
         ///
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
-
         public void CloseTCPConnection()
         {
             try
@@ -425,7 +497,6 @@ namespace EmpaticaDataProvider.Classes
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
         ///
         /// <param name="TCPCommandStr">The TCP command string.</param>
-
         private void SyncSend(string TCPCommandStr)
         {
             try
@@ -446,12 +517,11 @@ namespace EmpaticaDataProvider.Classes
         ///
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
         ///
-        /// <returns>A string.</returns>
-
+        /// <returns>the received tcp string (filtered).</returns>
         private string SyncReceive()
         {
             // Data buffer for incoming data.  
-            byte[] receivedBytes = new byte[64];
+            byte[] receivedBytes = new byte[128];
 
             try
             {
@@ -473,7 +543,6 @@ namespace EmpaticaDataProvider.Classes
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
         ///
         /// <param name="client">Create a TCP/IP  socket.</param>
-
         private void ASyncReceive(Socket client)
         {
             try
@@ -495,7 +564,6 @@ namespace EmpaticaDataProvider.Classes
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
         ///
         /// <param name="ar">The result of the asynchronous operation.</param>
-
         private void ASyncReceiveCallback(IAsyncResult ar)
         {
             try
@@ -504,7 +572,6 @@ namespace EmpaticaDataProvider.Classes
                 // from the asynchronous state object.
                 var state = (StateObject)ar.AsyncState;
                 var client = state.WorkSocket;
-
                 // Read data from the remote device.
                 var bytesRead = client.EndReceive(ar);
 
@@ -513,11 +580,8 @@ namespace EmpaticaDataProvider.Classes
                     // There might be more data, so store the data received so far.
                     state.Sb.Append(Encoding.ASCII.GetString(state.Buffer, 0, bytesRead));
                     receivedStr = state.Sb.ToString();
-
                     state.Sb.Clear();
-
                     ReceiveDone.Set();
-
                     // Get the rest of the data.
                     client.BeginReceive(state.Buffer, 0, StateObject.BufferSize, 0, ASyncReceiveCallback, state);
                 }
@@ -537,11 +601,8 @@ namespace EmpaticaDataProvider.Classes
                 Console.WriteLine(e.ToString());
             }
             receivedStrFiltered = receivedStr.Split(null);
-            //Console.WriteLine(receivedStr);
-            if (Globals.IsRecordingData)
-            {
-                UpdateAccValues();
-            }
+            //We need to execute this function because the IBI datastream sends it's data over 2 async receive functions.
+            CheckIfIBIStream();
         }
         #endregion
 
@@ -550,7 +611,6 @@ namespace EmpaticaDataProvider.Classes
         /// <summary>Updates the accelerometer values and trigger the event.</summary>
         ///
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
-
         private void UpdateAccValues()
         {
             try
@@ -563,8 +623,7 @@ namespace EmpaticaDataProvider.Classes
 
                 };
                 OnAccelerometerChanged(args);
-                lhsend.SendAccDataToLH(args);
-
+                if (CheckParameters.Instance.LHRunning) { lhsend.SendAccDataToLH(args); }
             }
             catch (Exception)
             {
@@ -578,19 +637,22 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>   Updates the ibi values. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         private void UpdateIbiValues()
         {
             try
             {
                 IBISensorChangedEventArgs args = new IBISensorChangedEventArgs
                 {
-                    InterBeatInterval = float.Parse(receivedStrFiltered[2]),
-                    HearthRateVariability = float.Parse(receivedStrFiltered[3])
+                    InterBeatInterval = float.Parse(receivedStrFilteredIBI[0]),
+                    HearthRateVariability = float.Parse(receivedStrFilteredIBI[1])
 
                 };
+                receivedStrFilteredIBI.Clear();
                 OnIBISensorChanged(args);
-                lhsend.SendIbiDataToLH(args);
-
+                if (CheckParameters.Instance.LHRunning) { lhsend.SendIbiDataToLH(args); }
             }
             catch (Exception)
             {
@@ -603,6 +665,9 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>   Updates the bvp values. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         private void UpdateBvpValues()
         {
             try
@@ -612,7 +677,7 @@ namespace EmpaticaDataProvider.Classes
                     BloodVolumePulse = float.Parse(receivedStrFiltered[2])
                 };
                 OnBVPSensorChanged(args);
-                lhsend.SendBvpDataToLH(args);
+                if (CheckParameters.Instance.LHRunning) { lhsend.SendBvpDataToLH(args); }
             }
             catch (Exception)
             {
@@ -624,6 +689,9 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>   Updates the gsr values. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         private void UpdateGsrValues()
         {
             try
@@ -633,7 +701,7 @@ namespace EmpaticaDataProvider.Classes
                     GalvanicSkinResponse = float.Parse(receivedStrFiltered[2])
                 };
                 OnGSRSensorChanged(args);
-                lhsend.SendGsrDataToLH(args);
+                if (CheckParameters.Instance.LHRunning) { lhsend.SendGsrDataToLH(args); }
             }
             catch (Exception)
             {
@@ -645,6 +713,9 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>   Updates the temperature values. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         private void UpdateTmpValues()
         {
             try
@@ -654,7 +725,7 @@ namespace EmpaticaDataProvider.Classes
                     SkinTemperature = float.Parse(receivedStrFiltered[2])
                 };
                 OnTemperatureSensorChanged(args);
-                lhsend.SendTmpDataToLH(args);
+                if (CheckParameters.Instance.LHRunning) { lhsend.SendTmpDataToLH(args); }
             }
             catch (Exception)
             {
@@ -666,16 +737,19 @@ namespace EmpaticaDataProvider.Classes
             }
         }
 
+        /// <summary>   Updates the tag values. </summary>
+        ///
+        /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         private void UpdateTagValues()
         {
             try
             {
                 TagCreatedEventArgs args = new TagCreatedEventArgs
                 {
-                    Tag = Int32.Parse(receivedStrFiltered[2])
+                    Tag = 1
                 };
                 OnTagCreated(args);
-                lhsend.SendTagDataToLH(args);
+                if (CheckParameters.Instance.LHRunning) { lhsend.SendTagDataToLH(args); }
             }
             catch (Exception)
             {
@@ -686,7 +760,6 @@ namespace EmpaticaDataProvider.Classes
                 OnTagCreated(args);
             }
         }
-
         #endregion
     }
 }

@@ -61,6 +61,16 @@ namespace EmpaticaDataProvider.Classes
         }
         private string serverIP;
 
+        /// <summary>  Get or set if the Learning Hub is running. </summary>
+        ///
+        /// <value> True if the Learning Hub is running. </value>
+        public bool LHRunning
+        {
+            get { return lhRunning; }
+            set { lhRunning = value; }
+        }
+        private bool lhRunning;
+
 
         /// <summary>   Checks if the Server IP is set by parameters. </summary>
         private bool sipPar = false;
@@ -73,6 +83,7 @@ namespace EmpaticaDataProvider.Classes
 
         ///// <summary>   Checks if the datastream is set by parameters. </summary>
         private bool dsPar = false;
+
 
         #endregion
 

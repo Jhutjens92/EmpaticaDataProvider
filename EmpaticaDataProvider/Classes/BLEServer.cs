@@ -64,7 +64,6 @@ namespace EmpaticaDataProvider.Classes
                 StartBLEServer();
                 // We need to wait around 2 seconds. This ensures the Empatica BLE Server is started before trying to connect to it. 
                 // We can only check if the Empatica BLE Server is running, however this does not ensure it is also ready.
-                Thread.Sleep(2000);
             }
         }
 
