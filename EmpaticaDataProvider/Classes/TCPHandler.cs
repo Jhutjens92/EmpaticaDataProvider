@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Windows.Threading;
 using EmpaticaDataProvider;
 using EmpaticaDataProvider.Classes;
 using EmpaticaDataProvider.ViewModel;
@@ -52,6 +53,13 @@ namespace EmpaticaDataProvider.Classes
         #endregion
 
         #region Events
+
+        /// <summary>Additional information for empatica connected events.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 14-11-2018.</remarks>
+        public class EmpaticaConnectedEventArgs : EventArgs
+        {
+        }
 
         /// <summary>Accelerometer changed events + vars.</summary>
         ///
@@ -153,6 +161,9 @@ namespace EmpaticaDataProvider.Classes
         /// <summary>Event queue for all listeners interested in AccelerometerChanged events.</summary>
         public event EventHandler<AccelerometerChangedEventArgs> AccelerometerChanged;
 
+        /// <summary>Event queue for all listeners interested in AccelerometerChanged events.</summary>
+        public event EventHandler<EmpaticaConnectedEventArgs> EmpaticaConnectedTrue;
+
         /// <summary>   Event queue for all listeners interested in IBISensorChanged events. </summary>
         public event EventHandler<IBISensorChangedEventArgs> IBISensorChanged;
 
@@ -167,6 +178,17 @@ namespace EmpaticaDataProvider.Classes
 
         /// <summary>   Event queue for all listeners interested in tagCreated events. </summary>
         public event EventHandler<TagCreatedEventArgs> TagCreatedEvent;
+
+
+        /// <summary>Raises the accelerometer changed event.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
+        ///
+        /// <param name="e">Event information to send to registered event handlers.</param>
+        protected virtual void OnEmpaticaConnected(EmpaticaConnectedEventArgs e)
+        {
+            EmpaticaConnectedTrue?.Invoke(this, e);
+        }
 
         /// <summary>Raises the accelerometer changed event.</summary>
         ///
@@ -317,6 +339,7 @@ namespace EmpaticaDataProvider.Classes
                     {
                         tcpStep = 4;
                         Console.WriteLine("Empatica E4 Wristband with ID: {0} connected. \n", empaticaID);
+                        EmpaticaConnected();
                     }
                     break;
 
@@ -368,8 +391,6 @@ namespace EmpaticaDataProvider.Classes
                 case 6:
                     tcpCommandStr = "device_disconnect";
                     break;
-
-
             }
             return tcpCommandStr;
         }
@@ -458,7 +479,7 @@ namespace EmpaticaDataProvider.Classes
             {
                 client.Connect(remoteEP);
                 Console.WriteLine("Socket connected to {0}", client.RemoteEndPoint.ToString());
-                tcpClientConnected = true;
+                tcpClientConnected = true;               
             }
             catch (ArgumentNullException ane)
             {
@@ -608,6 +629,15 @@ namespace EmpaticaDataProvider.Classes
 
         #region Event methods
 
+        /// <summary>Updates the ellipse color to see if the empatica is connected.</summary>
+        ///
+        /// <remarks>Jordi Hutjens, 14-11-2018.</remarks>
+        private void EmpaticaConnected()
+        {
+            EmpaticaConnectedEventArgs args = new EmpaticaConnectedEventArgs { };
+            OnEmpaticaConnected(args);
+        }
+
         /// <summary>Updates the accelerometer values and trigger the event.</summary>
         ///
         /// <remarks>Jordi Hutjens, 10-11-2018.</remarks>
@@ -646,8 +676,8 @@ namespace EmpaticaDataProvider.Classes
             {
                 IBISensorChangedEventArgs args = new IBISensorChangedEventArgs
                 {
-                    InterBeatInterval = float.Parse(receivedStrFilteredIBI[0]),
-                    HearthRateVariability = float.Parse(receivedStrFilteredIBI[1])
+                    HearthRateVariability = float.Parse(receivedStrFilteredIBI[0]),
+                    InterBeatInterval = float.Parse(receivedStrFilteredIBI[1])
 
                 };
                 receivedStrFilteredIBI.Clear();

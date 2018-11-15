@@ -143,5 +143,11 @@
             Background="{Binding ButtonColor}"
             Command="{Binding OnButtonClicked}"
             Content="{Binding ButtonText}" />
+        <Ellipse Fill="{Binding EllipseColor}" HorizontalAlignment="Left" Height="11" Margin="348,98,0,0" Stroke="Black" VerticalAlignment="Top" Width="11"/>
+        <Label
+            Margin="228,90,80,0"
+            VerticalAlignment="Top"
+            Content="Empatica Connected"
+            RenderTransformOrigin="2.77,-3.548" />
     </Grid>
 </Window> 

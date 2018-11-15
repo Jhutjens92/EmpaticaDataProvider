@@ -37,10 +37,15 @@ namespace EmpaticaDataProvider.Classes
                 if (CheckParameters.Instance.DataStream == "ibi")
                 {
                     names.Add("Empatica_Ibi");
+                    names.Add("Empatica_Hrv");
                 }
                 if (CheckParameters.Instance.DataStream == "tag")
                 {
                     names.Add("Empatica_Tag");
+                }
+                if (CheckParameters.Instance.DataStream == "gsr")
+                {
+                    names.Add("Empatica_Gsr");
                 }
                 HubConnector.SetValuesName(names);
             }

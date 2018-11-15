@@ -44,8 +44,8 @@ namespace EmpaticaDataProvider.Model
         {
             myConnector = new ConnectorHub.ConnectorHub();
 
-            MyConnector.init();
-            MyConnector.sendReady();
+            MyConnector.Init();
+            MyConnector.SendReady();
 
         }
 
@@ -59,7 +59,7 @@ namespace EmpaticaDataProvider.Model
 
         public static void SendData(List<string> values)
         {
-            MyConnector.storeFrame(values);
+            MyConnector.StoreFrame(values);
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +72,7 @@ namespace EmpaticaDataProvider.Model
 
         public static void SetValuesName(List<string> names)
         {
-            MyConnector.setValuesName(names);
+            MyConnector.SetValuesName(names);
         }
     }
 }

@@ -40,7 +40,7 @@
   <ItemGroup>
     <Reference Include="ConnectorHub, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>References\ConnectorHub.dll</HintPath>
+      <HintPath>..\..\LearningHub\ConnectorHub\bin\Debug\ConnectorHub.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

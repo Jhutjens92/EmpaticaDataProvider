@@ -160,6 +160,18 @@ namespace EmpaticaDataProvider.ViewModel
         /// <summary>The button color.</summary>
         private Brush buttonColor = new SolidColorBrush(Colors.White);
 
+        /// <summary>Gets or sets the color of the ellipse.</summary>
+        ///
+        /// <value>The color of the button.</value>
+        public Brush EllipseColor
+        {
+            get { return ellipseColor; }
+            set { SetProperty(ref ellipseColor, value); }
+        }
+
+        /// <summary>The button color.</summary>
+        private Brush ellipseColor = new SolidColorBrush(Colors.Red);
+
         /// <summary>   Gets or sets a value indicating whether the ACC fields are visible. </summary>
         ///
         /// <value> True if ACC fields need to show, false if not. </value>
@@ -287,10 +299,9 @@ namespace EmpaticaDataProvider.ViewModel
             if (CheckParameters.Instance.LHRunning)
             {
                 HubConnector.StartConnection();
-                HubConnector.MyConnector.startRecordingEvent += MyConnector_startRecordingEvent;
-                HubConnector.MyConnector.stopRecordingEvent += MyConnector_stopRecordingEvent;
+                HubConnector.MyConnector.StartRecordingEvent += MyConnector_startRecordingEvent;
+                HubConnector.MyConnector.StopRecordingEvent += MyConnector_stopRecordingEvent;
             }
-            Application.Current.MainWindow.Closing += MainWindow_Closing;
             CheckParameters.Instance.CheckStartupParameters();
             if (CheckParameters.Instance.LHRunning)
             {
@@ -300,7 +311,6 @@ namespace EmpaticaDataProvider.ViewModel
             IAppereance();
             bleserver.CheckBLEServer();
             synctcp.ConnectEmpatica();
-            
         }
         #endregion
 
@@ -323,6 +333,8 @@ namespace EmpaticaDataProvider.ViewModel
         /// <remarks>   Jordi Hutjens, 13-11-2018. </remarks>
         private void SubscribeToEvents()
         {
+            Application.Current.MainWindow.Closing += MainWindow_Closing;
+            synctcp.EmpaticaConnectedTrue += IUpdateEllipseColor;
             switch (CheckParameters.Instance.DataStream)
             {
                 case "acc":
@@ -418,6 +430,11 @@ namespace EmpaticaDataProvider.ViewModel
                     );
                 return _buttonClicked;
             }
+        }
+
+        private void IUpdateEllipseColor(object sender, EmpaticaConnectedEventArgs emp)
+        {
+            EllipseColor = new SolidColorBrush(Colors.Green);
         }
 
         /// <summary>Updates the accelerometer.</summary>
